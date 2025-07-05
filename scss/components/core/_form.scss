@@ -1,0 +1,968 @@
+@charset 'utf-8';
+
+/**
+** 컴포넌트 코어
+** 폼, 셀렉트, 체크박스, 라디오, 텍스트, 플레이스홀더, datepicker 등 form의 기본 단위
+**/
+
+$color-line-form-base: #cfcfcf;
+
+$height-form-base: 36px;
+$height-form-sm: 28px;
+$height-form-lg: 42px;
+
+$width_form_full : 100%;
+$width_form_wider : 428px;
+$width_form_wide : 346px;
+$width_form_base : 300px;
+$width_form_short : 218px;
+$width_form_shorter : 80px;
+
+$font-size-form-base: 14px;
+$font-size-form-sm: 12px;
+$font-size-form-lg: 16px;
+
+$font-height-form-base: $height-form-base;
+$font-height-form-sm: $height-form-sm;
+$font-height-form-lg: $height-form-lg;
+
+$color-form-base: $color-text-base;
+
+/// 개발 히든영역
+.mm_form-hidden {
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+	padding: 0;
+	width: 0;
+	height: 0;
+	@include opacity(0, none);
+}
+///-- 개발 히든영역
+
+// 텍스트 input/textarea extend 상속
+%formText {
+	$width-form-clear: $height-form-base - 6px;
+
+	width: $width_form_base;
+	position: relative;
+	// 상위 요소에서 -webkit-overflow-scrolling: touch, overflow: auto 사용할 때 스크롤 후 폼요소 렌더링 제대로 되지 않을 때 적용
+	@include transform(translate3d(0, 0, 0));
+
+	&.__text-on {
+		.btn_text-clear {
+			display: block;
+		}
+
+		.text_placeholder {
+			z-index: -1;
+			@include opacity(0);
+		}
+	}
+
+	// 요소가 disabled, checked 일 때
+	&.__text-off {
+		&[class*='_calendar_'] {
+			.btn_text-clear {// 데이트픽커 선택 시 x버튼 노출
+				display: block;
+			}
+		}
+
+		.text_placeholder {
+			z-index: -1;
+		}
+	}
+
+	// pc에서 textarea 오른쪽 스크롤바 노출로 패딩 변경
+	.__pc & {
+		&[class*="_area_"] {
+			.btn_text-clear {
+				right: 15px;
+
+				+ label textarea.textfield,
+				+ .text_alert + label textarea.textfield {
+					padding-right: $width-form-clear - 4px + 15px;
+				}
+			}
+
+			label {
+				padding: 0;
+
+				textarea.textfield {
+					overflow-y: scroll;
+
+					+ .bg_text + .text_placeholder {
+						right: 15px;
+					}
+				}
+			}
+		}
+	}
+
+	// 데이트픽커 아이콘
+	&[class*="_calendar_"] {
+		.mco_datepicker-calendar {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			right: 0;
+			width: 39px;
+			height: 100%;
+			border-left: 1px solid $color-line-form-base;
+			background: #fff;
+			color: #999999;
+			font-size: 15px;
+			line-height: $height-form-base - 2px;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.btn_text-clear {
+			right: 40px;
+		}
+
+		.textfield {
+			padding-right: $width_form_clear - 4px + 40px;
+
+			[class*="__ie1"] & { padding-top: 0;}
+		}
+	}
+
+	.btn_text-clear {
+		display: none;
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		right: 0;
+		margin-top: -$height-form-base / 2;
+		width: $width-form-clear;
+		height: $height-form-base;
+		color: #b9b9b9;
+		font-size: 14px;
+		line-height: $height-form-base;
+		text-align: center;
+
+		~ label {
+			.textfield:not(:disabled):not([readonly]) {
+				padding-right: $width_form_clear - 4px;
+
+				[class*="__ie1"] & { padding-top: 10px; }
+			}
+		}
+	}
+
+	.btn_text-pw {
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		right: 0;
+		margin-top: -$height-form-base / 2;
+		width: $height-form-base + 2px;
+		height: $height-form-base;
+		color: #cfcfcf;
+		font-size: 20px;
+		line-height: $height-form-base;
+		text-align: center;
+
+		+ label {
+			.textfield {
+				padding-right: $height-form-base + 2px;
+			}
+		}
+
+		> .mco_show {
+			color: $color-primary-base;
+		}
+	}
+
+	label {
+		display: block;
+		position: relative;
+		padding-top: 7px;
+		height: 36px;
+		border: 1px solid $color-line-form-base;
+		color: $color-form-base;
+		font-size: $font-size-form-base;
+		text-align: left;
+
+		[class*="__ie1"] & { padding-top: 10px; }
+
+		.__edge & { padding-top: 8px; }
+
+		> [class*="mco_"] {
+			+ .textfield {
+				.__edge & { padding: 2px 41px 0; }
+			}
+		}
+
+		.textfield {
+			position: relative;
+			z-index: 1;
+			padding: 2px 12px 0;
+			width: 100%;
+			height: 20px;
+			border: 0;
+			background: transparent;
+			line-height: 20px;
+			cursor: text;
+
+			[class*="__ie1"] & { padding-top: 0; }
+			//
+			// .__edge & { padding: 2px 11px 0; }
+
+			&:-webkit-autofill,
+			&:-webkit-autofill:hover,
+			&:-webkit-autofill:focus,
+			&:-webkit-autofill:active {// webkit 브라우저 자동완성
+				-webkit-text-fill-color: inherit !important;
+				@include transition(background-color 99999s 0s);
+			}
+
+			&[type="password"] {
+				letter-spacing: 4px;
+				font-family: $font-family-password;
+
+				[class*="__ie1"] & { margin-top: -2px; }
+			}
+
+			&[readonly]:not(.__datepicker-on) {
+				color: #999999;
+
+				+ .bg_text {
+					background: #f3f3f3;
+				}
+			}
+
+			&:disabled {
+				padding-top: 0;
+				color: #999999;
+
+				// .__edge & { padding: 2px 41px 0; }
+
+				+ .bg_text {
+					background: #dcdcdc;
+				}
+
+				~ .text_placeholder {
+					color: #999;
+				}
+			}
+
+			&.text_date {
+				line-height: 20px;
+				white-space: nowrap;
+
+				+ input[type="date"],
+				+ input[type="month"],
+				+ input[type="time"] {
+					position: absolute;
+					z-index: -1;
+					top: 0;
+					left: 0;
+					@include opacity(0);
+				}
+			}
+		}
+
+		.bg_text {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: #fff;
+		}
+
+		.text_placeholder {
+			display: block;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			padding: 0 12px;
+			color: #999999;
+			line-height: $font-height-form-base;
+			white-space: nowrap;
+			cursor: text;
+
+			[class*="__ie1"] & {
+				// line-height: $font-height-form-base+3px;
+				padding-top: 2px;
+			}
+
+			small {
+				display: inline-block;
+				vertical-align: 0;
+				font-size: 11px;
+			}
+		}
+
+		.text_label {
+			position: absolute;
+			top: 0;
+			left: 0;
+			line-height: $font-height-form-base - 2px;
+			white-space: nowrap;
+			cursor: text;
+		}
+	}
+
+	.text_byte {
+		// position: absolute;
+		// top: -18px;
+		// right: 0;
+		// color: #959595;
+		// font-size: 12px;
+		// letter-spacing: 0;
+	}
+}
+// 텍스트 input/textarea extend 상속
+
+/// 텍스트 input
+.mm_form-text {
+	@extend %formText;
+
+	&[class*="_short_"] {
+		width: $width_form_short;
+	}
+
+	&[class*="_shorter_"] {
+		width: $width_form_shorter;
+	}
+
+	&[class*="_wide_"] {
+		width: $width_form_wide;
+	}
+
+	&[class*="_wider_"] {
+		width: $width_form_wider;
+	}
+
+	&[class*="_full_"] {
+		width: $width_form_full;
+	}
+
+	&[class*="_lg_"] {
+		label {
+			padding-top: 12px;
+			height: 46px;
+
+			.textfield:not(:disabled):not([readonly]) {
+				[class*="__ie1"] & { margin-top: 3px; }
+				.__edge & { margin-top: 1px; }
+
+				&[type="password"] {
+					[class*="__ie1"] & { margin-top: 1px; }
+					.__edge & { margin-top: 0px; }
+				}
+			}
+
+			.text_placeholder {
+				line-height: 46px;
+			}
+		}
+	}
+}
+///-- 텍스트 input
+
+/// 텍스트 textarea
+.mm_form-textarea {
+	$width_form_clear: 30px;
+	$font-height-form-textarea: $font-size-form-base + 4px;
+
+	@extend %formText;
+
+	&[class*="_full_"] {
+		width: $width_form_full;
+	}
+
+	// pc에서 textarea 오른쪽 스크롤바 노출로 패딩 변경
+	.__pc & {
+		.btn_text-clear {
+			right: 15px;
+
+			~ label textarea.textfield {
+				padding-right: $width_form_clear - 4px + 15px;
+			}
+		}
+
+		label {
+			padding: 0;
+
+			textarea.textfield {
+				overflow-y: scroll;
+
+				~ .text_placeholder {
+					right: 15px;
+				}
+			}
+		}
+	}
+
+	.btn_text-clear {
+		~ label {
+			.textfield:not(:disabled):not([readonly]) {
+				padding-right: $width_form_clear - 4px + 15px;
+			}
+		}
+	}
+
+	label {
+		padding: 9px 0;
+		height: auto;
+
+		.textfield {
+			padding: 9px 10px 7px;
+			height: ($font-height-form-textarea * 5) + (10px * 2);// (line-height * 줄 수) + (padding-top + padding-bottom);
+			line-height: $font-height-form-textarea;
+
+			// ios에서 가로 padding 3px 줄여 적용
+			.__ios & {
+				padding-left: 7px;
+			}
+		}
+
+		.text_placeholder {
+			padding: 9px 10px 7px;
+			line-height: $font-height-form-textarea;
+			white-space: normal;
+		}
+
+		.text_label {
+			//
+		}
+	}
+}
+///-- 텍스트 textarea
+
+/// 셀렉트
+.mm_form-select {
+
+	position: relative;
+	width: $width_form_base;
+	// 상위 요소에서 -webkit-overflow-scrolling: touch, overflow: auto 사용할 때 스크롤 후 폼요소 렌더링 제대로 되지 않을 때 적용
+	@include transform(translate3d(0, 0, 0));
+
+	&[class*="_short_"] {
+		width: $width_form_short;
+	}
+
+	&[class*="_shorter_"] {
+		width: $width_form_shorter;
+	}
+
+	&[class*="_full_"] {
+		width: $width_form_full;
+	}
+
+	&[class*="_sm_"] {
+		label {
+			height: $height-form-sm;
+
+			select {
+				font-size: $font-size-form-sm;
+				line-height: $font-height-form-sm - 2px;
+			}
+
+			.mco_form-select {
+				top: 8px;
+			}
+		}
+	}
+
+	&[class*="_lg_"] {
+		label {
+			height: $height-form-lg;
+
+			select {
+				font-size: $font-size-form-lg;
+				line-height: $font-height-form-lg - 2px;
+			}
+
+			.mco_form-select {
+				top: 9px;
+			}
+		}
+	}
+
+	&[class*="_xl_"] {
+		label {
+			height: 52px;
+
+			select {
+				padding-left: 15px;
+				font-size: 20px;
+
+				[class*="__ie1"] & { padding-top: 9px; padding-left: 13px;}
+			}
+
+			.mco_form-select {
+				top: 14px;
+				font-size: 16px;
+			}
+		}
+	}
+
+	label {
+		display: block;
+		overflow: hidden;
+		position: relative;
+		height: $height-form-base;
+		border: 1px solid $color-line-form-base;
+		background: #fff;
+		font-size: 0;
+
+		select {
+			position: relative;
+			z-index: 1;
+			padding: 0 30px 0 8px;
+			width: 100%;
+			height: 100%;
+			border: 0;
+			background: transparent;
+			color: #000000;
+			font-size: $font-size-form-base;
+			line-height: $font-height-form-base;
+
+			[class*="__ie1"] & { padding: 5px 30px 0 6px; }
+
+			.__edge & { padding: 2px 30px 0 5px; }
+
+			@include prefix(appearance, none, webkit moz);
+
+			&::-ms-expand {
+				display: none;
+			}
+
+			&:focus,
+			&:active {
+				padding-right: 0;
+			}
+
+			// 비활성
+			&:disabled {
+				background: #d3d3d3;
+				color: #959595;
+			}
+		}
+
+		.mco_form-select {
+			position: absolute;
+			z-index: 2;
+			top: 11px;
+			right: 15px;
+			color: #000000;
+			font-size: 12px;
+			pointer-events: none;
+		}
+	}
+}
+///-- 셀렉트
+
+/// 체크박스
+.mm_form-check {
+	$height-form-check: 20px;
+
+	position: relative;
+	height: $height-form-check;
+	font-size: 0;
+	// 상위 요소에서 -webkit-overflow-scrolling: touch, overflow: auto 사용할 때 스크롤 후 폼요소 렌더링 제대로 되지 않을 때 적용
+	@include transform(translate3d(0, 0, 0));
+
+	[type="checkbox"] {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		@include opacity(0);
+	}
+
+	img {
+		@include prefix(pointer-events, none, ms);
+	}
+
+	.text_label {
+		display: inline-block;
+		color: $color-form-base;
+		font-size: 14px;
+		line-height: $height-form-check + 2px;
+
+		[class*="__ie1"] & {
+			line-height: $height-form-check + 5px;
+		}
+
+		+ .mco_form-check {
+			margin-left: 6px;
+		}
+	}
+
+	.mco_form-check {
+		position: relative;
+		width: $height-form-check;
+		height: $height-form-check;
+		border: 1px solid #b9b9b9;
+		background: #fff;
+		color: $color-secondary-base;
+		font-size: 20px;
+		text-align: center;
+		cursor: pointer;
+		line-height: $height-form-check - 4px;
+
+		&:before {
+			display: none;
+			position: absolute;
+			top: -2px;
+			left: 3px;
+		}
+
+		+ .text_label {
+			margin-left: 9px;
+		}
+	}
+
+	:checked + .mm_box-block {
+		.mco_form-check {
+			&:before {
+				display: block;
+			}
+
+			@include context-after(':disabled', ':checked') {
+				color: #999;
+			}
+		}
+	}
+}
+///-- 체크박스
+
+/// 라디오
+.mm_form-radio {
+	$height-form-radio: 20px;
+
+	position: relative;
+	height: $height-form-radio;
+	font-size: 0;
+	// 상위 요소에서 -webkit-overflow-scrolling: touch, overflow: auto 사용할 때 스크롤 후 폼요소 렌더링 제대로 되지 않을 때 적용
+	@include transform(translate3d(0, 0, 0));
+
+	[type="radio"] {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		@include opacity(0);
+	}
+
+	img {
+		@include prefix(pointer-events, none, ms);
+	}
+
+	.text_label {
+		display: inline-block;
+		color: $color-form-base;
+		font-size: 14px;
+		line-height: $height-form-radio + 2px;
+
+		[class*="__ie1"] & {
+			line-height: $height-form-radio + 5px;
+		}
+
+		+ .mco_form-radio {
+			margin-left: 8px;
+		}
+	}
+
+	.mco_form-radio {
+		position: relative;
+		width: $height-form-radio;
+		height: $height-form-radio;
+		border: 5px solid #fff;
+		border-radius: 50%;
+		background: #cfcfcf;
+		cursor: pointer;
+
+		&:after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 20px;
+			height: 20px;
+			border: 1px solid #b1b1b1;
+			border-radius: 50%;
+			@include transform(translate(-5px, -5px));
+			content: "";
+		}
+
+		+ .text_label {
+			margin-left: 7px;
+		}
+	}
+
+	:checked + .mm_box-block {
+		.mco_form-radio {
+			border-color: #fff;
+			background: $color-secondary-base;
+
+			@include context-after(':disabled', ':checked') {
+				border-color: #999;
+			}
+		}
+	}
+}
+///-- 라디오
+
+/// 파일(일반)
+.mm_form-file {
+	$width-form-clear: $height-form-base - 6px;
+
+	position: relative;
+	width: 380px;
+	font-size: 0;
+	// 상위 요소에서 -webkit-overflow-scrolling: touch, overflow: auto 사용할 때 스크롤 후 폼요소 렌더링 제대로 되지 않을 때 적용
+	@include transform(translate3d(0, 0, 0));
+
+	input[type="file"] {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		@include opacity(0);
+	}
+
+	// 파일 선택
+	&.__file-on {
+		.btn_remove {
+			display: block;
+		}
+	}
+
+	.btn_remove {
+		display: none;
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		right: 110px;
+		margin-top: -$height-form-base / 2;
+		width: $width-form-clear;
+		height: $height-form-base;
+		color: #b9b9b9;
+		font-size: 14px;
+		line-height: $height-form-base;
+		text-align: center;
+
+		+ label {
+			.text_path {
+				padding-right: $width-form-clear - 4px;
+			}
+		}
+	}
+
+	label {
+		display: block;
+		position: relative;
+		padding-right: 84px;
+
+		.text_path {
+			display: block;
+			padding: 0 8px;
+			height: $height-form-base;
+			border: 1px solid $color-line-form-base;
+			color: $color-form-base;
+			font-size: $font-size-form-base;
+			line-height: $height-form-base - 3px;
+			@include text-ellipsis(1);
+			cursor: text;
+		}
+
+		.text_file.mm_btn {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: auto;
+			cursor: pointer;
+		}
+	}
+}
+///-- 파일(일반)
+
+/// 파일(이미지)
+.mm_form-image {
+	position: relative;
+	width: 164px;
+	font-size: 0;
+	// 상위 요소에서 -webkit-overflow-scrolling: touch, overflow: auto 사용할 때 스크롤 후 폼요소 렌더링 제대로 되지 않을 때 적용
+	@include transform(translate3d(0, 0, 0));
+
+	input[type="file"] {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		@include opacity(0);
+	}
+
+	// 파일 선택
+	&.__image-on {
+		.btn_remove {
+			display: block;
+		}
+
+		label {
+			background: #fff;
+		}
+
+		.mm_form-image-box {
+			display: none;
+		}
+
+		.mm_form-image-preview {
+			display: block;
+
+			&.mm_image-none {
+				@include fluid-media(52.44%);
+			}
+		}
+	}
+
+	.btn_remove {
+		$height-btn-remove: 20px;
+
+		display: none;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		width: $height-btn-remove;
+		height: $height-btn-remove;
+		background: #666;
+		color: #fff;
+		font-size: 19px;
+		line-height: $height-btn-remove + 2px;
+		text-align: center;
+	}
+
+	label {
+		display: block;
+		position: relative;
+		border: 1px dashed $color-line-form-base;
+		cursor: pointer;
+	}
+
+	&-box {
+		display: block;
+		// background: #ebebeb;
+		text-align: center;
+		@include fluid-media(52.44%);
+
+		> * {
+			// position: absolute;
+			top: 50%;
+			left: 50%;
+			text-align: center;
+			// @include transform(translate(-50%, -50%));
+		}
+
+		.mco_add {
+			// color: #e2e2e2;
+			// font-size: 34px;
+		}
+
+		.mco_image {
+			// color: #e2e2e2;
+			// font-size: 21px;
+		}
+
+		.text_file {
+			margin: -20px 0 0 -53px;
+			width: 106px;
+			// color: $color-text-base;
+			// font-size: $font-size-form-base;
+		}
+
+		.text_label {
+			left: 0;
+			margin-top: -5px;
+			width: 100%;
+			height: 11px;
+			color: #808080;
+			font-size: 11px;
+		}
+	}
+
+	&-preview {
+		display: none;
+
+		.image_file {
+			@include context-unify('img') {
+				//
+			}
+
+			@include context-unify('i') {
+				background-position: 50% 50%;
+			}
+		}
+
+		.text_file {
+			//
+		}
+	}
+}
+///-- 파일(이미지)
+
+/// 오류 텍스트
+.text_alert {
+	display: block;
+	position: absolute;
+	z-index: 2;// $index-alert;
+	top: 0;
+	left: 0;
+	// margin-top: -2px;
+	padding: 9px 10px 10px 32px;
+	min-width: 100%;
+	min-height: 100%;
+	border: 1px solid $color-negative-base;
+	// background: #fff;
+	background: $color-negative-light;
+	color: $color-negative-base;
+	font-size: $font-size-form-base;
+	line-height: $font-size-form-base + 4px;
+	text-indent: 0;
+	white-space: nowrap;
+	// @include transform(translateY(-100%));
+
+	// &:before {
+	// 	position: absolute;
+	// 	left: 10px;
+	// 	bottom: -6px;
+	// 	@include triangle($color-negative-base, bottom, 6px);
+	// 	content: "";
+	// }
+	//
+	// &:after {
+	// 	position: absolute;
+	// 	left: 10px;
+	// 	bottom: -5px;
+	// 	@include triangle(#fff, bottom, 6px);
+	// 	content: "";
+	// }
+
+	.mco_form-alert {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		color: $color-negative-base;
+		font-size: 17px;
+	}
+
+	+ label {
+		border-color: $color-negative-base;
+
+		&,
+		.bg_text {
+			background: $color-negative-light;
+		}
+	}
+}
+///-- 오류 텍스트

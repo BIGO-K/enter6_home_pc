@@ -1,0 +1,131 @@
+@charset 'utf-8';
+
+/**
+** 프린트
+**/
+
+/// 인쇄영역
+.mm_app[class*="_print_"] {
+	.mm_strapline {
+		padding: 30px 0 0;
+		font-size: 28px;
+	}
+	
+	.mm_section {
+		margin-top: 30px;
+	}
+	
+	.mm_list {
+		border-bottom: 2px solid #b9b9b9;
+		
+		table {
+			min-width: 100%;
+			border-left: 1px solid #d3d3d3;
+			border-collapse: separate;
+			
+			thead {
+				th {
+					padding: 10px;
+					width: auto;
+					background: #f0f0f0;
+				}
+			}
+			
+			tbody {
+				td {
+					padding: 5px 10px;
+					white-space: normal;
+					word-break: keep-all;
+					
+					p {
+						min-width: 0;
+					}
+					
+					.image_product {
+						min-width: 0;
+					}
+				}
+			}
+			
+			tfoot {
+				tr {
+					> * {
+						padding: 10px 0;
+						border-top: 2px solid #d3d3d3;
+						border-right: 1px solid #d3d3d3;
+				   }
+				}
+				
+				th {
+					background: #f0f0f0;
+				}
+			}
+		}
+	}
+}
+///-- 인쇄영역
+
+/// 인쇄단락
+.mm_print {
+	width: 1000px;
+	page-break-after: always;
+	
+	&-foot {
+		padding: 25px 0 10px;
+		font-size: 15px;
+		line-height: 24px;
+		text-align: right;
+		
+		p {
+			span {
+				display: inline-block;
+				margin-left: 35px;
+			}
+			
+			.text_sign {
+				margin-left: 150px;
+			}
+		}
+	}
+}
+///-- 인쇄단락
+
+/// 바코드
+.m-print-barcode {
+	margin-bottom: 100px;
+	
+	.mm_print {
+		margin-bottom: 10px;
+		padding: 0 5px;
+		width: 380px;
+	}
+	
+	ul {
+		li {
+			float: left;
+			width: 60%;
+			height: 24px;
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 24px;
+			@include text-ellipsis(1);
+			
+			&:nth-child(even) {
+				width: 40%;
+				text-align: right;
+			}
+		}
+	}
+	
+	.image_barcode {
+		display: block;
+		margin-top: 6px;
+		text-align: center;
+		
+		img {
+			width: 90%;
+			height: 56px;
+		}
+	}
+}
+///-- 바코드

@@ -1,0 +1,894 @@
+@charset 'utf-8';
+
+/**
+** 회사소개 / 약관 / 제휴
+**/
+/// 회사소개
+.m-company {
+    font-size: 0;
+
+    /// 인사말
+    &-about {
+        padding: 75px 0 0 45px;
+        [class*="__ie1"] & { margin-bottom: -2px; }
+
+        .image_ceo {
+            float: left;
+            margin: -75px 43px 0 -45px;
+        }
+
+        h4 {
+            margin-bottom: 51px;
+            font-size: 29px;
+
+            [class*="__ie1"] & { margin-top: 3px; margin-bottom: 50px; }
+
+            > small {
+                font-size: 17px;
+            }
+        }
+
+        .m-company-about-article {
+            &:last-child {
+                margin-top: 37px;
+
+                p {
+                    margin-bottom: 25px;
+                }
+            }
+
+            p {
+                margin-bottom: 16px;
+                font-size: 15px;
+                line-height: 25px;
+
+                .mm_text-primary {
+                    font-size: 20px;
+                    line-height: 30px;
+                    vertical-align: middle;
+
+                    [class*="__ie1"] & { vertical-align: top; }
+                }
+            }
+        }
+    }
+    ///-- 인사말
+
+    /// 조직구성
+    &-group {
+        padding: 46px 0 96px 91px;
+
+        ul {
+            li {
+                float: left;
+                position: relative;
+                width: 162px;
+                margin-right: 26px;
+                border : 1px solid #dcdcdc;
+                border-top: 1px solid #606060;
+                font-size: 16px;
+                text-align: center;
+
+                &:after {
+                    position: absolute;
+                    top: -22px;
+                    left: 50%;
+                    width: 188px;
+                    height: 21px;
+                    border-top: 1px solid #dcdcdc;
+                    border-left: 1px solid #dcdcdc;
+                    content: " ";
+                }
+
+                &:first-child {
+                    float: inherit;
+                    margin-bottom: 27px;
+                    margin-left: 282px;
+                    border-top: 1px solid $color-primary-base;
+
+                    &:after {
+                        top: 44px;
+                        height: 102px;
+                        border-top: none;
+                    }
+                }
+
+                &:nth-child(2) {
+                    float: inherit;
+                    margin-bottom: 48px;
+                    margin-left: 379px;
+
+                    &:after {
+                        top: 50%;
+                        left: -17px;
+                        width: 17px;
+                        border-left: none;
+                    }
+                }
+
+                &:last-child {
+
+                    &:after {
+                        border-top: 0;
+                    }
+                }
+
+                h5{
+                    height: 44px;
+                    background-color: #f7f7f9;
+                    font-weight: 500;
+                    line-height: 46px;
+
+                    [class*="__ie1"] & { line-height: 50px; }
+
+                }
+
+                .m-company-group-sub {
+                    dl {
+                        padding: 24px 0 21px;
+                        border-top: 1px solid #dcdcdc;
+
+                        [class*="__ie1"] & { padding: 26px 0 19px; }
+
+                        dd {
+                            margin-top: 8px;
+                            color: #606060;
+                            font-size: 12px;
+                            line-height: 17px;
+
+                            [class*="__ie1"] & { margin: 7px 0 1px; }
+
+                            span {
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ///-- 조직구성
+
+    /// 엔터식스 CI
+    &-identity {
+        ul {
+            li {
+                margin-top: 53px;
+                height: auto;
+
+                &:first-child {
+                    margin-top: 30px;
+
+                    h4 {
+                        .__edge & { padding-bottom: 0; }
+                    }
+                }
+
+                h4 {
+                    border-left: 3px solid $color-primary-base;
+                    margin-bottom: 26px;
+                    padding-left: 14px;
+
+                    .__edge & { padding-bottom: 1px; }
+
+                    span {
+                        display: block;
+                        margin: 7px 0 0;
+                        color: #333333;
+                        font-size: 15px;
+                        line-height: 16px;
+
+                        [class*="__ie1"] & { margin: 6px 0 0; line-height: 13px; }
+                    }
+
+                    .text_head {
+                        margin-top: 0;
+                        font-size: 19px;
+                        line-height: 18px;
+
+                        [class*="__ie1"] & { line-height: 23px; }
+
+                        strong {
+                            margin-left: 5px;
+                            vertical-align: initial;
+                            font-weight: 500;
+                            font-size: 21px;
+                        }
+                    }
+                }
+
+                figure {
+                    position: relative;
+                    padding-left: 311px;
+                    height: 145px;
+
+                    .image_identity {
+                        overflow: hidden;
+                        position: absolute;
+                        top: 0;
+                        left: 18px;
+                        width: 267px;
+                        height: 144px;
+                    }
+
+                    figcaption {
+
+                        .m-company-identity-contents {
+                            margin-bottom: 10px;
+                            color: #333333;
+                            font-size: 12px;
+                            line-height: 19px;
+
+                            [class*="__ie1"] & { margin-bottom: 8px; padding-top: 2px; }
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+
+                            strong {
+                                font-size: 17px;
+                                line-height: 22px;
+                            }
+
+                            p {
+                                margin-top: 6px;
+                                color: #7b7b7b;
+
+                                [class*="__ie1"] & { margin-top: 5px; padding-bottom: 1px; }
+
+                                span {
+                                    color: $color-text-base;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .mm_btngroup {
+            margin-top: 45px;
+
+            button {
+
+                span {
+                    padding: 0 71px 0 14px;
+                }
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            .mco_download {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 58px;
+                background-color: $color-primary-base;
+                line-height: 58px;
+
+                .__edge & { height: 58px; line-height: 56px; }
+            }
+        }
+    }
+    ///-- 엔터식스 CI
+
+    /// 연혁
+    &-history {
+        .mm_section {
+            position: relative;
+            margin-top: 52px;
+            margin: 52px 0 105px;
+
+            [class*="__ie1"] & { margin: 54px 0 106px; }
+
+            &:last-child {
+                margin-bottom: 0;
+
+                .m-history-timeline-right {
+                    margin-bottom: 66px;
+
+                    [class*="__ie1"] & { margin-bottom: 65px;}
+                }
+            }
+
+            > h4 {
+                font-size: 26px;
+                line-height: 29px;
+
+                strong {
+                    margin-left: 14px;
+                    color: #424242;
+                    font-size: 25px;
+                    font-weight: 800;
+                }
+
+                span {
+                    &:last-child {
+                        display: block;
+                        margin-top: 2px;
+                        font-size: 19px;
+                    }
+                }
+            }
+
+            .ico_history-year {
+                position: absolute;
+                z-index: 0;
+                top: auto;
+                bottom: -40px;
+                left: 50%;
+                color: #f7f7f9;
+                font-size: 80px;
+                font-family: 'Roboto';
+                font-weight: 500;
+                @include prefix(transform, translateX(-50%), webkit ms);
+
+                &:first-of-type {
+                    top: 82px;
+                    bottom: auto;
+                }
+            }
+
+            dl {
+                position: relative;
+                z-index: 1;
+                margin-top: 58px;
+
+                [class*="__ie1"] & { margin-top: 63px; }
+
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    height: 100%;
+                    border-left: 1px solid #dcdcdc;
+                    @include prefix(transform, translateX(-50%), webkit ms);
+                    content: "";
+                }
+
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    width: 9px;
+                    height: 9px;
+                    border: 2px solid $color-primary-base;
+                    border-radius: 10px;
+                    background: #fff;
+                    @include prefix(transform, translateX(-50%), webkit ms);
+                    content: "";
+                }
+
+                dt {
+                    position: absolute;
+                    left: 324px;
+                    font-size: 20px;
+                    font-weight: 300;
+
+                    [class*="__ie1"] & { top: 2px; }
+
+                    span {
+                        display: inline-block;
+                        margin-top: -3px;
+                    }
+                }
+
+                dd{
+                    font-size: 14px;
+                    @include clearfix();
+
+                    > div {
+                        width: 50%;
+
+                        &[class*="right"] {
+                            float: right;
+                            margin-top: -5px;
+                            margin-bottom: 8px;
+                            padding-left: 18px;
+                            text-align: left;
+
+                            .__edge & { margin-top: -6px; }
+                        }
+
+                        &[class*="left"] {
+                            float: left;
+                            padding-right: 20px;
+                            text-align: right;
+
+                            .__edge & { margin-bottom: 1px; }
+                        }
+                    }
+
+                    ul {
+                        li {
+                            display: inline-block;
+                            position: relative;
+                            padding-left: 10px;
+                            line-height: 23px;
+
+                            &:before {
+                                position: absolute;
+                                top: 0;
+                                left: -2px;
+                                font-size: 12px;
+                                content: "ㆍ";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ///-- 연혁
+
+    /// 본사 찾아오시는길
+    &-way {
+        &-map {
+            overflow: hidden;
+            margin-bottom: 56px;
+            border: 1px solid #d5d5d5;
+            border-right: 0;
+
+            .m--map-api {
+                float: left;
+
+                .root_daum_roughmap {
+                    .wrap_controllers {
+                        border: 0;
+                    }
+                }
+            }
+
+            .m--map-address {
+                float: left;
+                padding-top: 55px;
+                width: 284px;
+                height: 407px;
+                background: #f7f7f9;
+                text-align: center;
+
+                h4 {
+                    position: relative;
+                    font-size: 24px;
+                    font-weight: 500;
+
+                    &:before {
+                        display: inline-block;
+                        position: absolute;
+                        top: 45px;
+                        left: 50%;
+                        width: 16px;
+                        border-top: 1px solid #000;
+                        content: "";
+                        @include prefix(transform, translateX(-50%), webkit ms);
+                    }
+
+                    [class*="__ie1"] & { height: 24px; line-height: 30px; }
+                }
+
+                ul {
+                    float: left;
+                    padding: 54px 0 39px;
+                    width: 284px;
+                    background: #f7f7f9;
+
+                    li {
+                        padding-top: 27px;
+                        text-align: center;
+
+                        &:first-child {
+                            padding-top: 0;
+                        }
+
+                        i {
+                            margin-bottom: 6px;
+                            width: 68px;
+                            height: 68px;
+                            background: #fff;
+                            border: 1px solid #e6e6e6;
+                            border-radius: 68px;
+                            color: #b1b1b1;
+                            font-size: 31px;
+                            line-height: 71px;
+                        }
+
+                        .text_address {
+                            overflow: hidden;
+                            height: 40px;
+                        }
+
+                        p {
+                            overflow: hidden;
+                            height: 20px;
+                            font-size: 14px;
+                            line-height: 20px;
+
+                            [class*="__ie1"] & { line-height: 23px; }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-guide {
+            .mm_form {
+                table {
+                    border-top: 1px solid #999;
+                    border-bottom: 1px solid #999;
+
+                    tbody {
+                        tr {
+                            border-top: 1px solid #e4e4e4;
+
+                            &:first-child {
+                                border: 0;
+                            }
+
+                            th {
+                                background: #f9f9f9;
+                                font-size: 14px;
+                            }
+
+                            td {
+                                padding: 19px 11px 16px;
+                                font-size: 14px;
+                                line-height: 23px;
+                                text-align: left;
+
+                                [class*="__ie1"] & { padding: 20px 11px 15px; }
+
+                                .__edge & { padding: 18px 12px 17px 10px; }
+                            }
+                        }
+                    }
+                }
+            }
+
+            dl {
+                position: relative;
+                padding-left: 120px;
+
+                dt {
+                    position: absolute;
+                    top: 0;
+                    left: 17px;
+                    padding-left: 22px;
+
+                    i {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        margin-right: 12px;
+                        color: #b1b1b1;
+                        font-size: 15px;
+
+                        &.mco_pin {
+                            font-size: 17px;
+                        }
+
+                        &.mco_charge {
+                            margin-top: -1px;
+                            font-size: 13px;
+                        }
+
+                        &.mco_inquiry {
+                            margin: -1px 0 0 -2px;
+                            font-size: 12px;
+                        }
+
+                        [class*="__ie1"] & { top: -2px; }
+                    }
+                }
+            }
+        }
+    }
+    ///-- 본사 찾아오시는길
+
+}
+///-- 회사소개
+
+/// 약관
+.m-terms {
+    margin: 0 auto;
+    padding: 72px 0 0px;
+
+    .mm_heading {
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    &-form {
+        .m--terms-contents {
+            margin-top: 17px;
+            padding: 30px 16px;
+            border: 1px solid #e1e1e1;
+            border-top-color: #999;
+            border-bottom-color: #999;
+            background: #fff;
+            text-align: left;
+
+            > * {
+                font-size: 12px;
+                line-height: 16px;
+            }
+
+            [class*="__ie1"] & { padding: 32px 16px 28px; }
+        }
+    }
+}
+///-- 약관
+
+
+/// B2B 사업제휴
+.m-b2b {
+    &-alliance {
+        &-visual {
+            position: relative;
+            margin-bottom: 35px;
+
+            .m--visual-content {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom:0;
+                left: 0;
+                padding: 132px 0 0;
+                text-align: center;
+
+                [class*="__ie1"] & { padding: 80px 0 39px; }
+
+                > h4 {
+                    position: relative;
+                    padding-left: 8px;
+                    font-size: 24px;
+                    font-weight: 300;
+                    line-height: 36px;
+                    letter-spacing: -1px;
+
+                    .image_logo {
+                        margin: 2px 10px 0 0;
+                        width: 102px;
+                        height: 29px;
+
+                        [class*="__ie1"] & { margin: -1px 10px 0 0; }
+                    }
+                }
+            }
+
+            .image_ico {
+                position: absolute;
+                top: 161px;
+                right: 22px;
+            }
+        }
+    }
+
+    .mm_formbox {
+        + .mm_form-check {
+            margin: 10px 20px;
+
+            .text_label {
+                a {
+                    margin-left: 4px;
+                    vertical-align: 0;
+                    color: #7b7b7b;
+                    font-size: 11px;
+                    text-decoration: underline;
+
+                    i {
+                        margin-left: 3px;
+                        line-height: 21px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-manager {
+        margin-bottom: 35px;
+
+        > .mm_strapline {
+    		font-size: 18px;
+    		line-height: 42px;
+    		text-align: left;
+            letter-spacing: -1.2px;
+
+            [class*="__ie1"] & { margin-bottom: 0; height: 42px; line-height: 45px; }
+	    }
+
+
+        > table {
+            border-top: 1px solid #999;
+            border-bottom: 1px solid #999;
+
+            thead {
+                th {
+                    padding: 9px 20px 7px;
+                    height: 39px;
+                    border-bottom: 1px solid #999;
+                    font-size: 14px;
+                    line-height: 22px;
+
+                    [class*="__ie1"] & { padding: 11px 20px 5px; }
+                }
+            }
+
+            tbody {
+                td {
+                    padding: 9px 14px 5px 19px;
+                    height: 39px;
+                    border-bottom: 1px solid #dcdcdc;
+                    border-right: 1px solid #dcdcdc;
+                    font-size: 14px;
+                    letter-spacing: -1px;
+
+                    [class*="__ie1"] & { padding: 12px 14px 5px 19px; }
+
+                    &:last-child {
+                        border-right: 0;
+                    }
+
+                    > p {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+
+    .mm_list-attention {
+        margin: 46px 0 33px;
+        padding: 0 0 0 100px;
+
+        > h6 {
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding-top: 41px;
+            width: 100px;
+            height: 100%;
+            background: $color-primary-base;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+
+            i {
+                margin-bottom: 9px;
+                font-size: 20px;
+
+                [class*="__ie1"] & { margin-bottom: 11px; }
+            }
+
+            span {
+                display: block;
+            }
+        }
+
+        ul {
+            padding: 22px;
+
+            [class*="__ie1"] & { padding: 24px 22px 20px; }
+
+            li {
+                color: #000;
+                line-height: 19px;
+
+                &:before {
+                    top: 0;
+                    left: -3px;
+                    content: "ㆍ";
+                }
+            }
+        }
+    }
+
+    &-brochure {
+        padding-top: 51px;
+
+        ul {
+            margin-left: -26px;
+            li {
+                position: relative;
+                overflow: hidden;
+                float: left;
+                margin-left: 26px;
+                width: 160px;
+                height: 160px;
+                border: 1px solid #e4e4e4;
+                border-radius: 160px;
+
+                > div {
+                    padding: 39px 0 0 21px;
+                    width: 100%;
+                    height: 100%;
+                    background: #7b7b7b;
+
+                    &:before {
+                        position: absolute;
+                        right: 16px;
+                        bottom: 55px;
+                        width: 48px;
+                        border-top: 1px solid #999;
+                        content: "";
+                    }
+
+                    &:after {
+                        position: absolute;
+                        right: 16px;
+                        bottom: 57px;
+                        width: 6px;
+                        border-top: 1px solid #999;
+                        transform: rotate(45deg);
+                        content: "";
+                    }
+
+                    p {
+                        padding: 7px 0 3px;
+                        color: #fff;
+                        font-size: 14px;
+
+                        [class*="__ie1"] & { margin-bottom: -1px; padding: 10px 0 0; }
+
+                        strong {
+                            font-size: 20px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+                > a {
+                    display: block;
+                    padding: 39px 0 0 26px;
+                    width: 100%;
+                    height: 100%;
+
+                    &:before {
+                        position: absolute;
+                        bottom: -122px;
+                        right: -100px;
+                        width: 200px;
+                        height: 200px;
+                        background: #f7f7f9;
+                        transform: rotate(-39deg);
+                        content: "";
+                    }
+
+                    p {
+                        padding: 7px 0 6px;
+                        color: #7b7b7b;
+                        font-size: 12px;
+
+                        [class*="__ie1"] & { padding: 10px 0 2px; }
+
+                        strong {
+                            position: relative;
+                            color: #424242;
+                            font-size: 20px;
+                            font-weight: 600;
+
+                            &:after {
+                                position: absolute;
+                                top: 24px;
+                                left: 0;
+                                width: 12px;
+                                border-top: 1px solid $color-primary-base;
+                                content: "";
+                            }
+                        }
+                    }
+
+                    .mco_download {
+                        position: absolute;
+                        right: 41px;
+                        bottom: 28px;
+                        color: #b1b1b1;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+///-- B2B 사업제휴

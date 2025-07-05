@@ -1,0 +1,159 @@
+@charset 'utf-8';
+
+/**
+** E고객센터
+**/
+
+.m-cs-faq {
+    .mm_search {
+        .mm_btn {
+            width: 130px;
+        }
+    }
+
+    .mm_strapline {
+        margin-bottom: 10px;
+        font-size: 18px;
+        text-align: left;
+
+        [class*="__ie1"] & { height: 18px; line-height: 21px; }
+    }
+
+    .btn_dropdown {
+        cursor: pointer;
+    }
+
+    &-noticelist {
+        position: relative;
+        margin-top: 57px;
+    }
+}
+
+/// 고객서비스 제도
+.m-cs-policy {
+    &-visual {
+        position: relative;
+
+        .m--visual-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom:0;
+            left: 0;
+            margin: 55px;
+            padding: 57px 0 39px;
+            background: rgba(255, 255, 255, 0.8);
+            text-align: center;
+
+            [class*="__ie1"] & { padding: 60px 0 36px; }
+
+            &:before {
+                display: block;
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                bottom:8px;
+                left: 8px;
+                border: 1px solid #e7e7e7;
+                content: "";
+
+            }
+
+            > h4 {
+                position: relative;
+                font-size: 24px;
+                font-weight: 300;
+                line-height: 36px;
+
+                &:after {
+                    display: block;
+                    position: absolute;
+                    bottom: -13px;
+                    left: 50%;
+                    margin-left: -6px;
+                    width: 12px;
+                    border-top: 1px solid #000;
+                    content: "";
+
+                    [class*="__ie1"] & { bottom: -10px; }
+                }
+
+                .image_logo {
+                    margin-right: 12px;
+                    width: 102px;
+                    height: 29px;
+
+                    [class*="__ie1"] & { margin-top: -3px; }
+                }
+            }
+
+            > p {
+                margin-top: 36px;
+                color: #7b7b7b;
+                font-size: 14px;
+                line-height: 22px;
+
+                [class*="__ie1"] & { line-height: 20px; }
+            }
+
+            .mm_formbox-attention {
+                margin-top: 40px;
+                text-align: center;
+
+                ul {
+                    display: inline-block;
+                    margin-left: -28px;
+
+                    li {
+                        display: inline-block;
+                        float: left;
+                        margin: 0 0 0 28px;
+                        color: #7b7b7b;
+                        font-size: 14px;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+
+    &-content {
+        padding-top: 15px;
+
+        h5 {
+            margin-top: 21px;
+            height: 40px;
+            font-size: 20px;
+            line-height: 40px;
+
+            [class*="__ie1"] & { line-height: 45px; }
+        }
+
+        > p {
+            padding: 4px 0 13px;
+            font-size: 15px;
+
+            [class*="__ie1"] & { padding: 6px 0 11px; }
+        }
+
+        ul {
+            li {
+                position: relative;
+                padding-left: 7px;
+                font-size: 12px;
+                line-height: 21px;
+
+                [class*="__ie1"] & { height: 21px; line-height: 23px; }
+
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: -3px;
+                    font-size: 12px;
+                    content: "ㆍ";
+                }
+            }
+        }
+    }
+}
+///-- 고객서비스 제도

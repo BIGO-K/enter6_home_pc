@@ -1,0 +1,246 @@
+@charset 'utf-8';
+
+/**
+** 네비게이션
+** - GNB, LNB, 브레드크럼
+**/
+
+/// GNB
+.mm_gnb {
+	border-bottom: 2px solid $color-primary-base;
+	text-align: center;
+
+	.mm_inner {
+		position: relative;
+		padding: 27px 0 12px;
+		margin: 0 auto;
+		width: $min-width-pc;
+
+		[class*="__ie1"] & { padding: 27px 0 8px; }
+
+		> ul {
+			> li {
+				display: inline-block;
+				position: relative;
+				font-size: 0;
+
+				&:before,
+				&:after {
+					visibility: hidden;
+					position: absolute;
+					left: 50%;
+					margin-left: -9px;
+					content: "";
+				}
+
+				&:before {
+					bottom: -12px;
+					@include triangle($color-positive-base, top, 9px, 11px);
+					
+					[class*="__ie1"] & { bottom: -9px; }
+				}
+
+				&:after {
+					bottom: -15px;
+					@include triangle(#fff, top, 9px, 11px);
+					
+					[class*="__ie1"] & { bottom: -12px; }
+				}
+
+				&:hover {
+					> .mm_gnb-sub {
+						visibility: visible;
+					}
+
+					&:before,
+					&:after {
+						visibility: visible;
+					}
+				}
+
+				h5 {
+					margin: 0 36px;
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 46px;
+					cursor: pointer;
+
+					[class*="__ie1"] & > span{ line-height: 50px; }
+
+				}
+			}
+		}
+	}
+
+    /// GNB 2depth
+    &-sub {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        padding-top: 14px;
+        font-size: 0;
+        white-space: nowrap;
+        @include prefix(transform, translateX(-50%), webkit ms);
+
+        ul {
+            li {
+                display: inline-block;
+                position: relative;
+                font-size: 0;
+
+                &:first-child {
+                    a:before{
+                        display: none;
+                    }
+                }
+
+                a {
+                    padding: 0px 12px;
+                    font-size: 14px;
+					font-weight: 500;
+                    line-height: 50px;
+
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        margin-left: -9px;
+                        font-size: 18px;
+                        line-height: 52px;
+                        content: "ㆍ";
+                    }
+                }
+            }
+        }
+    }
+    ///-- GNB 2depth
+}
+///-- GNB
+
+/// lnb
+.mm_lnb {
+	float: left;
+	padding: 0 43px 0 20px;
+	width: 293px;
+
+	+ .mm_page-content-inner {
+		float: left;
+		margin: 0;
+	}
+
+	> h2 {
+		padding: 31px 0 16px 4px;
+		font-size: 28px;
+		font-weight: 500;
+		line-height: 30px;
+
+		[class*="__ie1"] & { padding: 34px 0 13px 4px; }
+	}
+
+	&-menu {
+		padding: 2px 0 10px;
+		border-top: 1px solid #1a1a1a;
+		border-bottom: 1px solid #1a1a1a;
+
+		> ul {
+			> li {
+				margin-top: 10px;
+
+				.btn_menu {
+					position: relative;
+					padding: 0 12px 0 10px;
+					width: 100%;
+					height: 36px;
+					font-size: 16px;
+					font-weight: 500;
+					line-height: 38px;
+					text-align: left;
+
+					[class*="__ie1"] & { line-height: 42px; }
+					[class*="__ie1"] & i { margin-top: -2px; }
+
+					&.__on-lnb {
+						background: #333333;
+						color: #fff;
+
+						i {
+							color: #fff;
+						}
+					}
+
+					> span {
+						position: relative;
+
+						i {
+							position: absolute;
+							top: 50%;
+							right: 0;
+							@include transform(translateY(-50%));
+							color: #7b7b7b;
+						}
+					}
+				}
+			}
+		}
+
+		.mm_dropdown {
+			&.__dropdown-on {
+				.btn_dropdown {
+					background: #333333;
+					color: #fff;
+
+					i {
+						color: #fff;
+					}
+				}
+			}
+
+			&-item-inner {
+				padding: 9px 12px 3px 10px;
+
+				// [class*="__ie1"] & { padding: 11px 12px 3px 10px; }
+
+				ul {
+					li {
+						.btn_menu-sub {
+							color: #7b7b7b;
+							font-size: 14px;
+							font-weight: 500;
+							line-height: 26px;
+
+							[class*="__ie1"] & { height: 26px; line-height: 29px; }
+
+							&.__on-lnb {
+								color: $color-primary-base;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+///-- lnb
+
+/// 브레드크럼
+.mm_breadcrumb {
+	color: #7b7b7b;
+	font-size: 12px;
+
+	p {
+		> * {
+			margin: 0 3px;
+		}
+
+		strong {
+			color: #000;
+		}
+
+		i {
+			line-height: 10px;
+
+			[class*="__ie1"] & { line-height: 6px; }
+		}
+	}
+}
+///-- 브레드크럼

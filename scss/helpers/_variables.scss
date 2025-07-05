@@ -1,0 +1,85 @@
+@charset 'utf-8';
+
+/**
+* color - primary, secondary, tertiary, positive, negative, background, line, text, icon, tag...
+* font-size - body, button, tag
+**/
+
+/// color
+$color-primary-light: #ffcc00;
+$color-primary-base: #e71d3e;
+$color-primary-dark: #f78408;
+
+$color-secondary-base: #23b593;
+$color-secondary-gray: #bbbbaf;
+$color-secondary-darkgray: #54534c;
+
+$color-grade-s: #f04509;
+$color-grade-u: #16a6ab;
+
+$color-tertiary-base: #009d3f;
+
+$color-positive-base: $color-primary-base;
+
+$color-negative-light: #fce8e4;
+$color-negative-base: #f6664e;
+
+$color-text-base: #000000;
+
+/// font
+$font-family-mobile: "GothicA1", /*"spoquaHanSans", */"Helvetica Neue", Helvetica, Arial, Roboto, sans-serif;
+$font-family-pc: "GothicA1", "HYGothic", "HY중고딕", "Malgul Gothic", "나눔고딕", "NanumGothic", "Apple SD Gothic Neo", sans-serif;
+$font-family-latin: "GothicA1", sans-serif;
+$font-family-password: monospace, cursive, sans-serif;
+$font-family-base: $font-family-pc;// -mobile, -pc 중 선택 적용
+$fontFamily_special: "Jalnan", "GothicA1", "Malgul Gothic", "나눔고딕", "NanumGothic", "Apple SD Gothic Neo", sans-serif;
+
+$font-size-base: 10px;
+
+/// z-index
+$index-most: 10000;
+$index-skip: $index-most;
+$index-bom: 3100;
+$index-loading: 3000;
+$index-modal: 2100;
+$index-popup: 2000;
+$index-sidebar: 1200;
+$index-toolbar: 1100;
+$index-header: 1000;
+$index-floating: 100;
+$index-alert: 10;// 텍스트 경고
+
+/// size
+$min-width-mobile: 320px;
+$min-width-pc: 1200px;
+
+/// transition sec
+$time-base: 0.4s;
+$time-fast: 0.2s;
+$time-faster: 0.1s;
+$time-slow: 0.7s;
+$time-slower: 1s;
+
+/// 1px transpatent gif
+$image-empty: "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
+
+/// layout - grid
+
+/// layout - header
+$height-header-base: 220px;
+
+/// layout - footer
+$height-footer-base: 229px;
+
+/// layout - toolbar
+// $height-toolbar-base: 53px;
+
+/// layout - sidebar
+$width-sidebar-base: 210px;
+$width-sidebar-min: 50px;
+
+/// layout - popup
+
+/// layout - modal
+
+/// layout - bom

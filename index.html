@@ -1,0 +1,1069 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+
+	<title>엔터식스 홈페이지 프론트(PC)</title>
+
+	<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+	<link rel="stylesheet" href="http://publish.mmonstar.co.kr/enter6_shop/admin/css/app.css">
+	<link rel="stylesheet" href="http://publish.mmonstar.co.kr/enter6_shop/admin/css/fonts.css">
+	<style>
+		*{box-sizing:border-box; margin:0; padding:0; vertical-align:top; color:inherit; font:inherit; letter-spacing:inherit;}
+		a{display:inline-block; text-decoration:none;}
+		ol,ul,li{list-style: none;}
+		li{position: relative;}
+		img{border:0;}
+		html,
+		body{min-width:1200px; background:#fff;}
+		html{color:#000; font:12px/1 "Nanum Gothic",sans-serif;}
+		body{overflow-y:scroll; position:relative; padding-bottom:100px;}
+		h1{margin-bottom:30px; padding:25px 0; background:#00999d; color:#fff; font-weight:700; font-size:40px; text-align:center;}
+		h2{font-weight:700; font-size:15px;}
+		.text_color{color:#ff621d;}
+		.text_color2{color:#24aef2;}
+		.text_color3{color:#973af3;}
+		.text_color4{color:#04aa37;}
+		.text_color5{color:#e622ba;}
+		.text_color6{color:#ee1111;}
+		.mm_box-flex del {color: #aaa;}
+
+		#mm_view{margin:0 auto; width:1400px;}
+
+		.mm_tab-menu{}
+		.mm_tab-menu ul{padding:1px 0 0 1px;}
+		.mm_tab-menu ul > li{float:left; margin:-1px 0 0 -1px;}
+		.mm_tab-menu ul > li > .btn_tab{padding:0px 15px; border:1px solid #999; background:#f5f5f5; color:#999; font-size:14px; line-height:45px}
+		.mm_tab-menu ul > li > .btn_tab.__tab-on{background:#fff; color: #202020; font-weight:700;}
+
+		.mm_tab-item{margin-top:-1px; padding:10px; border:1px solid #999;}
+
+		li li{padding-left:30px;}
+		.item-depth1 > li{margin-bottom:5px; border:1px solid #ddd;}
+		.item-depth2 > li:nth-child(even) {background:#fafafa;}
+		.item-depth2 ul:before{display:block; position:absolute; top:35px; bottom:10px; left:40px; border-left:1px solid #ddd; content:"";}
+		.item-depth2 .mm_box-flex{border-top:1px solid #f4f4f4;}
+
+		.mm_box-flex{-webkit-align-items:center; align-items:center; padding:8px 0px; line-height:18px;}
+		.mm_box-flex:hover{background:#dfdfdf;}
+		.mm_box-flex div{padding:0 10px;font-size:13px; text-align:center;}
+		.mm_box-flex div.text_name{-webkit-flex:1; flex:1; border-left:0; text-align:left;}
+		.mm_box-flex div.text_link{width:350px; font-weight:700;}
+		.mm_box-flex div:nth-child(3){width:100px;}
+		.mm_box-flex div:nth-child(4){width:400px;}
+
+		.text_tag{display:inline-block; padding:0 5px; height:22px; border:1px solid #ee1111; border-radius:3px; background:#fff; color:#ee1111; font-size:12px; line-height:20px;}
+		.text_tag.__tag_complete__{border-color:#04aa37; color:#04aa37;}
+		.text_tag.__tag_working__{border-color:#558eda; color:#558eda;}
+		.text_tag.__tag_checking__{border-color:#973af3; color:#973af3;}
+		.text_tag.__tag_develop__{border-color:#04aa37; color:#04aa37;}
+	</style>
+
+	<!-- 스크립트  -->
+	<script src="http://publish.mmonstar.co.kr/enter6_shop/admin/js/libs/jquery-3.3.1.slim.min.js"></script>
+	<script src="http://publish.mmonstar.co.kr/enter6_shop/admin/js/libs/underscore-1.9.1.min.js"></script>
+	<script src="http://publish.mmonstar.co.kr/enter6_shop/admin/js/app_common.js"></script>
+	<script>
+		$(function() {
+
+			var $tag = $('.text_tag');
+			var counts = { _complete: 0, _working: 0, _checking: 0, _ready: 0 };
+
+			$tag.each(function() {
+
+				var $this = $(this);
+				var $a = $this.closest('a');
+				var _class = $this.attr('class');
+
+				if (/complete/i.test(_class)) {
+					counts._complete++;
+					$this.html('완료');
+				}
+				else if (/working/i.test(_class)) {
+					counts._working++;
+					$this.html('작업중');
+				}
+				else if (/checking/i.test(_class)) {
+					counts._checking++;
+					$this.html('검수중');
+				}
+				else if (/develop/i.test(_class)) {
+					counts._checking++;
+					$this.html('개발가능');
+				}
+				else {
+					counts._ready++;
+					$this.html('미작업');
+					return;
+				}
+
+				$a.attr({ 'href': 'html/' + $a.find('.text_link').text(),
+					'target': function(__index, __value) {
+
+						return (__value) ? __value : '_blank';
+
+					}
+				});
+
+			});
+
+			console.log('총 페이지 수: ' + $tag.length);
+			console.log('완료: ' + counts._complete);
+			console.log('검수중: ' + counts._checking);
+			console.log('작업중: ' + counts._working);
+			console.log('미작업: ' + counts._ready);
+
+		});
+	</script>
+</head>
+<body>
+	<div id="mm_view">
+		<h1>엔터식스 홈페이지 프론트(PC)</h1>
+		<div class="mm_tab">
+			<nav class="mm_tab-menu">
+				<ul>
+					<li><a href="javscript:void(0)" class="btn_tab __tab-on">메인/로그인/모달</a></li>
+					<li><a href="javscript:void(0)" class="btn_tab">회사소개/약관/제휴</a></li>
+					<li><a href="javscript:void(0)" class="btn_tab">회원가입</a></li>
+					<li><a href="javscript:void(0)" class="btn_tab">My 엔터식스</a></li>
+					<li><a href="javscript:void(0)" class="btn_tab">점별안내</a></li>
+					<li><a href="javscript:void(0)" class="btn_tab">이벤트/프로모션</a></li>
+					<li><a href="javscript:void(0)" class="btn_tab">My쿠폰</a></li>
+					<li><a href="javscript:void(0)" class="btn_tab">혜택</a></li>
+					<li><a href="javscript:void(0)" class="btn_tab">E고객센터</a></li>
+				</ul>
+			</nav>
+
+			<!--
+				(D) 1depth Ul은 div.mm_tab-item로 감싸서 사용합니다.
+				depth별 주석 표시는 편의상 3depth만 표시합니다.
+				아래 상태에 따라 text_tag 요소를 변경합니다.
+					미작업 - <span class="text_tag"></span>
+					완료 - <span class="text_tag __tag_complete__"></span>
+				상태가 완료일 경우 스크립트로 a요소에 href 속성이 추가됩니다.
+				해당 Depth에 링크가 없을경우 .text_name을 제외한 나머지 div 요소를  합니다.
+			 -->
+
+			<!-- 템플릿, 메인, 로그인 -->
+			<div class="mm_tab-item __tab-on">
+				<ul class="item-depth1">
+					<li>
+						<a class="mm_box-flex">
+							<div class="text_name"><h2>템플릿</h2></div>
+						</a>
+						<ul class="item-depth2">
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name"><h2>템플릿</h2></div>
+									<div class="text_link">_template.html</div>
+									<div><span class="text_tag __tag_complete__"></span></div>
+									<div>-</div>
+								</a>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name"><h2>서브 템플릿</h2></div>
+									<div class="text_link">_templateSub.html</div>
+									<div><span class="text_tag __tag_complete__"></span></div>
+									<div>-</div>
+								</a>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name"><h2>폰트 템플릿</h2></div>
+									<div class="text_link">_templateFont.html</div>
+									<div><span class="text_tag __tag_complete__"></span></div>
+									<div>-</div>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a class="mm_box-flex">
+							<div class="text_name"><h2>메인</h2></div>
+							<div class="text_link">main.html</div>
+							<div><span class="text_tag __tag_complete__"></span></div>
+							<div><p class="text_color">팝업 배너 포함 / 팝업배너 fixed시 left 값 issue</p></div>
+						</a>
+					</li>
+					<li>
+						<a class="mm_box-flex">
+							<div class="text_name"><h2>로그인</h2></div>
+							<div class="text_link">login.html</div>
+							<div><span class="text_tag __tag_develop__"></span></div>
+							<div></div>
+						</a>
+						<ul class="item-depth2">
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">아이디 찾기</div>
+									<div class="text_link">loginFindId.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+								<ul class="item-depth2">
+									<li>
+										<a class="mm_box-flex">
+											<div class="text_name">아이디 찾기 결과</div>
+											<div class="text_link">loginFindIdResult.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">비밀번호 찾기</div>
+									<div class="text_link">loginFindPassword.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+								<ul class="item-depth2">
+									<li>
+										<a class="mm_box-flex">
+											<div class="text_name">비밀번호 재설정</div>
+											<div class="text_link">loginFindPasswordReset.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a class="mm_box-flex">
+							<div class="text_name"><h2>모달 - iframe type</h2></div>
+							<div class="text_link"></div>
+							<div></div>
+							<div>script type은 기존처럼 사용 가능</div>
+						</a>
+						<ul class="item-depth2">
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">(모달) 우편번호 찾기</div>
+									<div class="text_link">_modal_postcode.html</div>
+									<div><span class="text_tag __tag_complete__"></span></div>
+									<div>기본/검색결과/결과없음 상태 포함</div>
+								</a>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">(모달) 층별 지도 확대보기</div>
+									<div class="text_link">_modal_floorZoom.html</div>
+									<div><span class="text_tag __tag_complete__"></span></div>
+									<div></div>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a class="mm_box-flex">
+							<div class="text_name"><h2>메일</h2></div>
+							<div class="text_link"></div>
+							<div></div>
+							<div></div>
+						</a>
+						<ul class="item-depth2">
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">(메일) 회원가입 완료</div>
+									<div class="text_link">mail_memberMailJoin.html</div>
+									<div><span class="text_tag __tag_complete__"></span></div>
+									<div></div>
+								</a>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">(메일) 회원탈퇴 (A)회원</div>
+									<div class="text_link">mail_memberMailWithdrawA.html</div>
+									<div><span class="text_tag __tag_complete__"></span></div>
+									<div></div>
+								</a>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">(메일) 회원탈퇴 (B)회원</div>
+									<div class="text_link">mail_memberMailWithdrawB.html</div>
+									<div><span class="text_tag __tag_complete__"></span></div>
+									<div></div>
+								</a>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">(메일) 휴면계정 전환 알림</div>
+									<div class="text_link">mail_memberMailDormant.html</div>
+									<div><span class="text_tag __tag_complete__"></span></div>
+									<div></div>
+								</a>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">(메일) 개인정보이용 안내</div>
+									<div class="text_link">mail_memberMailPrivate.html</div>
+									<div><span class="text_tag __tag_complete__"></span></div>
+									<div></div>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a class="mm_box-flex">
+							<div class="text_name"><h2>에러</h2></div>
+						</a>
+						<ul class="item-depth2">
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">error 403</div>
+									<div class="text_link">error403.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">error 404</div>
+									<div class="text_link">error404.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">error 500</div>
+									<div class="text_link">error500.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">서비스 점검</div>
+									<div class="text_link">errorService.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">트래픽</div>
+									<div class="text_link">errorTraffic.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+							</li>
+							<li>
+								<a class="mm_box-flex">
+									<div class="text_name">리뉴얼</div>
+									<div class="text_link">errorRenewal.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--// 템플릿, 메인, 로그인 -->
+
+			<!-- 회사소개 -->
+			<div class="mm_tab-item">
+				<ul class="item-depth1">
+					<li>
+						<a class="mm_box-flex">
+							<div class="text_name"><h2>회사소개/약관/제휴</h2></div>
+						</a>
+						<ul class="item-depth2">
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">회사소개</div>
+								</a>
+								<ul class="item-depth3">
+					                <li>
+					                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+					                        <div class="text_name">인사말</div>
+					                        <div class="text_link">companyAbout.html</div>
+					                        <div><span class="text_tag __tag_develop__"></span></div>
+					                        <div><p class="text_color3"></p></div>
+					                    </a>
+					                </li>
+									<li>
+					                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+					                        <div class="text_name">회사연혁</div>
+					                        <div class="text_link">companyHistory.html</div>
+					                        <div><span class="text_tag __tag_develop__"></span></div>
+					                        <div></div>
+					                    </a>
+					                </li>
+									<li>
+					                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+					                        <div class="text_name">조직구성</div>
+					                        <div class="text_link">companyGroup.html</div>
+					                        <div><span class="text_tag __tag_develop__"></span></div>
+					                        <div><p class="text_color3"></p></div>
+					                    </a>
+					                </li>
+									<li>
+					                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+					                        <div class="text_name">엔터식스CI</div>
+					                        <div class="text_link">companyLogo.html</div>
+					                        <div><span class="text_tag __tag_develop__"></span></div>
+					                        <div><p class="text_color3"></p></div>
+					                    </a>
+					                </li>
+									<li>
+					                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+					                        <div class="text_name">본사 찾아오시는길</div>
+					                        <div class="text_link">companyLocation.html</div>
+					                        <div><span class="text_tag __tag_develop__"></span></div>
+					                        <div><p class="text_color3"></p></div>
+					                    </a>
+					                </li>
+					            </ul>
+							</li>
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">약관</div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">이용약관</div>
+											<div class="text_link">termsUse.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">개인정보 취급방침</div>
+											<div class="text_link">termsPolicy.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">이메일 무단 수집거부</div>
+											<div class="text_link">termsEmail.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">제휴/입점문의</div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">B2B 사업제휴</div>
+											<div class="text_link">b2bBusinessPartner.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">브랜드 입점문의</div>
+											<div class="text_link">b2bBrand.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">마케팅 제휴문의</div>
+											<div class="text_link">b2bMarketing.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">신규점포 제휴</div>
+											<div class="text_link">b2bNewStore.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--// 회사소개 -->
+
+			<!-- 회원가입 -->
+			<div class="mm_tab-item">
+				<ul class="item-depth1">
+					<li>
+						<a class="mm_box-flex">
+							<div class="text_name"><h2>회원가입</h2></div>
+						</a>
+						<ul class="item-depth2">
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">회원가입</div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">본인인증</div>
+											<div class="text_link">joinCertification.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div></div>
+										</a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">약관동의</div>
+											<div class="text_link">joinTerms.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div></div>
+										</a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">회원정보입력</div>
+											<div class="text_link">JoinProfile.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div>(모달) 우편번호 검색</div>
+										</a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">가입완료</div>
+											<div class="text_link">joinComplete.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--// 회원가입 -->
+
+			<!-- My 엔터식스 -->
+			<div class="mm_tab-item">
+				<ul class="item-depth1">
+					<li>
+						<a class="mm_box-flex">
+							<div class="text_name"><h2>My 엔터식스</h2></div>
+						</a>
+						<ul class="item-depth2">
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">회원정보 / 포인트</div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">회원정보수정</div>
+										</a>
+										<ul class="item-depth3">
+											<li>
+												<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+													<div class="text_name">비밀번호 확인</div>
+													<div class="text_link">memberProfileModifyPassConfirm.html</div>
+													<div><span class="text_tag __tag_develop__"></span></div>
+													<div><p class="text_color3"></p></div>
+												</a>
+											</li>
+											<li>
+												<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+													<div class="text_name">회원정보 수정</div>
+													<div class="text_link">memberProfileModify.html</div>
+													<div><span class="text_tag __tag_develop__"></span></div>
+													<div>(모달) 우편번호 찾기</div>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">회원정보/포인트</div>
+										</a>
+										<ul class="item-depth4">
+											<li>
+												<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+													<div class="text_name">포인트 사용내역</div>
+													<div class="text_link">memberInfoUsePoint.html</div>
+													<div><span class="text_tag __tag_develop__"></span></div>
+													<div><p class="text_color3"></p></div>
+												</a>
+												<ul class="item-depth5">
+													<li>
+														<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+															<div class="text_name">내역없음</div>
+															<div class="text_link">memberInfoUsePoint_none.html</div>
+															<div><span class="text_tag __tag_develop__"></span></div>
+															<div></div>
+														</a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+													<div class="text_name">구매내역</div>
+													<div class="text_link">memberInfoPurchase.html</div>
+													<div><span class="text_tag __tag_develop__"></span></div>
+													<div><p class="text_color3"></p></div>
+												</a>
+												<ul class="item-depth5">
+													<li>
+														<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+															<div class="text_name">내역없음</div>
+															<div class="text_link">memberInfoPurchase_none.html</div>
+															<div><span class="text_tag __tag_develop__"></span></div>
+															<div><p class="text_color3"></p></div>
+														</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">상담내역조회</div>
+									<div class="text_link">memberInquiryList.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">내역 없음</div>
+											<div class="text_link">memberInquiryList_none.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">자세히보기</div>
+											<div class="text_link">memberInquiryDetail.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color">답변완료 포함</p></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">회원탈퇴</div>
+									<div class="text_link">memberWithdraw.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">탈퇴 완료</div>
+											<div class="text_link">memberWithdrawComplete.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--// My 엔터식스 -->
+
+			<!-- 점별안내 -->
+			<div class="mm_tab-item">
+				<ul class="item-depth1">
+					<li>
+						<a class="mm_box-flex">
+							<div class="text_name"><h2>점별안내</h2></div>
+						</a>
+						<ul class="item-depth2">
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">점별안내(공통)</div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">지점안내</div>
+											<div class="text_link">branchInfo.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">브랜드안내</div>
+											<div class="text_link">branchBrand.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+										<ul class="item-depth3">
+											<li>
+												<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+													<div class="text_name">확대보기</div>
+													<div class="text_link">_modal_floorZoom.html</div>
+													<div><span class="text_tag __tag_develop__"></span></div>
+													<div></div>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">편의시설안내</div>
+											<div class="text_link">branchFacility.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">오시는길&주차안내</div>
+											<div class="text_link">branchParking.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--// 점별안내 -->
+
+			<!-- 이벤트/프로모션 -->
+			<div class="mm_tab-item">
+				<ul class="item-depth1">
+					<li>
+						<a class="mm_box-flex">
+							<div class="text_name"><h2>이벤트/프로모션</h2></div>
+						</a>
+						<ul class="item-depth2">
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">전관 Event</div>
+									<div class="text_link">eventList.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">자세히보기</div>
+											<div class="text_link">eventListDetail.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">스탬프 이벤트</div>
+									<div class="text_link">eventStamp.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div></div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">자세히보기</div>
+											<div class="text_link">eventStampDetail.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">쇼핑뉴스</div>
+									<div class="text_link">eventShoppingNewsList.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">자세히보기</div>
+											<div class="text_link">eventShoppingNewsListDetail.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">컬쳐&공연</div>
+									<div class="text_link">eventCultureList.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div><p class="text_color3"></p></div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">자세히보기</div>
+											<div class="text_link">eventCultureListDetail.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div>버튼 확인 필요</div>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">PR센터</div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">갤러리</div>
+											<div class="text_link">eventPrGallary.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+										<ul class="item-depth4">
+											<li>
+												<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+													<div class="text_name">자세히보기</div>
+													<div class="text_link">eventPrGallaryDetail.html</div>
+													<div><span class="text_tag __tag_develop__"></span></div>
+													<div></div>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">보도자료</div>
+											<div class="text_link">eventPrArticle.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div><p class="text_color3"></p></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--// 이벤트/프로모션 -->
+
+			<!-- My 쿠폰 -->
+			<div class="mm_tab-item">
+				<ul class="item-depth1">
+					<li>
+						<a class="mm_box-flex">
+							<div class="text_name"><h2>My쿠폰</h2></div>
+						</a>
+						<ul class="item-depth2">
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">상품 교환권</div>
+									<div class="text_link">myCouponVoucher.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div></div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">목록없음</div>
+											<div class="text_link">myCouponVoucher_none.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+									<div class="text_name">M쿠폰</div>
+									<div class="text_link">myCouponAppcoupon.html</div>
+									<div><span class="text_tag __tag_develop__"></span></div>
+									<div></div>
+								</a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+											<div class="text_name">목록없음</div>
+											<div class="text_link">myCouponAppcoupon_none.html</div>
+											<div><span class="text_tag __tag_develop__"></span></div>
+											<div></div>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--// 이벤트관리 -->
+
+			<!-- 혜택 -->
+			<div class="mm_tab-item">
+			    <ul class="item-depth1">
+			        <li>
+			            <a class="mm_box-flex">
+			                <div class="text_name"><h2>혜택</h2></div>
+			            </a>
+			            <ul class="item-depth2">
+							<li>
+			                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+			                        <div class="text_name">서프라이즈카드란</div>
+			                    </a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+					                        <div class="text_name">서프라이즈카드란</div>
+					                        <div class="text_link">benefitSurpriseCard.html</div>
+					                        <div><span class="text_tag __tag_develop__"></span></div>
+					                        <div></div>
+					                    </a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+					                        <div class="text_name">발급방법</div>
+					                        <div class="text_link">benefitSurpriseCardIssue.html</div>
+					                        <div><span class="text_tag __tag_develop__"></span></div>
+					                        <div><p class="text_color3"></p></div>
+					                    </a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+					                        <div class="text_name">혜택</div>
+					                        <div class="text_link">benefitSurpriseCardMembership.html</div>
+					                        <div><span class="text_tag __tag_develop__"></span></div>
+					                        <div><p class="text_color3"></p></div>
+					                    </a>
+									</li>
+								</ul>
+			                </li>
+							<li>
+			                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+			                        <div class="text_name">회원등급 혜택</div>
+			                        <div class="text_link">benefitMemberGrade.html</div>
+			                        <div><span class="text_tag __tag_develop__"></span></div>
+			                        <div><p class="text_color3"></p></div>
+			                    </a>
+			                </li>
+							<li>
+			                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+			                        <div class="text_name">상품교환권</div>
+			                        <div class="text_link">benefitVoucher.html</div>
+			                        <div><span class="text_tag __tag_develop__"></span></div>
+			                        <div><p class="text_color3"></p></div>
+			                    </a>
+			                </li>
+			                <li>
+			                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+			                        <div class="text_name">제휴상품권 및 카드</div>
+			                    </a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+					                        <div class="text_name">제휴상품권</div>
+					                        <div class="text_link">benefitAllianceGiftCard.html</div>
+					                        <div><span class="text_tag __tag_develop__"></span></div>
+					                        <div><p class="text_color3"></p></div>
+					                    </a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+					                        <div class="text_name">모바일결제</div>
+					                        <div class="text_link">benefitAllianceMobilePayment.html</div>
+					                        <div><span class="text_tag __tag_develop__"></span></div>
+					                        <div><p class="text_color3"></p></div>
+					                    </a>
+									</li>
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+					                        <div class="text_name">제휴카드</div>
+					                        <div class="text_link">benefitCard.html</div>
+					                        <div><span class="text_tag __tag_develop__"></span></div>
+					                        <div><p class="text_color3">페이지 사용하지 않으며 추후 재오픈할 수 있음</p></div>
+					                    </a>
+									</li>
+								</ul>
+			                </li>
+			            </ul>
+			        </li>
+			    </ul>
+			</div>
+			<!--// 혜택 -->
+
+			<!-- E고객센터 -->
+			<div class="mm_tab-item">
+			    <ul class="item-depth1">
+			        <li>
+			            <a class="mm_box-flex">
+			                <div class="text_name"><h2>E고객센터</h2></div>
+			            </a>
+			            <ul class="item-depth2">
+							<li>
+			                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+			                        <div class="text_name">FAQ</div>
+			                        <div class="text_link">csFaq.html</div>
+			                        <div><span class="text_tag __tag_develop__"></span></div>
+			                        <div><p class="text_color3"></p></div>
+			                    </a>
+			                </li>
+							<li>
+			                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+			                        <div class="text_name">고객의소리</div>
+			                        <div class="text_link">csComplain.html</div>
+			                        <div><span class="text_tag __tag_develop__"></span></div>
+			                        <div><p class="text_color3"></p></div>
+			                    </a>
+			                </li>
+							<li>
+			                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+			                        <div class="text_name">고객서비스 제도</div>
+			                        <div class="text_link">csServiceInstitution.html</div>
+			                        <div><span class="text_tag __tag_develop__"></span></div>
+			                        <div><p class="text_color3"></p></div>
+			                    </a>
+			                </li>
+			                <li>
+			                    <a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+			                        <div class="text_name">공지사항</div>
+			                        <div class="text_link">csNotice.html</div>
+			                        <div><span class="text_tag __tag_develop__"></span></div>
+			                        <div><p class="text_color3"></p></div>
+			                    </a>
+								<ul class="item-depth3">
+									<li>
+										<a class="mm_box-flex" href="javascript:void(0)" target="_blank">
+					                        <div class="text_name">자세히보기</div>
+					                        <div class="text_link">csNoticeDetail.html</div>
+					                        <div><span class="text_tag __tag_develop__"></span></div>
+					                        <div><p class="text_color3"></p></div>
+					                    </a>
+									</li>
+								</ul>
+			                </li>
+
+			            </ul>
+			        </li>
+			    </ul>
+			</div>
+			<!--// E고객센터 -->
+		</div>
+	</div>
+</body>
+</html>

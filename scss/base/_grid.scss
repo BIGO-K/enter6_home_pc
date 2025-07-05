@@ -1,0 +1,176 @@
+@charset 'utf-8';
+
+/**
+** 그리드
+**/
+
+html,
+body {
+	// overflow: hidden;
+
+	width: 100%;
+	min-width: $min-width-pc;// $min-width-mobile;
+	height: 100%;
+	min-height: 100%;
+	background: #fff;
+}
+
+html {
+	// overflow-x: auto;// 세로스크롤은 스크립트로 적용
+	color: $color-text-base;
+	font-weight: normal;
+	font-size: $font-size-base;
+	font-family: $font-family-base;
+	line-height: 1;
+	letter-spacing: -0.5px;
+	@include prefix(text-size-adjust, none, webkit ms);
+	// -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	// 폰트 로드 후 적용
+	&.wf-active {
+		// font-family: $font-family-base;
+	}
+}
+
+body {
+	overflow-y: scroll;// pc 스크롤바 기본 삽입
+	-webkit-overflow-scrolling: touch;
+
+	// 스크롤 안됨
+	// .__popup &,
+	// .__modal &,
+	// .__bom &,
+	.__noscroll & {
+		position: fixed;// fixed 사용 시 안드로이드 4에서 오류
+	}
+}
+
+/// 스킵 네비게이션
+.mm_skip {
+	position: absolute;
+	z-index: $index-skip;
+	top: 0;
+	left: 0;
+	font-size: 0;
+	line-height: 1;
+
+	a:focus {
+		padding: 10px;
+		background: $color-primary-base;
+		color: #fff;
+		font-weight: 700;
+		font-size: 12px;
+	}
+}
+///-- 스킵 네비게이션
+
+/// 전체 영역
+.mm_app {
+	position: relative;
+	height: 100%;
+	// min-height: 100%;
+}
+///-- 전체 영역
+
+/// 기본 화면
+.mm_view {
+	position: relative;
+	padding-top: $height-header-base;
+	min-height: 100%;
+	// height: 100%;
+
+	// 사이드바 있음
+	.mm_sidebar + & {
+		margin-left: $width-sidebar-min;
+	}
+}
+///-- 기본 화면
+
+/// 페이지
+.mm_page {
+	position: relative;
+	padding-bottom: $height-footer-base;
+	min-height: 100%;
+
+	// 본문 어두운배경
+	.__view-body-dark & {
+		background: #f9f9f9;
+	}
+
+	> .mm_scroller {
+		// 스크롤 안됨
+		.__popup &,
+		.__modal &,
+		.__bom &,
+		.__noscroll & {
+			overflow: hidden;
+		}
+	}
+
+	.__mm_modal__ & {
+		height: 100%;
+		padding-bottom: 0;
+	}
+
+	/// 페이지 본문
+	&-content {
+		// @include prefix(flex, 1, webkit ms);
+		// overflow: hidden;
+		position: relative;
+		// margin: 0 auto;
+		padding: 0 0 100px;
+		// width: 1200px;
+		// min-height: 637px;
+
+		// overlay scrollbars
+		.os-content & {
+			min-height: 100%;
+		}
+
+		/// 서브페이지 컨텐츠 영역
+		&-inner {
+			position: relative;
+			margin: 0 auto;
+			width: 907px;
+
+			> .mm_title {
+				font-size: 24px;
+				font-weight: 300;
+				line-height: 24px;
+			}
+		}
+		///-- 서브페이지 컨텐츠 영역
+
+		> .mm_inner {
+			@include clearfix;
+		}
+	}
+	///-- 페이지 본문
+}
+///-- 페이지
+
+/// 로딩
+.mm_loading {
+	position: absolute;
+	z-index: $index-loading;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(#fff, 0.1);
+	font-size: 0;
+	line-height: 1;
+
+	.mm_page > & {
+		top: $height-header-base;
+		bottom: 0;// $height-toolbar-base;
+	}
+
+	&-inner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%, -50%));
+	}
+}
+///-- 로딩

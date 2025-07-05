@@ -1,0 +1,38 @@
+@charset 'utf-8';
+
+/**
+** 툴바
+**/
+
+/// 툴바 영역
+.mm_toolbar {
+	// position: absolute;
+	// z-index: $index-toolbar;
+	// bottom: 0;
+	// left: 0;
+	// width: 100%;
+	// height: $height-toolbar-base;
+	// background: #171717;
+	// @include transition(transform $time-fast);
+	//
+	// // 툴바 숨김 (아래로 이동)
+	// .__focus &,
+	// // .__expand &,// 화면 확장 (헤더/툴바 숨김)
+	// .__view-toolbar-hide & {
+	// 	@include opacity(0, none);
+	// 	@include transform(translateY(100%));
+	// 	@include transition(opacity 0s $time-fast, transform $time-fast);
+	// }
+	//
+	// > ul {
+	// 	height: 100%;
+	//
+	// 	> li {
+	// 		button,
+	// 		a {
+	// 			position: relative;
+	// 		}
+	// 	}
+	// }
+}
+///-- 툴바 영역

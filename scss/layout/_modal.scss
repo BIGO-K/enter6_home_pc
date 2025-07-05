@@ -1,0 +1,407 @@
+@charset 'utf-8';
+
+/**
+** 모달
+**/
+
+$width-modal-base: 700px;
+
+/// 모달 영역
+.mm_modal {
+	overflow: hidden;
+	position: fixed;// mobile: absolute, pc: fixed
+	z-index: $index-modal;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	@include opacity(0, none);
+	@include transition(opacity 0s $time-fast);
+
+	// 모달 열림
+	.__modal & {
+		@include opacity(1, auto);
+		@include transition(opacity 0s ease-in);
+
+		.mm_modal-dim {
+			@include opacity(1);
+		}
+	}
+
+	&-dim {
+		width: 100%;
+		height: 100%;
+		background: rgba(#000, 0.88);
+		@include opacity(0);
+		@include transition(opacity $time-fast);
+	}
+
+	&-items {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+}
+///-- 모달 영역
+
+/// 모달 요소
+.mm_modal-item {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	@include opacity(0, none);
+	@include transform(scale(1.2));
+	@include transition(opacity $time-fast, transform $time-fast);
+
+	.mm_modal & {
+		display: block;
+	}
+
+	// 현재창
+	&.__modal-on {
+		z-index: 1;
+		@include opacity(1, auto);
+		@include transform(scale(1));
+	}
+
+	// 노출모션
+	&.__modal-motion-up {
+		@include transform(translateY(10%));
+
+		&.__modal-on {
+			@include transform(translateY(0));
+		}
+	}
+	&.__modal-motion-down {
+		@include transform(translateY(-10%));
+
+		&.__modal-on {
+			@include transform(translateY(0));
+		}
+	}
+	&.__modal-motion-left {
+		@include transform(translateX(10%));
+
+		&.__modal-on {
+			@include transform(translateX(0));
+		}
+	}
+	&.__modal-motion-right {
+		@include transform(translateX(-10%));
+
+		&.__modal-on {
+			@include transform(translateX(0));
+		}
+	}
+
+	.btn_modal-area {
+		width: 100%;
+		height: 100%;
+		background: rgba(#000, 0);
+		cursor: default;
+	}
+
+	&-inner {
+		overflow: hidden;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		padding-top: 60px;
+		width: $width-modal-base;
+		max-height: 90%;
+		background: #fff;
+		@include transform(translate(-50%, -50%));
+	}
+
+	&-head {
+		position: absolute;
+		top: 0;
+		right: 20px;
+		left: 20px;
+		padding-top: 6px;
+		border-bottom: 2px solid #303952;
+
+		h5 {
+			padding: 0 40px 0 3px;
+			height: 52px;
+			color: #303952;
+			font-weight: 500;
+			font-size: 26px;
+			line-height: 50px;
+			letter-spacing: -1px;
+			@include text-ellipsis(1);
+		}
+	}
+
+	&-content {
+		position: relative;
+		padding: 0px 20px 30px;
+		height: 100%;
+
+		.mm_scroller & {
+			height: auto;
+		}
+
+		// 첫 번째 form 테이블
+		> .mm_formbox:first-child {
+			> table {
+				border-top: 0;
+
+				&:first-child {
+					margin-top: -20px;
+				}
+			}
+		}
+
+		.mm_pagination {
+			margin: 18px 0;
+		}
+	}
+}
+///-- 모달 요소
+
+/// 모달 닫기
+.btn_modal-close {
+	position: absolute;
+	top: 5px;
+	right: 13px;
+	width: 57px;
+	height: 57px;
+	color: #000000;
+	font-size: 22px;
+	line-height: 74px;
+	text-align: center;
+}
+///-- 모달 닫기
+
+/// 모달 페이지
+html[class*="_modal_"] {
+	min-width: 0;
+
+	body {
+		min-width: 0;
+	}
+
+	.mm_app {
+		&[class*="_zoom_"] {
+			.mm_view {
+				padding-top:100px;
+			}
+
+			.btn_modal-close {
+				top: -1px;
+				right: 7px;
+			}
+
+		}
+
+		.mm_view {
+			padding-top: 70px;
+			height: 100%;
+		}
+
+		.mm_header {
+			right: 0;
+			left: 0;
+			padding: 6px 30px 0;
+			height: auto;
+			border-bottom: 0;
+			line-height: 1;
+
+			.mm_title {
+				padding: 0 40px 0 3px;
+				// border-bottom: 2px solid #303952;
+				height: 64px;
+				color: #000000;
+				font-size: 20px;
+				font-weight: 400;
+				line-height: 78px;
+				letter-spacing: -1px;
+				@include text-ellipsis(1);
+
+				@at-root {
+					html[class*="__ie1"] .mm_app .mm_header .mm_title {
+						line-height: 83px;
+					}
+				}
+
+			}
+
+			i {
+				&[class*="floor-badge"] {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 80px;
+					height: 80px;
+					background: $color-primary-base;
+					color: #fff;
+					font-size: 22px;
+					font-weight: 800;
+					line-height: 82px;
+					text-align: center;
+
+					+ .mm_title {
+						margin-left: 62px;
+						font-weight: 600;
+						line-height: 70px;
+					}
+				}
+			}
+		}
+
+		.mm_page {
+			padding: 0;
+			height: 100%;
+		}
+
+		.mm_page-content {
+			padding: 0;
+		}
+
+		.mm_list {
+			> .mm_scroller {
+				max-height: 350px;
+
+				&[class*="_x_"] {
+					max-height: none;
+				}
+			}
+		}
+	}
+}
+
+// iframe 내부
+.mm_modal-frame {
+	@extend .mm_modal-item-content;
+	width: $width-modal-base;
+}
+///-- 모달 페이지
+
+/// 우편번호찾기
+.m-modal-postcode {
+	&.mm_modal-frame,
+	.mm_modal-item-inner {
+		width: 700px;
+	}
+
+	.m-modal-postcode-form {
+		position: relative;
+		padding: 40px 0;
+		border-top: 1px solid #999999;
+		border-bottom: 1px solid #999999;
+		background: #f7f7f9;
+		text-align: center;
+
+		.text_guide {
+			margin-bottom: 11px;
+			font-size: 13px;
+		}
+
+		.mm_form-text {
+			margin: 0 auto;
+		}
+
+		.mm_btn {
+			margin-top: 18px;
+			width: 180px;
+		}
+	}
+
+	/// 우편번호리스트
+	.m-modal-postcode-list {
+		border-bottom: 1px solid #999999;
+		.text_result {
+			margin-bottom: 12px;
+			font-size: 16px;
+
+			strong {
+				font-weight: 500;
+			}
+		}
+
+		> ul {
+
+			> li {
+				padding: 18px 36px 18px 15px;
+				border-bottom: 1px solid #e8e8e8;
+			}
+		}
+
+		.mm_text-none {
+			padding: 87px 0;
+			color: #010101;
+			font-size: 14px;
+		}
+	}
+
+	.m-modal-postcode-item {
+		position: relative;
+		padding-right: 95px;
+
+		> a {
+			display: block;
+
+			&:nth-of-type(2) {
+				dl {
+					margin-top: 2px;
+				}
+			}
+		}
+
+		dl {
+			position: relative;
+			padding-left: 65px;
+			min-height: 20px;
+			font-size: 12px;
+
+			dt {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 56px;
+				height: 20px;
+				border: 1px solid #b9b9b9;
+				background: #fff;
+				color: #7b7b7b;
+				font-weight: 600;
+				line-height: 20px;
+				text-align: center;
+
+				&.mm_text-secondary {
+					border-color: $color-secondary-base;
+				}
+			}
+
+			dd {
+				line-height: 20px;
+			}
+		}
+
+		.text_postcode {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			margin-top: -5px;
+			// width: 102px;
+			font-size: 13px;
+			text-align: center;
+		}
+	}
+	///-- 우편번호리스트
+}
+///-- 우편번호찾기
+
+/// 지점 층별지도 확대보기
+.m-modal-floorExpansion {
+	padding: 0 50px 50px;
+	width: 1100px;
+	text-align: center;
+}
+///-- 지점 층별지도 확대보기

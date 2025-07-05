@@ -1,0 +1,58 @@
+@charset 'utf-8';
+
+/**
+** 사이드바
+**/
+
+/// 플로팅 배너
+.mm_floating {
+    position: absolute;
+    z-index: $index-floating;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 0;
+
+    &.__sidebar-sticky {
+        position: fixed;
+        top: 20px;
+    }
+
+    &-rside {
+        position: absolute;
+        right: -116px;
+        width: 96px;
+
+        ul {
+            li {
+                margin-bottom: 2px;
+            }
+        }
+
+        .btn_move-top {
+            height: 27px;
+            color: #606060;
+            font-size: 10px;
+            font-weight: 800;
+            line-height: 28px;
+
+            &:after {
+                border-color: #d7d7d7;
+            }
+
+            i {
+                margin-right: 6px;
+                line-height: 26px;
+                font-size: 11px;
+            }
+        }
+    }
+}
+///-- 플로팅 배너
+
+
+/// 사이드바
+.mm_sidebar {
+
+}
+///-- 사이드바

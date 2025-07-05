@@ -1,0 +1,406 @@
+@charset 'utf-8';
+
+/**
+** 컴포넌트 코어
+** - 박스, 컨테이너, 블럭 컨텐츠, 스와이퍼, 영역, 테이블 col
+**/
+
+/// 클리어픽스
+[class*="container"],
+.mm_container {
+	@include clearfix;
+}
+
+.mm_inner {
+	position: relative;
+	margin: 0 auto;
+	width: $min-width-pc;
+}
+///-- 클리어픽스
+
+/// 기본형
+.mm_box {
+	/// 인라인블럭
+	&-inline {
+		display: inline-block;
+	}
+	///-- 인라인블럭
+
+	/// 블럭
+	&-block {
+		display: block;
+	}
+	///-- 블럭
+
+	/// 왼쪽
+	&-lside {
+		float: left;
+		@include clearfix;
+	}
+	///-- 왼쪽
+
+	/// 오른쪽
+	&-rside {
+		float: right;
+		@include clearfix;
+	}
+	///-- 오른쪽
+
+	/// 플로팅 전체
+	&-full {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: auto;
+		height: auto;
+	}
+	///-- 플로팅 전체
+
+	/// 가변
+	&-fluid {
+		@include fluid-media(100%);
+	}
+	///-- 가변
+
+	/// 플렉스
+	&-flex {
+		@include flex-container();
+
+		// 플렉스 자식요소 사이즈 동일
+		&[class*="_equal_"] {
+			> * {
+				@include prefix(flex, 1, webkit ms);
+				width: auto;
+				height: 100%;
+
+				> a,
+				> button {
+					display: block;
+					width: 100%;
+					text-align: center;
+
+					&:not(.mm_btn) {
+						height: 100%;
+					}
+				}
+			}
+		}
+
+		// 플렉스 자식요소 사이즈 자동
+		&[class*="_auto_"] {
+			> * {
+				@include prefix(flex, auto, webkit ms);
+				width: auto;
+				height: 100%;
+
+				> a,
+				> button {
+					display: block;
+					text-align: center;
+
+					&:not(.mm_btn) {
+						height: 100%;
+					}
+				}
+			}
+		}
+
+		/// 플렉스 column
+		&-column {
+			@include flex-container(column);
+			min-height: 100%;
+		}
+
+		/// 플렉스 auto
+		&-auto {
+			@include prefix(flex, auto, webkit ms);
+		}
+		///-- 플렉스 auto
+
+		/// 플렉스 equal
+		&-equal {
+			@include prefix(flex, 1, webkit ms);
+		}
+		///-- 플렉스 equal
+	}
+	///-- 플렉스
+
+	/// 박스 head (mm_list-head와 같은 용도)
+	&-head {
+		position: relative;
+		@include clearfix;
+	}
+
+	&-line {
+
+	}
+}
+///-- 기본형
+
+/// 스크롤러
+.mm_scroller {
+	overflow: auto;
+	height: 100%;
+
+	&[class*="_x_"] {
+		overflow-x: auto;
+		overflow-y: visible;
+		width: 100%;
+		height: auto;
+	}
+
+	&[class*="_y_"] {
+		overflow-x: visible;
+		overflow-y: auto;
+	}
+
+	&[data-scrollbar] {
+		// overflow: hidden;
+	}
+}
+///-- 스크롤러
+
+/// 페이지상단
+.mm_head {
+	position: relative;
+	padding: 30px 0 23px 3px;
+	height: 77px;
+	@include clearfix;
+
+	[class*="__ie1"] & { padding: 33px 0 20px 3px; }
+
+	.mm_title {
+		float: left;
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 24px;
+	}
+
+	.mm_btngroup {
+		float: left;
+		margin: 2px 0 0 4px;
+
+		> * {
+			float: left;
+		}
+
+		.btn_help {
+			margin: 1px 10px 0 0;
+			color: #303952;
+			font-size: 22px;
+			line-height: 24px;
+		}
+
+		.btn_bookmark,
+		.btn_window {
+			margin-left: 4px;
+			padding: 0 9px;
+			height: 24px;
+			border: 1px solid #596275;
+			border-radius: 24px;
+			color: #596275;
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 22px;
+		}
+
+		.btn_bookmark {
+			background: $color-primary-light;
+
+			.mco_bookmark {
+				margin: 1px 7px -1px 0;
+				font-size: 10px;
+			}
+		}
+
+		.btn_window {
+			.mco_window {
+				margin-right: 6px;
+				font-size: 11px;
+			}
+		}
+
+		.text_attention {
+			margin-left: 10px;
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 24px;
+			white-space: nowrap;
+
+			&:before {
+				margin: 2px 4px -2px 0;
+				content: "*";
+			}
+		}
+	}
+
+	.mm_breadcrumb {
+		position: absolute;
+		right: 0;
+		bottom: 36px;
+
+		[class*="__ie1"] & { bottom: 34px; }
+	}
+}
+///-- 페이지상단
+
+/// 섹션
+.mm_section {
+	margin-top: 60px;
+
+	// 탭메뉴 다음
+	.mm_tabmenu + & {
+		margin-top: 50px;
+	}
+
+	// 순서안내 다음
+	.mm_next + & {
+		margin-top: 0;
+	}
+}
+///-- 섹션
+
+/// 싱커(연결자)
+[class^="mm_syncer"],
+[class*=" mm_syncer"] {
+	display: none;
+
+	&[class$="-on"],
+	&[class*="-on "] {
+		display: block;
+
+		@include context-unify(table) {
+			display: table;
+		}
+
+		@include context-unify(tbody) {
+			display: table-row-group;
+		}
+
+		@include context-unify(tr) {
+			display: table-row;
+		}
+
+		@include context-unify(td) {
+			display: table-cell;
+		}
+	}
+}
+///-- 싱커(연결자)
+
+/// 디싱커(연결자/반대속성)
+[class^="mm_desyncer"],
+[class*=" mm_desyncer"] {
+	&[class$="-on"],
+	&[class*="-on "] {
+		display: none;
+	}
+}
+///-- 디싱커(연결자/반대속성)
+
+/// 선택요소
+.mm_selected {
+	display: inline-block;
+	position: relative;
+	padding: 0 10px;
+	height: 30px;
+	border: 1px solid #d3d3d3;
+	background: #ebebeb;
+	font-size: 14px;
+	line-height: 26px;
+
+	.btn_remove {
+		margin: 0 -10px 0 10px;
+		width: 28px;
+		height: 100%;
+		color: #b9b9b9;
+		font-size: 10px;
+		line-height: 28px;
+	}
+}
+///-- 선택요소
+
+/// 유의사항 (dropdown 상속)
+.mm_attention {
+	// border: 1px solid #d3d3d3;
+	// border-radius: 4px;
+	// background: #f5f5f5;
+	// color: #808080;
+	// font-size: 11px;
+	// line-height: 14px;
+	//
+	// &.__dropdown-on {
+	// 	padding-bottom: 8px;
+	// }
+	//
+	// .btn_dropdown {
+	// 	padding: 7px 0 8px;
+	// 	font-size: 12px;
+	// 	text-align: center;
+	//
+	// 	> span {
+	// 		padding-right: 20px;
+	// 	}
+	//
+	// 	.mco_attention {
+	// 		margin: 1px 5px -1px 0;
+	// 	}
+	//
+	// 	.mco_dropdown {
+	// 		margin-top: 1px;
+	// 	}
+	// }
+	//
+	// .mm_dropdown-item {
+	// 	margin-top: -2px;
+	//
+	// 	li {
+	// 		position: relative;
+	// 		padding: 0 10px 0 15px;
+	//
+	// 		&:before {
+	// 			position: absolute;
+	// 			top: 0;
+	// 			left: 4px;
+	// 			content: "ㆍ";
+	// 		}
+	// 	}
+	//
+	// 	> p {
+	// 		padding: 0 9px;
+	//
+	// 		&:nth-of-type(n+2) {
+	// 			margin-top: 6px;
+	// 		}
+	// 	}
+	// }
+}
+///-- 유의사항
+
+/// 다음단계
+.mm_next {
+	margin: 40px auto;
+	padding-top: 32px;
+	width: 100px;
+	height: 100px;
+	border: 3px solid $color-secondary-base;
+	border-radius: 100px;
+	color: $color-secondary-base;
+	font-size: 18px;
+	text-align: center;
+
+	.mco_down {
+		display: block;
+		margin-top: 6px;
+	}
+}
+///-- 다음단계
+
+/// 라인간격
+.mm_line {
+	// border-top: 8px solid #d9d9d9;
+}
+///-- 라인간격

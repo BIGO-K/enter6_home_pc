@@ -1,0 +1,254 @@
+@charset 'utf-8';
+
+@import 'helpers/functions';
+@import 'helpers/mixins';
+@import 'helpers/variables';
+
+%fontello {
+	display: inline-block;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-size: inherit;
+	font-family: "Fontello";
+	line-height: inherit;
+	text-decoration: inherit;
+	text-transform: none;
+	text-indent: 0;
+	speak: none;
+	@include prefix(font-smoothing, antialiased, webkit moz);
+}
+
+/*!
+ * Pikaday
+ * Copyright © 2014 David Bushell | BSD & MIT license | http://dbushell.com/
+ */
+ 
+ $pika-color-primary: #059b9f;
+ $pika-color-secondary: #ffcc00;
+  
+.pika-single {
+	z-index: 9999;
+	display: inline-block;
+	position: relative;
+	border: 2px solid $pika-color-primary;
+	border-top: 0;
+	background: #fff;
+	color: #333;
+	font-family: $font-family-base;
+	@include clearfix;
+
+	&.is-hidden {
+		display: none;
+	}
+
+	&.is-bound {
+		position: absolute;
+	}
+}
+
+.pika-lendar {
+	float: left;
+	padding-left: 2px;
+	// width: 259px;
+	
+	&:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin-left: -2px;
+		border-left: 2px solid $pika-color-primary;
+		content: "";
+	}
+	
+	&:first-child {
+		margin-left: -2px;
+	}
+}
+
+.pika-title {
+	position: relative;
+	background: $pika-color-primary;
+	color: #fff;
+	text-align: center;
+
+	.pika-label {
+		display: inline-block;
+		overflow: hidden;
+		position: relative;
+		z-index: 9999;
+		margin: 0;
+		padding: 0 10px 0 0;
+		color: #fff;
+		font: 500 20px/50px $font-family-latin;
+		
+		&:before {
+			content: ".";
+		}
+		
+		&:first-child {
+			padding: 0 0 0 10px;
+			
+			&:before {
+				content: "";
+			}
+		}
+	}
+	
+	.pika-prev,
+	.pika-next {
+		display: block;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		padding: 0 19px;
+		height: 50px;
+		font-size: 0;
+		text-indent: -100px;
+		@include opacity(0.8);
+		cursor: pointer;
+
+		&:hover {
+			@include opacity(1);
+		}
+
+		&.is-disabled {
+			@include opacity(0.2);
+			cursor: default;
+		}
+		
+		&:after {
+			@extend %fontello;
+			display: block;
+			font-size: 20px;
+			line-height: 50px;
+		}
+	}
+	
+	.pika-prev,
+	.is-rtl .pika-next {
+		left: 0;
+		
+		&:after {
+			content: "\e937";
+		}
+	}
+
+	.pika-next,
+	.is-rtl .pika-prev {
+		right: 0;
+		
+		&:after {
+			content: "\e938";
+		}
+	}
+
+	.pika-select {
+		// display: inline-block;
+		position: absolute;
+		z-index: 9998;
+		top: 10px;
+		bottom: 10px;
+		left: 0;
+		color: #333;
+		font-size: 12px;
+		@include opacity(0);
+		cursor: pointer;
+	}
+}
+
+.pika-table {
+	margin: 0 10px 10px;
+	width: auto;
+	font-size: 12px;
+	
+	th {
+		padding-top: 3px;
+		border: 1px solid transparent;
+		border-width: 0 1px;
+		line-height: 25px;
+	}
+	
+	td {
+		border: 1px solid #e6e6e6;
+	}
+
+	abbr {
+		text-decoration: none;
+	}
+}
+
+.pika-button {
+	display: block;
+	position: relative;
+	width: 33px;
+	height: 33px;
+	line-height: 33px;
+
+	.is-today & {
+		&:after {
+			position: absolute;
+			top: -1px;
+			right: -1px;
+			bottom: -1px;
+			left: -1px;
+			border: 1px solid $pika-color-primary;
+		}
+	}
+	
+	.is-outside-current-month & {
+		background: #f0f0f0;
+		color: #979797;
+	}
+
+	.is-selected & {
+		background: $pika-color-secondary;
+		
+		@include context-first('.pick-whole-week ') {
+			
+			background: $pika-color-secondary !important;
+			
+		}
+			
+		@include context-first('.is-outside-current-month') {
+			
+			background: rgba($pika-color-secondary, 0.5);
+			
+		}
+	}
+
+	.is-disabled & {
+		background: #c1c1c1;
+		color: #979797;
+		cursor: default;
+		pointer-events: none;
+	}
+
+	&:hover {
+		//
+	}
+
+	.is-selection-disabled {
+		cursor: default;
+		pointer-events: none;
+	}
+}
+
+.pika-week {
+	padding: 0 10px 0 5px;
+	color: #979797;
+	font-weight: 300;
+}
+
+
+.is-startrange .pika-button {
+	background: $pika-color-secondary;
+}
+
+.is-endrange .pika-button {
+	background: $pika-color-secondary;
+}
+
+.is-inrange .pika-button {
+	background: $pika-color-secondary;
+}

@@ -1,0 +1,381 @@
+@charset 'utf-8';
+
+/**
+** 메인
+**/
+
+.mm_hero {
+    .swiper-slide {
+        > a {
+            width: 100%;
+
+            figure {
+                .image_hero {
+                    width: 100%;
+                }
+
+                figcaption {
+
+                }
+            }
+        }
+    }
+
+    .swiper-count {
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        bottom: 26px;
+        padding: 0 18px 0 15px;
+        width: 100px;
+        height: 36px;
+        border-radius: 100px;
+        background: rgba(0,0,0,0.46);
+        color: #b1b1b1;
+        font-size: 17px;
+        line-height: 37px;
+        @include prefix(transform, translateX(-50%), webkit ms);
+
+        > span {
+            margin: 0 3px;
+            height: 36px;
+            font-size: 17px;
+            line-height: 37px;
+
+            [class*="__ie1"] & {
+                line-height: 42px;
+            }
+        }
+
+        [class*="current"] {
+            color: #fff;
+        }
+
+        [class*="__ie1"] & {
+            line-height: 42px;
+        }
+    }
+
+    .btn_toggle {
+        position: absolute;
+        z-index: 5;
+        bottom: 37px;
+        left: 50%;
+        margin-left: 22px;
+
+        i {
+            color: #fff;
+            font-size: 13px;
+        }
+    }
+}
+
+.m-main {
+    /// 쇼핑뉴스
+    &-shoppingnews {
+        position: relative;
+        margin-top: 50px;
+
+        .mm_inner {
+            position: relative;
+        }
+
+        .mm_list {
+            margin: 0;
+
+            &-head {
+                margin-top: -42px;
+                padding-bottom: 16px;
+
+                .mm_form-select {
+                    width: 218px;
+
+                    label {
+                        border: 5px solid $color-primary-base;
+
+                        select {
+                            font-size: 16px;
+                            line-height: 32px;
+
+                            .__edge & { padding: 1px 30px 0 5px; }
+                        }
+
+                        .mco_form-select {
+                            top: 9px;
+                            color: $color-primary-base;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            .btn_more {
+                position: absolute;
+                top: 17px;
+                right: 0;
+                font-size: 17px;
+                font-weight: 300;
+
+                [class*="__ie1"] & { top: 20px; }
+            }
+
+            /// 쇼핑뉴스 리스트
+            > ul {
+                li {
+                    float: left;
+                    margin-left: 12px;
+                    height: 408px;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    .image_shoppingnews {
+                        width: 291px;
+                        height: 291px;
+
+                        &.mm_image-none {
+                            border: 1px solid #d5d5d5;
+                            border-bottom: 0;
+                        }
+                    }
+
+                    figcaption {
+                        position: relative;
+                        padding: 22px 18px 31px;
+                        width: 291px;
+                        height: 117px;
+                        border: 1px solid #d5d5d5;
+
+                        .m-shoppingnews-badge {
+                            overflow: hidden;
+                            position: absolute;
+                            top: -13px;
+                            left: 19px;
+
+                            i {
+                                overflow: hidden;
+                                float: left;
+                                padding: 0 8px;
+                                height: 26px;
+                                color: #fff;
+                                font-size: 12px;
+                                font-weight: 500;
+                                line-height: 26px;
+
+                                &.ico_branch {
+                                    background: #000;
+                                }
+
+                                &.ico_category {
+                                    background: $color-primary-base;
+                                }
+
+                                [class*="__ie1"] & { line-height: 30px; }
+                            }
+                        }
+
+                        > P {
+                            &.text_title {
+                                overflow: hidden;
+                                height: 23px;
+                                font-size: 18px;
+                                line-height: 23px;
+
+                                .__edge & { line-height: 22px; }
+                            }
+
+                            &.text_period {
+                                position: absolute;
+                                left: 18px;
+                                bottom: 19px;
+                                color: #54534c;
+                                font-size: 12px;
+
+                                [class*="__ie1"] & { bottom: 17px; }
+                            }
+                        }
+                    }
+                }
+            }
+            ///-- 쇼핑뉴스 리스트
+        }
+    }
+    ///-- 쇼핑뉴스
+
+    /// 메인 - SNS
+    &-sns {
+        margin-top: 62px;
+
+        .mm_list {
+            > ul {
+                > li {
+                    float: left;
+                    margin-left: 13px;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    .text_title {
+                        margin: 24px 0 16px 0;
+                        height: 32px;
+                        text-align: center;
+
+                        i {
+                            margin-right: 12px;
+                            width: 32px;
+                            height: 32px;
+                            border-radius: 100px;
+                            color: #fff;
+                            font-size: 16px;
+                            line-height: 33px;
+
+                            &[class*="-facebook"] {
+                                background: #3c5b9a;
+                            }
+                            &[class*="-instagram"] {
+                                background: #d8669c;
+                            }
+                            &[class*="-youtube"] {
+                                background: #e54e4e;
+                            }
+                            &[class*="-blog"] {
+                                background: #fda70e;
+                            }
+                        }
+
+                        span {
+                            font-size: 17px;
+                            line-height: 33px;
+
+                            [class*="__ie1"] & { line-height: 38px; }
+                        }
+                    }
+                }
+            }
+
+            .mm_swiper {
+                width: 290px;
+
+                .swiper-wrapper {
+                    li {
+                        [class*="image_"] {
+                            width: 290px;
+                            height: 290px;
+                        }
+                    }
+                }
+
+                .swiper-count {
+                    margin-top: 10px;
+
+                    [class*="__ie1"] & { margin-top: 12px; margin-bottom: -2px; }
+
+                    &[class*="fraction"] {
+                        color: #aaa;
+                        font-size: 12px;
+                        text-align: center;
+
+                        [class*="current"] {
+                            color: #606060;
+                            font-weight: 700;
+                        }
+                    }
+                }
+
+                .swiper-control {
+                    margin-top: 10px;
+
+                    [class*="fraction"] {
+                        color: #aaa;
+                        font-size: 12px;
+                        text-align: center;
+
+                        [class*="current"] {
+                            color: #606060;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ///-- 메인 - SNS
+
+    /// 개별영역 (제휴 / 회사소개/ 대관)
+    &-alliance {
+        margin: 60px 0 -100px;
+        padding: 30px 0;
+        background: #f7f7f9;
+
+        ul {
+            li {
+                float: left;
+                margin-left: 13px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    ///-- 개별영역 (제휴 / 회사소개/ 대관)
+
+    /// 메인 팝업
+    &-popup {
+        display: none;
+        position: fixed;
+        z-index: $index-popup;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 0;
+
+        &.__open {
+            display: block;
+        }
+
+        &-item {
+            position: absolute;
+            z-index: $index-popup;
+            top: 100px;
+            left: 0;
+            width: auto;
+			min-width: 250px;
+            border: 1px solid #000;
+
+            .btn_popup-close {
+            	position: absolute;
+            	z-index: 1;
+            	top: 13px;
+            	right: 13px;
+            	width: 21px;
+            	height: 21px;
+            	color: #000;
+            	font-size: 20px;
+            	line-height: 1;
+            	text-align: center;
+
+            	.mm_popup & {
+            		right: 17px;
+            	}
+            }
+
+            .m--popup-foot {
+                padding: 6px 0;
+                height: 31px;
+                background: #000;
+                text-align: center;
+
+                .mm_form-check {
+                    .text_label {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    ///-- 메인 팝업
+}

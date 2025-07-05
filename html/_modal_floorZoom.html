@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko" class="__mm_modal__">
+<head>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+	<!-- 소셜태그 -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+	<meta property="og:site_name" content="">
+	<!--// 소셜태그 -->
+
+	<title>(팝업) 확대보기 - 엔터식스 홈페이지</title>
+
+    <!-- 라이브러리 css -->
+	<link rel="stylesheet" href="../css/libs/fontello-custom.css">
+	<link rel="stylesheet" href="../css/libs/swiper-4.3.3.min.css">
+	<link rel="stylesheet" href="../css/libs/pikaday.css">
+	<link rel="stylesheet" href="../css/libs/overlayscrollbars-1.5.1.min.css">
+
+	<!-- 페이지 css -->
+	<!-- (D) 폰트는 webfontloader를 사용하여 app_page-common.js에서 적용 -->
+	<link class="link_font" rel="stylesheet" resource="../css/fonts.css">
+    <link rel="stylesheet" href="../css/app.css">
+
+	<!-- (D) 스크립트(폴리필, 라이브러리)는 요청을 줄이기 위해 combind + minify를 적용해주세요. -->
+	<!-- 폴리필 스크립트 -->
+	<script src="../js/polyfill/es6-promise.auto-4.2.4.min.js"></script>
+
+	<!-- 라이브러리 스크립트 -->
+	<!--<script src="../js/libs/webfontloader-1.6.28.min.js"></script>-->
+	<script src="../js/libs/jquery-3.3.1.slim.min.js"></script>
+	<script src="../js/libs/axios-0.18.0.min.js"></script>
+	<script src="../js/libs/underscore-1.9.1.min.js"></script>
+	<script src="../js/libs/load-image.all-2.19.0.min.js"></script>
+	<script src="../js/libs/swiper-4.3.3.min.js"></script>
+	<script src="../js/libs/tweenmax-2.0.1.min.js"></script>
+	<script src="../js/libs/moment-2.22.2.min.js"></script>
+	<script src="../js/libs/pikaday-1.6.1.min.js"></script>
+	<script src="../js/libs/overlayscrollbars-1.5.1.min.js"></script>
+
+	<!-- 공통 스크립트 -->
+    <script src="../js/app_common.js"></script>
+
+	<!-- (D) 페이지 공통 스크립트는 body 하단, 전용 스크립트는 .mm_page-content 하단에 넣어주세요. -->
+</head>
+<body>
+	<div id="mm_app" class="mm_app __app_zoom__">
+		<!-- 스킵 -->
+		<nav class="mm_skip">
+			<ul>
+				<li><a href="#mm_body" data-href="anchor">본문바로가기</a></li>
+			</ul>
+		</nav>
+		<!-- 스킵 -->
+
+		<!-- 화면 -->
+		<div class="mm_view">
+			<!-- 헤더 -->
+			<div class="mm_header">
+                <i class="ico_floor-badge"><span>1F</span></i>
+				<h1 class="mm_title"><span>강변테크노마트점</span></h1>
+				<button type="button" class="btn_modal-close" onclick="mm.modal.close();"><i class="mco_modal-close"></i><span class="mm_ir-blind">모달 닫기</span></button>
+			</div>
+			<!--// 헤더 -->
+
+			<!-- 내용 -->
+			<div id="mm_body" class="mm_page">
+                <!-- <div class="m-modal-header">
+                    <i class="ico_floor-badge"><span>1F</span></i>
+    				<h1 class="mm_title"><span>층별 지도 확대보기</span></h1>
+                </div> -->
+				<div class="mm_scroller" data-scrollbar>
+                    <!-- 본문 -->
+                    <div class="mm_page-content">
+                        <!-- (D) 실제 내용을 추가하는 부분입니다. -->
+
+                        <!-- (D) iframe 모달은 html 요소에 '__mm_modal__' 클래스를 추가합니다. -->
+                        <!-- (D) 확대보기 모달은 .mm_app 요소에 '__app_zoom__' 클래스를 추가합니다. -->
+                        <div class="mm_modal-frame m-modal-floorExpansion">
+                            <i class="image_floor"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/_sample/floor_zoom01.jpg' }" alt=""></i>
+                        </div>
+                        <!-- 페이지 스크립트 -->
+                        <!-- <script src="../js/.js"></script> -->
+                    </div>
+                    <!--// 본문 -->
+				</div>
+			</div>
+			<!--// 내용 -->
+		</div>
+		<!--// 화면 -->
+	</div>
+
+	<!-- 공통 스크립트 -->
+	<script src="../js/app_page-common.js"></script>
+</body>
+</html>

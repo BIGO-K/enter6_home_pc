@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+	<!-- 소셜태그 -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+	<meta property="og:site_name" content="">
+	<!--// 소셜태그 -->
+
+	<title>회원탈퇴 &#60; My엔터식스 &#60; 엔터식스몰</title>
+
+	<!-- 라이브러리 css -->
+	<link rel="stylesheet" href="../css/libs/fontello-custom.css">
+	<link rel="stylesheet" href="../css/libs/swiper-4.3.3.min.css">
+	<link rel="stylesheet" href="../css/libs/pikaday.css">
+	<link rel="stylesheet" href="../css/libs/overlayscrollbars-1.5.1.min.css">
+
+	<!-- 페이지 css -->
+	<!-- (D) 폰트는 webfontloader를 사용하여 app_page-common.js에서 적용 -->
+	<link class="link_font" rel="stylesheet" resource="../css/fonts.css">
+    <link rel="stylesheet" href="../css/app.css">
+
+	<!-- (D) 스크립트(폴리필, 라이브러리)는 요청을 줄이기 위해 combind + minify를 적용해주세요. -->
+	<!-- 폴리필 스크립트 -->
+	<script src="../js/polyfill/es6-promise.auto-4.2.4.min.js"></script>
+
+	<!-- 라이브러리 스크립트 -->
+	<!--<script src="../js/libs/webfontloader-1.6.28.min.js"></script>-->
+	<script src="../js/libs/jquery-3.3.1.slim.min.js"></script>
+	<script src="../js/libs/axios-0.18.0.min.js"></script>
+	<script src="../js/libs/underscore-1.9.1.min.js"></script>
+	<script src="../js/libs/load-image.all-2.19.0.min.js"></script>
+	<script src="../js/libs/swiper-4.3.3.min.js"></script>
+	<script src="../js/libs/tweenmax-2.0.1.min.js"></script>
+	<script src="../js/libs/moment-2.22.2.min.js"></script>
+	<script src="../js/libs/pikaday-1.6.1.min.js"></script>
+	<script src="../js/libs/overlayscrollbars-1.5.1.min.js"></script>
+
+	<!-- 공통 스크립트 -->
+    <script src="../js/app_common.js"></script>
+
+	<!-- (D) 페이지 공통 스크립트는 body 하단, 전용 스크립트는 .mm_page-content 하단에 넣어주세요. -->
+</head>
+<body>
+    <div id="mm_app" class="mm_app">
+        <!-- 스킵 -->
+		<nav class="mm_skip">
+			<ul>
+				<li><a href="#mm_body" data-href="anchor">본문바로가기</a></li>
+			</ul>
+		</nav>
+		<!-- 스킵 -->
+
+        <!-- 화면 -->
+		<div class="mm_view">
+			<!-- 헤더 -->
+			<div class="mm_header">
+				<div class="mm_header-util">
+					<div class="mm_container mm_inner">
+						<div class="mm_box-rside">
+							<ul>
+								<!-- <li>
+									<a href="#" data-href="{ '_type': 'link' }" class="btn_login"><span><i class="mco_login"></i>로그인</span></a>
+								</li> -->
+								<li>
+									<a href="#" class="btn_logout"><span><i class="mco_logout"></i>로그아웃</span></a>
+								</li>
+								<li>
+									<a href="#" data-href="{ '_type': 'link' }" class="btn_join"><span><i class="mco_join"></i>My엔터식스</span></a>
+								</li>
+								<li>
+									<div class="mm_form-select __sm__">
+										<label>
+											<select>
+												<option value="">Language</option>
+											</select>
+											<i class="mco_form-select"></i>
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="mm_header-title">
+					<h1><a href="#" data-href="{ '_type': 'link' }"><span class="mm_ir-blind">엔터식스</span></a></h1>
+				</div>
+
+				<!-- GNB -->
+				<div class="mm_gnb">
+					<div class="mm_inner">
+						<ul>
+							<li>
+								<h5><span>점별안내</span></h5>
+								<div class="mm_gnb-sub">
+									<ul>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>강변테크노마트점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>왕십리역점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>동탄 메타폴리스점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>파크에비뉴한양대점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>상봉점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>강남점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>천호역점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>안양점(예정)</span></a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<h5><span>이벤트/프로모션</span></h5>
+								<div class="mm_gnb-sub">
+									<ul>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>전관 EVENT</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>스탬프 이벤트</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>쇼핑뉴스</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>컬쳐&#38;공연</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>PR센터</span></a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<h5><span>My쿠폰</span></h5>
+								<div class="mm_gnb-sub">
+									<ul>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>상품교환권</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>M쿠폰</span></a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<h5><span>혜택</span></h5>
+								<div class="mm_gnb-sub">
+									<ul>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>제휴상품권 및 카드</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>서프라이즈 카드란</span></a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<h5><span>E-고객센터</span></h5>
+								<div class="mm_gnb-sub">
+									<ul>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>FAQ</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>고객의소리</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>공지사항</span></a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--// GNB -->
+			</div>
+			<!--// 헤더 -->
+
+			<!-- 내용 -->
+			<div id="mm_body" class="mm_page">
+				<!-- 본문 -->
+				<div class="mm_page-content">
+					<!-- (D) 실제 내용을 추가하는 부분입니다. -->
+
+					<!-- 플로팅 배너 -->
+					<div class="mm_floating">
+						<div class="mm_inner">
+							<div class="mm_floating-rside">
+								<ul>
+									<li>
+										<a href="#" data-href="{ '_type': 'link' }">
+											<figure>
+												<i class="image_floating"><img src="../images/_sample/side_floating_01.jpg" alt="서프라이즈 카드 할인 6%" onerror="this.remove();"></i>
+												<figcaption class="mm_ir-blind">서프라이즈 카드 할인 6%</figcaption>
+											</figure>
+										</a>
+									</li>
+									<li>
+										<a href="#" data-href="{ '_type': 'link' }">
+											<figure>
+												<i class="image_floating"><img src="../images/_sample/side_floating_02.jpg" alt="엔터식스 온라인 몰로 이동" onerror="this.remove();"></i>
+												<figcaption class="mm_ir-blind">엔터식스 온라인몰 이동</figcaption>
+											</figure>
+										</a>
+									</li>
+									<li>
+										<a href="#" data-href="{ '_type': 'link' }">
+											<figure>
+												<i class="image_floating"><img src="../images/_sample/side_floating_03.jpg" alt="엔터식스 마블 컬렉션 온라인몰 이동" onerror="this.remove();"></i>
+												<figcaption class="mm_ir-blind">엔터식스 마블 컬렉션 온라인몰 이동</figcaption>
+											</figure>
+										</a>
+									</li>
+								</ul>
+
+								<a href="#mm_app" data-href="anchor" class="mm_btn __btn_line__ btn_move-top"><span><i class="mco_up"></i>TOP</span></a>
+							</div>
+						</div>
+					</div>
+					<!--// 플로팅 배너 -->
+
+					<div class="mm_inner">
+
+						<!-- LNB -->
+						<nav class="mm_lnb">
+							<h2><span>My엔터식스</span></h2>
+							<div class="mm_lnb-menu">
+								<ul>
+									<!-- (D) 현재 페이지에는 a태그에 __on-lnb 클래스 및  title="선택됨" 추가 -->
+									<li>
+										<a href="#" class="btn_menu" data-href="{ '_type': 'link'}"><span class="mm_box-block">회원정보/포인트<i class="mco_next"></i></span></a>
+									</li>
+									<li>
+										<a href="#" class="btn_menu" data-href="{ '_type': 'link'}"><span class="mm_box-block">회원정보 수정<i class="mco_next"></i></span></a>
+									</li>
+									<li>
+										<a href="#" class="btn_menu" data-href="{ '_type': 'link'}"><span class="mm_box-block">상담내역조회<i class="mco_next"></i></span></a>
+									</li>
+									<li>
+										<a href="#" class="btn_menu __on-lnb" title="선택됨" data-href="{ '_type': 'link'}"><span class="mm_box-block">회원탈퇴<i class="mco_next"></i></span></a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+						<!-- // LNB -->
+
+						<div class="mm_page-content-inner">
+							<div class="mm_head">
+								<h3 class="mm_title"><span>회원탈퇴</span></h3>
+
+								<div class="mm_breadcrumb">
+									<p><span>HOME</span>&#62;<span>My엔터식스</span>&#62;<strong>회원탈퇴</strong></p>
+								</div>
+							</div>
+
+							<div class="m-member-withdraw">
+								<div class="m-member-withdraw-guide">
+									<h3 class="mm_heading"><span>회원탈퇴 전 꼭 읽어주세요!</span></h3>
+									<p class="text_subtitle"><span>엔터식스몰 회원탈퇴를 하시면 엔터식스 회원 약관 및 개인정보 제공, 활용에 관한 약관 동의가 모두 철회되며<br>모든 엔터식스 제휴 브랜드의 회원 서비스 및 웹사이트로부터 탈퇴됩니다</span></p>
+									<div class="mm_btngroup">
+										<div class="mm_box-inline">
+											<a href="#" data-href="{ '_type' : 'link' }" class="mm_btn __btn_xs_line_primary__"><span>서비스 이용약관 전문보기</span><i class="mco_next"></i></a>
+										</div>
+									</div>
+								</div>
+
+								<div class="mm_formbox">
+									<table>
+										<tbody>
+											<tr>
+												<th scope="row"><span>아아디</span><i class="ico_required" title="필수입력"></i></th>
+												<td>
+													<div class="mm_form-text">
+														<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+														<label>
+															<input type="text" class="textfield"><i class="bg_text"></i>
+															<span class="text_placeholder">아이디를 입력하세요</span>
+														</label>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row"><span>비밀번호</span><i class="ico_required" title="필수입력"></i></th>
+												<td>
+													<div class="mm_form-text __text_wider__">
+														<button type="button" class="btn_text-pw"><i class="mco_hide"></i><span class="mm_ir-blind">비밀번호 보기</span></button>
+														<label>
+															<input type="password" class="textfield"><i class="bg_text"></i>
+															<span class="text_placeholder">비밀번호를 입력해주세요</span>
+														</label>
+													</div>
+												</td>
+											</tr>
+                                            <tr>
+    											<th scope="row"><span>탈퇴사유</span><i class="ico_required" title="필수입력"></i></th>
+    											<td>
+    												<div class="mm_form-textarea">
+    													<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+    													<label>
+    														<textarea class="textfield"></textarea><i class="bg_text"></i>
+    														<span class="text_placeholder">탈퇴사유를 입력해주세요</span>
+    													</label>
+    												</div>
+    											</td>
+    										</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div class="mm_btngroup">
+									<div class="mm_box-inline">
+										<button type="button" class="mm_btn __btn_wide_line__"><span>취소하기</span></button>
+										<button type="button" class="mm_btn __btn_wide_darker__"><span>탈퇴하기</span></button>
+									</div>
+								</div>
+
+                                <div class="mm_formbox-attention">
+                                    <strong><i class="mco_attention-triangle"></i><span>유의사항</span></strong>
+                                    <ul>
+                                        <li>탈퇴를 원하시는 회원은 위 내용과 같이 탈퇴를 신청해 주세요</li>
+                                        <li>탈퇴처리가 되면 <span class="mm_text-primary">1개월간 회원가입이 불가능</span>하며, 멤버쉽 포인트 적립 예정 쿠폰은 모두 소멸됩니다</li>
+                                        <li>엔터식스 온라인카드만 발급 받은 회원님은 보유하고 계신 포인트 및 혜택이 자동 소멸됩니다</li>
+                                        <li>엔터식스 회원 재가입 시 신규회원으로 가입되며, 탈퇴 전의 포인트 및 혜택이 복원되지 않습니다</li>
+                                    </ul>
+                                </div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 페이지 스크립트 -->
+					<!-- <script src="../js/.js"></script> -->
+				</div>
+				<!--// 본문 -->
+			</div>
+			<!--// 내용 -->
+
+			<!-- 푸터 -->
+			<div class="mm_footer">
+				<div class="mm_footer-service">
+					<div class="mm_container mm_inner">
+						<div class="mm_box-lside">
+							<ul>
+								<li>
+									<a href="#" data-href="{ '_type': 'link' }"><span>이용약관</span></a>
+								</li>
+								<li>
+									<a href="#" data-href="{ '_type': 'link' }"><span>개인정보취급방침</span></a>
+								</li>
+								<li>
+									<a href="#" data-href="{ '_type': 'link' }"><span>이메일무단수집거부</span></a>
+								</li>
+							</ul>
+						</div>
+						<div class="mm_box-rside">
+							<div class="mm_form-select">
+								<label>
+									<select onchange="window.open(value, '_blank')">
+										<option value="">Partner Site</option>
+										<!-- (D) 파트너 사이트 연결 -->
+										<option value="http://enter6.co.kr/">엔터식스 쇼핑몰</option>
+									</select>
+									<i class="mco_form-select"></i>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mm_footer-info">
+					<div class="mm_inner">
+						<h5><span>(주) 엔터식스 패션쇼핑몰</span></h5>
+						<address>
+							<span>서울 특별시 광진구 광나루로 56길 85, 37층, 38층, 39층</span><span>대표이사:김상대</span><span>개인정보담당자:이대건</span><br>
+							<span>대표전화(본사):02.511.8588</span><span>팩스:02.511.9939</span><span>서프라이즈카드 회원관리팀:02.511.8288</span><span>사업자등록번호:120-81-45616</span>
+						</address>
+						<p class="text_copyright">&copy; (주)엔터식스 패션쇼핑몰. all rights reserved.</p>
+
+						<!-- SNS 연결 링크 -->
+						<ul>
+							<li>
+								<a href="https://www.facebook.com/enter6" data-href="{ '_type': 'link' }">
+									<i class="mco_sns-facebook"></i><span class="mm_ir-blind">facebook</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.instagram.com/enter_6/" data-href="{ '_type': 'link' }">
+									<i class="mco_sns-instagram"></i><span class="mm_ir-blind">instagram</span>
+								</a>
+							</li>
+							<li>
+								<a href="http://blog.enter6.co.kr/" data-href="{ '_type': 'link' }">
+									<i class="mco_sns-blog"></i><span class="mm_ir-blind">blog</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.youtube.com/user/enter6video/" data-href="{ '_type': 'link' }">
+									<i class="mco_sns-youtube"></i><span class="mm_ir-blind">Youtube</span>
+								</a>
+							</li>
+						</ul>
+						<!--// SNS 연결 링크 -->
+					</div>
+				</div>
+
+				<!-- 수상배너 -->
+				<div class="mm_footer-awards">
+					<div class="mm_inner">
+						<div class="mm_swiper" data-swiper="{ 'configs': { 'slidesPerView' : 8, 'loop' : false, 'autoplay': false}, 'controls': {'_isSwiperInner' : false, 'prev': '.btn_awards-prev', 'next': '.btn_awards-next'} }" >
+							<div class="mm_swiper-inner">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<figure>
+											<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_01.png'}" alt=""></i>
+											<figcaption>
+												<p class="text_awards">2014 웹어워드코리아</p>
+												<p class="text_awards">유통분야 최우수상</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="swiper-slide">
+										<figure>
+											<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_03.png'}" alt=""></i>
+											<figcaption>
+												<p class="text_awards">2016</p>
+												<p class="text_awards">우수중소기업대상</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="swiper-slide">
+										<figure>
+											<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_02.png'}" alt=""></i>
+											<figcaption>
+												<p class="text_awards">2014 대한민국</p>
+												<p class="text_awards">인터넷소통대상</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="swiper-slide">
+										<figure>
+											<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_01.png'}" alt=""></i>
+											<figcaption>
+												<p class="text_awards">2014 웹어워드코리아</p>
+												<p class="text_awards">유통분야 최우수상</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="swiper-slide">
+										<figure>
+											<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_03.png'}" alt=""></i>
+											<figcaption>
+												<p class="text_awards">2016</p>
+												<p class="text_awards">우수중소기업대상</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="swiper-slide">
+										<figure>
+											<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_02.png'}" alt=""></i>
+											<figcaption>
+												<p class="text_awards">2014 대한민국</p>
+												<p class="text_awards">인터넷소통대상</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="swiper-slide">
+										<figure>
+											<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_01.png'}" alt=""></i>
+											<figcaption>
+												<p class="text_awards">2014 웹어워드코리아</p>
+												<p class="text_awards">유통분야 최우수상</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="swiper-slide">
+										<figure>
+											<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_03.png'}" alt=""></i>
+											<figcaption>
+												<p class="text_awards">2016</p>
+												<p class="text_awards">우수중소기업대상</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="swiper-slide">
+										<figure>
+											<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_02.png'}" alt=""></i>
+											<figcaption>
+												<p class="text_awards">2014 대한민국</p>
+												<p class="text_awards">인터넷소통대상</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="swiper-slide">
+										<figure>
+											<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_01.png'}" alt=""></i>
+											<figcaption>
+												<p class="text_awards">2014 웹어워드코리아</p>
+												<p class="text_awards">유통분야 최우수상</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="swiper-slide">
+										<figure>
+											<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_03.png'}" alt=""></i>
+											<figcaption>
+												<p class="text_awards">2016</p>
+												<p class="text_awards">우수중소기업대상</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="swiper-slide">
+										<figure>
+											<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_02.png'}" alt=""></i>
+											<figcaption>
+												<p class="text_awards">2014 대한민국</p>
+												<p class="text_awards">인터넷소통대상</p>
+											</figcaption>
+										</figure>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="swiper-control">
+							<div class="mm_box-inline">
+								<button type="button" class="btn_awards-prev"><i class="mco_control __prev__"></i><span class="mm_ir-blind">이전</span></button>
+								<button type="button" class="btn_awards-next"><i class="mco_control __next__"></i><span class="mm_ir-blind">다음</span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--// 수상배너 -->
+			</div>
+			<!--// 헤더 -->
+        </div>
+        <!--// 화면 -->
+    </div>
+
+	<!-- 페이지 공통 스크립트 -->
+	<script src="../js/app_page-common.js"></script>
+</body>
+</html>

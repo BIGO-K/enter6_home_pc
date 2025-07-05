@@ -1,0 +1,152 @@
+@charset 'utf-8';
+
+/**
+** 컴포넌트 코어
+** - 텍스트, 알림, 대체텍스트, 타이틀
+**/
+
+/// 기본형
+.mm_text {
+	/// 강조
+	&-primary {
+		color: $color-primary-base !important;
+
+		&-light {
+			color: $color-primary-light !important;
+		}
+
+		&-dark {
+			color: $color-primary-dark !important;
+		}
+	}
+	&-secondary {
+		color: $color-secondary-base !important;
+	}
+	&-tertiary {
+		color: $color-tertiary-base !important;
+	}
+	///-- 강조
+
+	/// 상태(긍정/부정)
+	&-positive {
+		color: $color-positive-base;
+	}
+	&-negative {
+		color: $color-negative-base;
+	}
+	///-- 상태(긍정/부정)
+
+	/// 없음
+	&-none {
+		padding: 87px 0 !important;
+		font-size: 14px;
+		line-height: 17px;
+		text-align: center;
+
+		small {
+			display: inline-block;
+			margin-top: 8px;
+			color: #808080;
+			font-size: 14px;
+			line-height: 20px;
+		}
+	}
+	///-- 없음
+
+	&-grade {
+		&-s {
+			color: $color-grade-s;
+		}
+		&-u {
+			color: $color-grade-u;
+		}
+	}
+
+	/// 상단 안내
+	&-guide {
+		// padding: 16px 14px;
+		// border-bottom: 1px solid #b9b9b9;
+		// color: #4d556a;
+		// font-size: 14px;
+		// line-height: 18px;
+	}
+	///-- 상단 안내
+
+	/// 말줄임
+	&-ellipsis {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		word-break: break-all;
+
+		br {
+			display: none;
+		}
+	}
+	///-- 말줄임
+
+	/// 쪼개기
+	&-break {
+		word-break: break-all;
+	}
+	///-- 쪼개기
+
+	/// 별점
+	&-star {
+		font-size: 14px;
+	}
+	///-- 별점
+}
+///-- 기본형
+
+/// 대체텍스트
+.mm_ir {
+	&-blind {
+		@include text-ir(blind);
+	}
+
+	&-indent {
+		@include text-ir();
+	}
+
+	&-wa {
+		@include text-ir(wa);
+	}
+}
+///-- 대체텍스트
+
+/// 페이지제목
+.mm_title {
+	font-weight: 500;
+	font-size: 26px;
+	letter-spacing: -1px;
+}
+///-- 페이지제목
+
+/// 컨텐츠제목
+.mm_heading {
+	height: 42px;
+	color: $color-text-base;
+	font-size: 26px;
+	font-weight: 300;
+	line-height: 42px;
+	letter-spacing: -1px;
+	text-align: center;
+
+	[class*="__ie1"] & { line-height: 50px; }
+
+	strong {
+		font-weight: 700;
+	}
+}
+///-- 컨텐츠제목
+
+/// 소제목
+.mm_strapline {
+	// padding: 46px 0 30px;
+	font-size: 22px;
+	text-align: center;
+
+	[class*="__ie1"] & { margin-bottom: -6px; line-height: 28px; }
+}
+///-- 소제목

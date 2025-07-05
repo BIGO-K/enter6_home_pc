@@ -1,0 +1,171 @@
+@charset 'utf-8';
+
+/**
+** 팝업
+**/
+
+/// 팝업 영역
+.mm_popup {
+	overflow: hidden;
+	position: fixed;// mobile: absolute, pc: fixed
+	z-index: $index-popup;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	@include opacity(0, none);
+	@include transition(opacity 0s $time-fast);
+
+	// 팝업 열림
+	.__popup & {
+		@include opacity(1, auto);
+		@include transition(opacity 0s ease-in);
+
+		.mm_popup-dim {
+			@include opacity(1);
+		}
+	}
+
+	&-dim {
+		width: 100%;
+		height: 100%;
+		background: rgba(#000, 0.4);
+		@include opacity(0);
+		@include transition(opacity $time-fast);
+	}
+
+	&-items {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+}
+///-- 팝업 영역
+
+/// 팝업 요소
+.mm_popup-item {
+	@include flex-container(column);
+	position: absolute;
+	top: $height-header-base;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: 4px solid $color-primary-base;
+	background: #fff;
+	@include opacity(0, none);
+	@include transition(opacity 0s $time-base, transform $time-base);
+
+	// 현재창
+	&.__popup-on {
+		@include opacity(1, auto);
+		@include transition(transform $time-base);
+	}
+
+	// 노출모션
+	&.__popup-motion-up {
+		@include transform(translateY(100%));
+
+		&.__popup-on {
+			@include transform(translateY(0));
+		}
+	}
+	&.__popup-motion-down {
+		@include transform(translateY(-100%));
+
+		&.__popup-on {
+			@include transform(translateY(0));
+		}
+	}
+	&.__popup-motion-left {
+		@include transform(translateX(100%));
+
+		&.__popup-on {
+			@include transform(translateX(0));
+		}
+	}
+	&.__popup-motion-right {
+		@include transform(translateX(-100%));
+
+		&.__popup-on {
+			@include transform(translateX(0));
+		}
+	}
+
+	iframe {
+		@include prefix(flex, 1, webkit ms);
+		position: relative;
+		min-width: 100%;
+	}
+
+	> .mm_loading {
+		z-index: 1;
+	}
+}
+///-- 팝업 요소
+
+/// 팝업 닫기
+.btn_popup-close {
+	position: absolute;
+	z-index: 1;
+	top: 11px;
+	right: (17px - 30px);
+	width: 57px;
+	height: 57px;
+	color: #303952;
+	font-size: 30px;
+	line-height: 57px;
+	text-align: center;
+
+	.mm_popup & {
+		right: 17px;
+	}
+}
+///-- 팝업 닫기
+
+/// 외부링크
+.m-popup-external {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	iframe {
+		height: 100%;
+	}
+}
+///-- 외부링크
+
+/// 팝업 페이지
+.mm_app[class*="_popup_"] {
+	.mm_view {
+		padding-top: 70px;
+	}
+
+	.mm_header {
+		right: 30px;
+		left: 30px;
+		padding: 28px 2px 0;
+		height: 70px;
+		border-bottom: 2px solid #303952;
+		line-height: 1;
+	}
+
+	.mm_page-content {
+		padding: 0 30px 100px;
+	}
+
+	.mm_list {
+		> .mm_scroller {
+			max-height: 350px;
+
+			&[class*="_x_"] {
+				max-height: none;
+			}
+		}
+	}
+}
+///-- 팝업 페이지

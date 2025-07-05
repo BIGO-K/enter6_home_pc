@@ -1,0 +1,133 @@
+@charset 'utf-8';
+
+/**
+** My엔터식스
+**/
+
+
+.mm_page-content-inner {
+
+}
+
+/// 회원정보 입력폼
+.m-member-password-confirm {
+    padding: 59px 0 66px 0;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    background: #f9f9f9;
+    text-align: center;
+
+    .mm_heading {
+        font-size: 22px;
+        line-height: 38px;
+    }
+
+    .text_subtitle {
+        margin-bottom: 42px;
+        color: #7b7b7b;
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .mm_form-text {
+        margin: 10px auto 0;
+
+        label {
+            padding: 12px 0;
+
+            input {
+                position: relative;
+                padding-left: 42px;
+                padding-top: 1px
+            }
+
+            [class*="mco_"] {
+                position: absolute;
+                z-index: 1;
+                top: 15px;
+                left: 15px;
+            }
+            .mco_login-id {
+                font-size: 13px;
+            }
+
+            .mco_login-password {
+                font-size: 17px;
+            }
+
+            .text_placeholder {
+                padding-left: 42px;
+                line-height: 46px;
+            }
+        }
+
+
+    }
+
+    .mm_btngroup {
+        .mm_btn {
+            width: 200px;
+        }
+    }
+}
+
+.m-member-profile {
+    table {
+        th {
+            > span {
+                > span {
+                    color: #999;
+                }
+            }
+        }
+
+        td {
+            .m-profile-email {
+                .text_tilde {
+                    width: 25px;
+                    font-size: 14px;
+                }
+            }
+
+            .mm_text-primary {
+                font-size: 14px;
+            }
+
+            .mm_formbox-linked {
+                .mco_hyphen {
+                    color: #cfcfcf;
+                    line-height: 36px;
+                }
+            }
+        }
+    }
+
+    .mm_btngroup {
+        margin-top: 28px;
+
+        .mm_btn {
+            width: 180px;
+        }
+    }
+}
+///-- 회원정보 입력폼
+
+// 상담내역조회
+.m-member-inquiry {
+    &-list {
+        .mm_btngroup {
+            .mm_btn {
+                width: 200px;
+            }
+        }
+    }
+
+    &-detail {
+        .mm_btngroup {
+            .mm_btn {
+                width: 200px;
+            }
+        }
+    }
+}
+//-- 상담내역조회

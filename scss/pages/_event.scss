@@ -1,0 +1,963 @@
+@charset 'utf-8';
+
+/**
+** 이벤트/프로모션
+**/
+
+.m-event {
+
+    .text_placeholder {
+        &[class*="__text_full__"] {
+            [class*="__ie1"] & { padding-top: 10px; }
+        }
+    }
+}
+/// 전관EVENT
+.m-event-list {
+    ul {
+        li {
+            position: relative;
+            margin-top: 5px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            figure {
+                figcaption {
+                    position: absolute;
+                    top: 118px;
+                    left: 460px;
+                    padding-right: 15px;
+                    max-width: 450px;
+                    color: #000;
+                    letter-spacing: -1px;
+
+                    .text_title {
+                        overflow: hidden;
+                        margin-left: -3px;
+                        max-height: 84px;
+
+                        > p {
+                            font-size: 40px;
+                            font-weight: 500;
+                            line-height: 42px;
+
+                            [class*="__ie1"] & { height: 42px; line-height: 52px; }
+                        }
+                    }
+
+                    .text_subtitle {
+                        overflow: hidden;
+                        margin-left: -2px;
+                        max-height: 51px;
+                        margin-top: 18px;
+
+                        .__edge & { margin-top: 15px; }
+
+                        > p {
+                            font-size: 18px;
+                            font-weight: 300;
+                            line-height: 26px;
+
+                            [class*="__ie1"] & { height: 26px; line-height: 30px; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+///-- 전관EVENT
+
+.m-event-stamp {
+
+    // 스탬프 이벤트
+    .mm_list {
+        margin: 0;
+
+        &-head {
+            padding-bottom: 16px;
+
+            .mm_form-select {
+                label {
+                    border: 5px solid $color-primary-base;
+
+                    select {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 34px;
+
+                        [class*="__ie1"] & {padding-top: 6px;}
+
+                        .__edge & {padding: 0 30px 0 4px;}
+                    }
+
+                    .mco_form-select {
+                        top: 9px;
+                        color: $color-primary-base;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .btn_more {
+            position: absolute;
+            top: 17px;
+            right: 0;
+            font-size: 17px;
+            font-weight: 300;
+        }
+
+        > ul {
+            margin-top: -16px;
+
+            li {
+                position: relative;
+                float: left;
+                margin: 16px 0 0 17px;
+                width: 291px;
+                height: 408px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:nth-child(3n + 4) {
+                    margin-left: 0;
+                }
+
+                .mm_list-none {
+                    padding-top: 213px;
+                    height: 100%;
+                    border: 1px solid #d5d5d5;
+                    background: url('../images/common/event_none.jpg') no-repeat;
+                    color: #606060;
+                    font-size: 16px;
+                    line-height: 23px;
+                    text-align: center;
+
+                    [class*="__ie1"] & { padding-top: 215px; }
+                }
+
+                .image_eventstamp {
+                    overflow: hidden;
+                    width: 291px;
+                    height: 291px;
+
+                    &.mm_image-none {
+                        border: 1px solid #d5d5d5;
+                        border-bottom: 0;
+                    }
+                }
+
+                figcaption {
+                    position: relative;
+                    padding: 22px 18px 31px;
+                    width: 291px;
+                    height: 117px;
+                    border: 1px solid #d5d5d5;
+
+                    .ico_branch {
+                        position: absolute;
+                        top: -13px;
+                        left: 19px;
+                        overflow: hidden;
+                        padding: 0 8px;
+                        height: 26px;
+                        color: #fff;
+                        font-size: 12px;
+                        font-weight: 500;
+                        line-height: 26px;
+
+                        &.ico_branch {
+                            background: #000;
+                        }
+
+                        [class*="__ie1"] & { line-height: 30px; }
+                    }
+
+                    > P {
+                        &.text_title {
+                            overflow: hidden;
+                            height: 23px;
+                            font-size: 18px;
+                            line-height: 23px;
+
+                            [class*="__ie1"] & { line-height: 26px; }
+
+                            .__edge & { line-height: 21px; }
+                        }
+
+                        &.text_period {
+                            position: absolute;
+                            left: 18px;
+                            bottom: 19px;
+                            color: #54534c;
+                            font-size: 12px;
+
+                            [class*="__ie1"] & { bottom: 17px; }
+                        }
+                    }
+                }
+
+                .ico_eventstamp {
+                    position: absolute;
+                    right: 0;
+
+                    span {
+                        display: block;
+                        width: 70px;
+                        height: 70px;
+                        color: #fff;
+                        font-size: 17px;
+                        line-height: 70px;
+                        text-align: center;
+
+                        [class*="__ie1"] & { line-height: 74px; }
+                    }
+                }
+
+                .__join {
+                    span {
+                        background-color: $color-primary-base;
+                    }
+                }
+
+                .__notjoin {
+                    span {
+                        background-color: #606060;
+                    }
+                }
+
+                .__close {
+                    z-index: 1;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0,0.5);
+
+                    span {
+                        float: right;
+                        background-color: #000;
+                    }
+                }
+            }
+        }
+    }
+    //-- 스탬프이벤트
+
+    // 스탬프이벤트 상세페이지
+    .mm_board {
+        .mm_board-title {
+            padding: 11px 210px 11px 0;
+
+            h4 {
+                overflow: hidden;
+                height: 26px;
+                line-height: 30px;
+
+                [class*="__ie1"] & { line-height: 34px; }
+
+                i {
+                    overflow: hidden;
+                    float: left;
+                    padding: 0 8px;
+                    height: 26px;
+                    color: #fff;
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 26px;
+
+                    &.ico_branch {
+                        background: #000;
+                        margin-right: 6px;
+                    }
+
+                    [class*="__ie1"] & { line-height: 30px; }
+                }
+            }
+        }
+
+        &-content {
+            position: relative;
+            padding: 0;
+        }
+    }
+
+    &-detail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0 42px 50px 38px;
+        height: 902px;
+        font-size: inherit;
+        line-height: inherit;
+        text-align: center;
+
+        .m--detail-head {
+            padding-top: 62px;
+            height: 352px;
+
+            .text_event-branch {
+                display: inline-block;
+                width: 320px;
+                border-bottom: 1px solid;
+                font-size: 24px;
+                font-weight: 300;
+                line-height: 53px;
+
+                [class*="__ie1"] & { height: 54px; line-height: 57px;}
+            }
+
+            h4 {
+                margin-top: 38px;
+
+                [class*="__ie1"] & { margin-top: 43px; }
+
+                strong {
+                    display: block;
+                    font-size: 50px;
+                    line-height: 58px;
+                }
+            }
+
+            .text_event-date {
+                margin-top: 6px;
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 49px;
+
+                [class*="__ie1"] & { margin-top: 1px;}
+            }
+        }
+
+        .m--detail-stampbox {
+            position: relative;
+            width: 557px;
+            height: 500px;
+
+            &-amount {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 50px 45px 0 49px;
+
+                ul {
+                    li {
+                        display: inline-block;
+                        margin: 0 18px 21px 0;
+                        width: 141px;
+
+                        &:nth-child(3n) {
+                            margin-right: 0;
+                        }
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                &[class*="-3set"] {
+                    li {
+                        margin: 0 109px 0 0;
+                        width: 176px;
+
+                        &:nth-child(2n) {
+                            margin-right: 0;
+                        }
+
+                        &:last-child {
+                            margin-top: -50px;
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                &[class*="-2set"] {
+                    top: 60px;
+
+                    li {
+                        margin: 0 18px 0 0;
+                        width: 183px;
+                    }
+                }
+            }
+
+            .btn_join-event {
+                overflow: visible;
+                position: absolute;
+                left: 50%;
+                bottom: 44px;
+                width: 300px;
+                height: 72px;
+                border-radius: 36px;
+                background-color: #282c3a;
+                color: #b1ff7f;
+                font-size: 23px;
+                line-height: 74px;
+                @include transform(translateX(-50%));
+
+                [class*="__ie1"] & { line-height: 76px; }
+
+                &[class*="_complete_"] {
+                    color: #faff76;
+                }
+
+                &[class*="_disabled_"] {
+                    background-color: #999999;
+                    color: #c2c2c2;
+                    cursor: default;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                &:after {
+                    position: absolute;
+                    top: 18px;
+                    right: 27px;
+                    width: 70px;
+                    height: 72px;
+                    background: url("../images/_sample/stampbtn_hand.png") no-repeat center;
+                    content: "";
+                }
+            }
+        }
+    }
+
+    .mm_list-attention {
+        margin-top: 0;
+        padding: 30px 30px 24px;
+        color: #000;
+        font-weight: 300;
+        @include clearfix;
+
+        h6 {
+            position: static;
+            float: left;
+            margin-top: 0;
+            font-size: 18px;
+
+            i {
+                margin-right: 8px;
+            }
+
+            span {
+                 [class*="__ie1"] & { line-height: 23px; }
+            }
+        }
+
+        ul {
+            float: left;
+            margin-top: -2px;
+            padding-left: 35px;
+
+            li {
+                font-size: 15px;
+                line-height: 23px;
+
+                [class*="__ie1"] & { height: 23px; line-height: 26px; }
+
+                &:before {
+                    top: 0;
+                    left: -8px;
+                    content: "ㆍ";
+                }
+            }
+        }
+    }
+    //-- 스탬프 이벤트 상세페이지
+}
+.m-event-shoppingnews {
+    /// 쇼핑뉴스 리스트
+    .mm_list {
+        margin: 0;
+
+        &-head {
+            padding-bottom: 16px;
+
+            .mm_form-select {
+                label {
+                    border: 5px solid $color-primary-base;
+
+                    select {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 34px;
+
+                        [class*="__ie1"] & {padding-top: 6px;}
+
+                        .__edge & {padding: 0 30px 0 4px;}
+                    }
+
+                    .mco_form-select {
+                        top: 9px;
+                        color: $color-primary-base;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .btn_more {
+            position: absolute;
+            top: 17px;
+            right: 0;
+            font-size: 17px;
+            font-weight: 300;
+        }
+
+        > ul {
+            margin-top: -16px;
+
+            li {
+                float: left;
+                margin: 16px 0 0 17px;
+                width: 291px;
+                height: 408px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:nth-child(3n + 4) {
+                    margin-left: 0;
+                }
+
+                .mm_list-none {
+                    padding-top: 213px;
+                    height: 100%;
+                    border: 1px solid #d5d5d5;
+                    background: url('../images/common/event_none.jpg') no-repeat;
+                    color: #606060;
+                    font-size: 16px;
+                    line-height: 23px;
+                    text-align: center;
+
+                    [class*="__ie1"] & { padding-top: 215px; }
+                }
+
+                .image_shoppingnews {
+                    overflow: hidden;
+                    width: 291px;
+                    height: 291px;
+
+                    &.mm_image-none {
+                        border: 1px solid #d5d5d5;
+                        border-bottom: 0;
+                    }
+                }
+
+                figcaption {
+                    position: relative;
+                    padding: 22px 18px 31px;
+                    width: 291px;
+                    height: 117px;
+                    border: 1px solid #d5d5d5;
+
+                    .m-shoppingnews-badge {
+                        overflow: hidden;
+                        position: absolute;
+                        top: -13px;
+                        left: 19px;
+
+                        i {
+                            overflow: hidden;
+                            float: left;
+                            padding: 0 8px;
+                            height: 26px;
+                            color: #fff;
+                            font-size: 12px;
+                            font-weight: 500;
+                            line-height: 26px;
+
+                            &.ico_branch {
+                                background: #000;
+                            }
+
+                            &.ico_category {
+                                background: $color-primary-base;
+                            }
+
+                            [class*="__ie1"] & { line-height: 30px; }
+                        }
+                    }
+
+                    > P {
+                        &.text_title {
+                            overflow: hidden;
+                            height: 23px;
+                            font-size: 18px;
+                            line-height: 23px;
+
+                            [class*="__ie1"] & { line-height: 26px; }
+
+                            .__edge & { line-height: 21px; }
+                        }
+
+                        &.text_period {
+                            position: absolute;
+                            left: 18px;
+                            bottom: 19px;
+                            color: #54534c;
+                            font-size: 12px;
+
+                            [class*="__ie1"] & { bottom: 17px; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ///-- 쇼핑뉴스 리스트
+
+    /// 쇼핑뉴스 자세히보기
+    .mm_board {
+        .mm_board-title {
+            padding: 11px 210px 11px 0;
+
+            h4 {
+                overflow: hidden;
+                height: 26px;
+                line-height: 30px;
+
+                [class*="__ie1"] & { line-height: 34px; }
+
+                i {
+                    overflow: hidden;
+                    float: left;
+                    padding: 0 8px;
+                    height: 26px;
+                    color: #fff;
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 26px;
+
+                    &.ico_branch {
+                        background: #000;
+                    }
+
+                    &.ico_category {
+                        margin-right: 6px;
+                        background: $color-primary-base;
+                    }
+
+                    [class*="__ie1"] & {
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+    }
+    /// 쇼핑뉴스 자세히보기
+}
+
+/// 컬쳐 공연이벤트
+.m-event-culture {
+    /// 쇼핑뉴스 리스트
+    .mm_list {
+        margin: 0;
+
+        &-head {
+            padding-bottom: 16px;
+
+            .mm_form-select {
+                label {
+                    border: 5px solid $color-primary-base;
+
+                    select {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 34px;
+
+                        [class*="__ie1"] & {padding-top: 6px;}
+
+                        .__edge & {padding: 0 30px 0 4px;}
+                    }
+
+                    .mco_form-select {
+                        top: 9px;
+                        color: $color-primary-base;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .btn_more {
+            position: absolute;
+            top: 17px;
+            right: 0;
+            font-size: 17px;
+            font-weight: 300;
+        }
+
+        > ul {
+            margin-top: -16px;
+
+            li {
+                float: left;
+                margin: 16px 0 0 17px;
+                width: 291px;
+                height: 408px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:nth-child(3n + 4) {
+                    margin-left: 0;
+                }
+
+                .mm_list-none {
+                    padding-top: 213px;
+                    height: 100%;
+                    border: 1px solid #d5d5d5;
+                    background: url('../images/common/event_none.jpg') no-repeat;
+                    color: #606060;
+                    font-size: 16px;
+                    line-height: 23px;
+                    text-align: center;
+
+                    [class*="__ie1"] & { padding-top: 215px; }
+                }
+
+                .image_culture {
+                    overflow: hidden;
+                    width: 291px;
+                    height: 291px;
+
+                    &.mm_image-none {
+                        border: 1px solid #d5d5d5;
+                        border-bottom: 0;
+                    }
+                }
+
+                figcaption {
+                    position: relative;
+                    padding: 22px 18px 31px;
+                    width: 291px;
+                    height: 117px;
+                    border: 1px solid #d5d5d5;
+
+                    .m-culture-badge {
+                        overflow: hidden;
+                        position: absolute;
+                        top: -13px;
+                        left: 19px;
+
+                        i {
+                            overflow: hidden;
+                            float: left;
+                            padding: 0 8px;
+                            height: 26px;
+                            color: #fff;
+                            font-size: 12px;
+                            font-weight: 500;
+                            line-height: 26px;
+
+                            &.ico_branch {
+                                background: #000;
+                            }
+
+                            &.ico_category {
+                                background: $color-primary-base;
+                            }
+
+                            [class*="__ie1"] & { line-height: 30px; }
+                        }
+                    }
+
+                    > P {
+                        &.text_title {
+                            overflow: hidden;
+                            height: 23px;
+                            font-size: 18px;
+                            line-height: 23px;
+
+                            [class*="__ie1"] & { line-height: 26px; }
+
+                            .__edge & { line-height: 21px; }
+                        }
+
+                        &.text_period {
+                            position: absolute;
+                            left: 18px;
+                            bottom: 19px;
+                            color: #54534c;
+                            font-size: 12px;
+
+                            [class*="__ie1"] & { bottom: 17px; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ///-- 쇼핑뉴스 리스트
+
+    /// 쇼핑뉴스 자세히보기
+    .mm_board {
+        .mm_board-title {
+            padding: 11px 210px 11px 0;
+
+            h4 {
+                overflow: hidden;
+                height: 26px;
+                line-height: 30px;
+
+                i {
+                    overflow: hidden;
+                    float: left;
+                    padding: 0 8px;
+                    height: 26px;
+                    color: #fff;
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 26px;
+
+                    &.ico_branch {
+                        background: #000;
+                    }
+
+                    &.ico_category {
+                        margin-right: 6px;
+                        background: $color-primary-base;
+                    }
+
+                    [class*="__ie1"] & {
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+    }
+    /// 쇼핑뉴스 자세히보기
+}
+///-- 컬쳐 공연이벤트
+
+/// PR 센터
+.m-event-pr {
+    &-gallary {
+        .mm_search {
+            margin-bottom: 0;
+            text-align: center;
+
+            table {
+                td {
+                    padding-left: 0;
+                    text-align: center;
+
+                    .mm_formbox-linked {
+                        display: inline-block;
+
+                        .mm_form-select {
+                            width: 140px;
+                        }
+
+                        .mm_btn {
+                            width: 108px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mm_list {
+            ul {
+                position: relative;
+                padding: 0 53px 0 54px;
+
+                li {
+                    float: left;
+                    margin-left: 40px;
+                    padding: 42px 0 0;
+
+                    &:nth-child(3n+4),
+                    &:first-child {
+                        margin-left: 0;
+
+                        &:after {
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            width: 907px;
+                            border-top: 1px solid #dcdcdd;
+                            content: "";
+                        }
+                    }
+
+
+                }
+            }
+
+            figure {
+                .image_gallary-thumb {
+                    overflow: hidden;
+                    width: 240px;
+                    height: 182px;
+                }
+
+                figcaption {
+                    padding: 8px 0 37px;
+
+                    > p {
+                        font-size: 14px;
+                        line-height: 20px;
+
+                        [class*="__ie1"] & { height: 20px; line-height: 23px; }
+                    }
+
+                    .ico_branch {
+                        display: inline-block;
+                        margin-bottom: 4px;
+                        padding: 0 8px;
+                        height: 26px;
+                        border: 1px solid #dcdcdc;
+                        background: #e4e4e4;
+                        color: #424242;
+                        font-size: 12px;
+                        font-weight: 700;
+                        line-height: 26px;
+
+                        [class*="__ie1"] & { line-height: 29px; }
+                    }
+                }
+            }
+        }
+    }
+
+    &-article {
+        .mm_list-head {
+            padding-bottom: 16px;
+
+            .mm_form-select {
+                label {
+                    border: 5px solid $color-primary-base;
+
+                    select {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 34px;
+
+                        [class*="__ie1"] & {padding-top: 6px;}
+
+                        .__edge & {padding: 0 30px 0 4px;}
+                    }
+
+                    .mco_form-select {
+                        top: 9px;
+                        color: $color-primary-base;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+///-- PR 센터

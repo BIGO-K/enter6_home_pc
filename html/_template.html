@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+	<!-- 소셜태그 -->
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+	<meta property="og:site_name" content="">
+	<!--// 소셜태그 -->
+
+	<title>템플릿 - 엔터식스몰</title>
+
+	<!-- 라이브러리 css -->
+	<link rel="stylesheet" href="../css/libs/fontello-custom.css">
+	<link rel="stylesheet" href="../css/libs/swiper-4.3.3.min.css">
+	<link rel="stylesheet" href="../css/libs/pikaday.css">
+	<link rel="stylesheet" href="../css/libs/overlayscrollbars-1.5.1.min.css">
+
+	<!-- 페이지 css -->
+	<!-- (D) 폰트는 webfontloader를 사용하여 app_page-common.js에서 적용 -->
+	<link class="link_font" rel="stylesheet" resource="../css/fonts.css">
+    <link rel="stylesheet" href="../css/app.css">
+
+	<!-- (D) 스크립트(폴리필, 라이브러리)는 요청을 줄이기 위해 combind + minify를 적용해주세요. -->
+	<!-- 폴리필 스크립트 -->
+	<script src="../js/polyfill/es6-promise.auto-4.2.4.min.js"></script>
+
+	<!-- 라이브러리 스크립트 -->
+	<!--<script src="../js/libs/webfontloader-1.6.28.min.js"></script>-->
+	<script src="../js/libs/jquery-3.3.1.slim.min.js"></script>
+	<script src="../js/libs/axios-0.18.0.min.js"></script>
+	<script src="../js/libs/underscore-1.9.1.min.js"></script>
+	<script src="../js/libs/load-image.all-2.19.0.min.js"></script>
+	<script src="../js/libs/swiper-4.3.3.min.js"></script>
+	<script src="../js/libs/tweenmax-2.0.1.min.js"></script>
+	<script src="../js/libs/moment-2.22.2.min.js"></script>
+	<script src="../js/libs/pikaday-1.6.1.min.js"></script>
+	<script src="../js/libs/overlayscrollbars-1.5.1.min.js"></script>
+
+	<!-- 공통 스크립트 -->
+    <script src="../js/app_common.js"></script>
+
+	<!-- (D) 페이지 공통 스크립트는 body 하단, 전용 스크립트는 .mm_page-content 하단에 넣어주세요. -->
+</head>
+<body>
+    <div id="mm_app" class="mm_app">
+        <!-- 스킵 -->
+		<nav class="mm_skip">
+			<ul>
+				<li><a href="#mm_body" data-href="anchor">본문바로가기</a></li>
+			</ul>
+		</nav>
+		<!-- 스킵 -->
+
+        <!-- 화면 -->
+		<div class="mm_view">
+			<!-- 헤더 -->
+			<div class="mm_header">
+				<div class="mm_header-util">
+					<div class="mm_container mm_inner">
+						<div class="mm_box-rside">
+							<ul>
+								<!-- <li>
+									<a href="#" data-href="{ '_type': 'link' }" class="btn_login"><span><i class="mco_login"></i>로그인</span></a>
+								</li> -->
+								<li>
+									<a href="#" class="btn_logout"><span><i class="mco_logout"></i>로그아웃</span></a>
+								</li>
+								<li>
+									<a href="#" data-href="{ '_type': 'link' }" class="btn_join"><span><i class="mco_join"></i>My엔터식스</span></a>
+								</li>
+								<li>
+									<div class="mm_form-select __select_sm__">
+										<label>
+											<select>
+												<option value="">Language</option>
+											</select>
+											<i class="mco_dropdown"></i>
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="mm_header-title">
+					<h1><a href="#" data-href="{ '_type': 'link' }"><span class="mm_ir-blind">엔터식스</span></a></h1>
+				</div>
+
+				<!-- GNB -->
+				<div class="mm_gnb">
+					<div class="mm_inner">
+						<ul>
+							<li>
+								<h5><span>점별안내</span></h5>
+								<div class="mm_gnb-sub">
+									<ul>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>강변테크노마트점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>왕십리역점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>동탄 메타폴리스점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>파크에비뉴한양대점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>상봉점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>강남점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>천호역점</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>안양점(예정)</span></a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<h5><span>이벤트/프로모션</span></h5>
+								<div class="mm_gnb-sub">
+									<ul>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>전관 EVENT</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>스탬프 이벤트</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>쇼핑뉴스</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>컬쳐&#38;공연</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>PR센터</span></a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<h5><span>My쿠폰</span></h5>
+								<div class="mm_gnb-sub">
+									<ul>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>MY쿠폰</span></a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<h5><span>혜택</span></h5>
+								<div class="mm_gnb-sub">
+									<ul>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>서프라이즈 카드란</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>회원등급 혜택</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>상품교환권</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>제휴상품권 및 카드</span></a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<h5><span>E-고객센터</span></h5>
+								<div class="mm_gnb-sub">
+									<ul>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>FAQ</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>고객의소리</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>고객서비스 제도</span></a></li>
+										<li><a href="#" data-href="{ '_type': 'link' }"><span>공지사항</span></a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--// GNB -->
+			</div>
+			<!--// 헤더 -->
+
+			<!-- 내용 -->
+			<div id="mm_body" class="mm_page">
+				<!-- 본문 -->
+				<div class="mm_page-content">
+					<!-- (D) 실제 내용을 추가하는 부분입니다. -->
+
+					<!-- 플로팅 배너 -->
+					<div class="mm_floating">
+						<div class="mm_inner">
+							<div class="mm_floating-rside">
+								<ul>
+									<li>
+										<a href="#" data-href="{ '_type': 'link' }">
+											<figure>
+												<i class="image_floating"><img src="../images/_sample/side_floating_01.jpg" alt="서프라이즈 카드 할인 6%" onerror="this.remove();"></i>
+												<figcaption class="mm_ir-blind">서프라이즈 카드 할인 6%</figcaption>
+											</figure>
+										</a>
+									</li>
+									<li>
+										<a href="#" data-href="{ '_type': 'link' }">
+											<figure>
+												<i class="image_floating"><img src="../images/_sample/side_floating_02.jpg" alt="엔터식스 온라인 몰로 이동" onerror="this.remove();"></i>
+												<figcaption class="mm_ir-blind">엔터식스 온라인몰 이동</figcaption>
+											</figure>
+										</a>
+									</li>
+									<li>
+										<a href="#" data-href="{ '_type': 'link' }">
+											<figure>
+												<i class="image_floating"><img src="../images/_sample/side_floating_03.jpg" alt="엔터식스 마블 컬렉션 온라인몰 이동" onerror="this.remove();"></i>
+												<figcaption class="mm_ir-blind">엔터식스 마블 컬렉션 온라인몰 이동</figcaption>
+											</figure>
+										</a>
+									</li>
+								</ul>
+
+								<a href="#mm_app" data-href="anchor" class="mm_btn __btn_line__ btn_move-top"><span><i class="mco_up"></i>TOP</span></a>
+							</div>
+						</div>
+					</div>
+					<!--// 플로팅 배너 -->
+					<h3 class="mm_heading"><span>가운데 정렬 컨텐츠 제목</span></h3>
+
+					<h4 class="mm_strapline"><span>가운데 정렬 소제목</span></h4>
+					<br>
+					<p style="font-size:11px;font-weight:300; text-align:center">[Light] 회원가입을 환영합니다 이 문구는 테스트 문구입니다. 이거 보시고 도움이 되었으면 좋겠네요</p>
+
+
+					<!-- 시스템 팝업 -->
+					<section>
+						<div class="mm_inner">
+							<h2 style="padding:30px 5px 10px; font-size:16px;">- 시스템 팝업 (BOM 모달)</h2>
+							<!--
+								(D) 얼럿
+								mm.bom.alert('내용', 콜백함수, { title: '제목', args: [콜백 파라미터] });
+								콜백함수가 있으면 확인버튼을 클릭할 때 해당 함수를 실행합니다.
+								args가 있으면 콜백함수를 호출할 때 함께 전달합니다.
+								내용의 줄바꿈은 <br>입니다.
+							-->
+							<button type="button" class="mm_btn __btn_sm__" onclick="mm.bom.alert('안내안내<br>br 줄바꿈');"><span>얼럿 - 기본</span></button>
+							<br><br>
+							<button type="button" class="mm_btn __btn_sm__" onclick="mm.bom.alert('타이틀을 변경할 수 있습니다.', null, { _title: '타이틀' });return false;"><span>얼럿 - 타이틀 변경</span></button>
+							<br><br>
+							<!--
+								(D) 컨펌
+								mm.bom.confirm('내용', 콜백함수, { title: '제목', args: [콜백 파라미터] });
+								사용은 얼럿과 동일합니다.
+								콜백함수를 호출할 때 첫번째 파라미터로 확인(true)/취소(false) 값을 전달합니다.
+							-->
+							<button type="button" class="mm_btn __btn_sm_primary__" onclick="mm.bom.confirm('안내안내<br>줄바꿈', sample_callback);"><span>컨펌 - 기본</span></button>
+							<br><br>
+							<button type="button" class="mm_btn __btn_sm_primary__" onclick="mm.bom.confirm('타이틀을 변경할 수 있습니까?', sample_callback, { _title: '타이틀 변경', args: [1, 'test'] });"><span>컨펌 - 옵션적용</span></button>
+							<script>
+								function sample_callback() {
+									alert(_.values(arguments));
+								}
+							</script>
+							<br><br>
+							<!--
+								(D) 프롬프트
+								mm.bom.prompt('내용', 콜백함수, { _title: '제목', args: [콜백 파라미터], forms: [생성할 입력폼] });
+								사용은 얼럿과 동일합니다.
+								_callback 첫번째 파라미터로 form value(배열)과 확인(true)/취소(false)를 전달합니다.
+								입력폼은 옵션이 없어도 기본 값은 input:text 1종 노출입니다.
+								추가/변경할 때는 { forms: [{ type: '속성', placeholder: '내용이 없으면 삭제', value: '내용이 없으면 삭제' }] } 형식의 오브젝트를 forms 배열에 추가합니다.
+								type 값은 input 입력요소(text, tel, number, email, search, url, password, date, month, time)와 textarea, select 입니다.
+								select의 option은 options: [{ text: '텍스트', value: '값', selected: true }] 형식으로 배열에 추가합니다.
+								date, time의 노출 방식은 format: '값'으로 변경할 수 있습니다.(moment.js format 참고)
+								attrs 값이 빈 값이 아니면 폼요소에 attr을 적용합니다.({ 'data-text': JSON.stringify({ _isResize: true }).replace(/"/g, '\''), 'style': 'background:red' } 등)
+							-->
+							<button type="button" class="mm_btn __btn_sm_secondary__" onclick="mm.bom.prompt('입력하세요.', sample_callback);"><span>프롬프트 - 기본</span></button>
+							<br><br>
+							<button type="button" class="mm_btn __btn_sm_secondary__" onclick="sample_prompt();"><span>프롬프트 - 옵션적용</span></button>
+							<script>
+								function sample_prompt() {
+
+									var options = {
+										_title: '고객센터 이관처리',
+										forms: [
+											{
+												_type: 'select',
+												options: [
+													{ _text: '가나다', _value: 'select 가' },
+													{ _text: 'abcd', _value: 'select a' },
+													{ _text: '123', _value: 'select 1', _selected: true }
+												]
+											},
+											{
+												_type: 'textarea',
+												_placeholder: '고객센터로 이관하는 사유를 작성하세요.',
+												_value: 'value 내용\n줄바꿈'// textarea의 줄바꿈은 \n 입니다.
+											},
+											{
+												_type: 'text',
+												// _placeholder: '입력',
+												_value: '결과 값'
+											},
+											{
+												_type: 'password',
+												_placeholder: '비밀번호를 입력하세요'
+											},
+											{
+												_type: 'date',
+												// _placeholder: '날짜를 선택하세요.',
+												_format: 'YYYY년 MM월 DD일'
+												// _format은 moment.js 기준으로 합니다.
+											},
+											{
+												// pc에서 지원 안함 (select, text 등으로 적용)
+												_type: 'time',
+												_placeholder: '시간 (pc에서 지원 안함, select로 사용)',
+												_format: 'a hh:mm'
+											}
+										]
+									};
+									mm.bom.prompt('', sample_callback, options);
+
+								}
+							</script>
+						</div>
+					</section>
+					<!--// 시스템 팝업 -->
+
+					<!-- 섹션 -->
+					<section class="mm_section">
+						<div class="mm_inner">
+							<div class="mm_formbox">
+								<table>
+									<tbody>
+										<tr>
+											<th scope="row"><span>날짜</span><i class="ico_required" title="필수입력"></i></th>
+											<td>
+												<div class="mm_formbox-period">
+													<ul>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="dev_range-multiline">
+																<b class="mm_box-block">
+																	<span class="text_label">오늘</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="dev_range-multiline">
+																<b class="mm_box-block">
+																	<span class="text_label">1주일</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="dev_range-multiline">
+																<b class="mm_box-block">
+																	<span class="text_label">1개월</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="dev_range-multiline">
+																<b class="mm_box-block">
+																	<span class="text_label">6개월</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="dev_range-multiline">
+																<b class="mm_box-block">
+																	<span class="text_label">1년</span>
+																</b>
+															</label>
+														</li>
+													</ul>
+													<div class="mm_form-text">
+														<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+														<label>
+															<input type="text" class="textfield mm_datepicker"><i class="bg_text"></i>
+															<span class="text_placeholder">시작일</span>
+															<i class="mco_datepicker-calendar"></i>
+														</label>
+													</div>
+													<i class="text_tilde">-</i>
+													<div class="mm_form-text">
+														<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+														<label>
+															<input type="text" class="textfield mm_datepicker"><i class="bg_text"></i>
+															<span class="text_placeholder">종료일</span>
+															<i class="mco_datepicker-calendar"></i>
+														</label>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>이름</span><i class="ico_required" title="필수입력"></i></th>
+											<td>
+												<div class="mm_form-text">
+													<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+													<label>
+														<input type="text" class="textfield"><i class="bg_text"></i>
+														<span class="text_placeholder">이름을 입력하세요</span>
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>생년월일</span><i class="ico_required" title="필수입력"></i></th>
+											<td>
+												<div class="mm_formbox-linked">
+													<div class="mm_formbox-capsule">
+														<div class="mm_form-text __text_shorter__">
+															<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+															<label>
+																<input type="text" class="textfield"><i class="bg_text"></i>
+																<span class="text_placeholder mm_ir-blind">생년월일 년</span>
+															</label>
+														</div>
+														<span class="text_unit">년</span>
+													</div>
+													<div class="mm_formbox-capsule">
+														<div class="mm_form-text __text_shorter__">
+															<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+															<label>
+																<input type="text" class="textfield"><i class="bg_text"></i>
+																<span class="text_placeholder mm_ir-blind">생년월일 월</span>
+															</label>
+														</div>
+														<span class="text_unit">월</span>
+													</div>
+													<div class="mm_formbox-capsule">
+														<div class="mm_form-text __text_shorter__">
+															<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+															<label>
+																<input type="text" class="textfield"><i class="bg_text"></i>
+																<span class="text_placeholder mm_ir-blind">생년월일 일</span>
+															</label>
+														</div>
+														<span class="text_unit">일</span>
+													</div>
+													<div class="mm_radio-list">
+														<ul>
+															<li>
+																<label class="mm_form-radio">
+																	<input type="radio" name="member_solar_calendar" checked>
+																	<b class="mm_box-block">
+																		<i class="mco_form-radio"></i>
+																		<span class="text_label">양력</span>
+																	</b>
+																</label>
+															</li>
+															<li>
+																<label class="mm_form-radio">
+																	<input type="radio" name="member_solar_calendar">
+																	<b class="mm_box-block">
+																		<i class="mco_form-radio"></i>
+																		<span class="text_label">음력</span>
+																	</b>
+																</label>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>내외국인</span><i class="ico_required" title="필수입력"></i></th>
+											<td>
+												<div class="mm_radio-list">
+													<ul>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="member_foreign" checked>
+																<b class="mm_box-block">
+																	<i class="mco_form-radio"></i>
+																	<span class="text_label">내국인</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="member_foreign">
+																<b class="mm_box-block">
+																	<i class="mco_form-radio"></i>
+																	<span class="text_label">외국인</span>
+																</b>
+															</label>
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<!-- (D) 카드번호 노출하지 않을경우 아래 tr 삭제 -->
+										<tr>
+											<th scope="row"><span>카드번호</span></th>
+											<td>
+												<div class="mm_form-text __text_wider__">
+													<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+													<label>
+														<input type="text" class="textfield" value="5272-8974-3487-3146" disabled><i class="bg_text"></i>
+														<span class="text_placeholder mm_ir-blind">휴대폰 번호 가운데자리</span>
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>휴대폰</span><i class="ico_required" title="필수입력"></i></th>
+											<td>
+												<div class="mm_formbox-linked">
+													<div class="mm_form-select __select_shorter__">
+														<label>
+															<select>
+																<option value="">선택</option>
+																<option value="">010</option>
+															</select>
+															<i class="mco_form-select"></i>
+														</label>
+													</div>
+													<i class="mco_hyphen"></i>
+													<div class="mm_form-text __text_shorter__">
+														<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+														<label>
+															<input type="text" class="textfield"><i class="bg_text"></i>
+															<span class="text_placeholder mm_ir-blind">휴대폰 번호 가운데자리</span>
+														</label>
+													</div>
+													<i class="mco_hyphen"></i>
+													<div class="mm_form-text __text_shorter__">
+														<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+														<label>
+															<input type="text" class="textfield"><i class="bg_text"></i>
+															<span class="text_placeholder mm_ir-blind">휴대폰 번호 뒷자리</span>
+														</label>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>아이디</span><i class="ico_required" title="필수입력"></i></th>
+											<td>
+												<div class="mm_formbox-linked">
+													<div class="mm_form-text">
+														<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+														<label>
+															<input type="text" class="textfield"><i class="bg_text"></i>
+															<span class="text_placeholder">6 ~ 20자리의 영어, 숫자 조합</span>
+														</label>
+													</div>
+													<button type="button" class="mm_btn __btn_xs_darker__"><span>중복확인</span></button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>비밀번호</span><i class="ico_required" title="필수입력"></i></th>
+											<td>
+												<div class="mm_form-text __text_wider__">
+													<button type="button" class="btn_text-pw"><i class="mco_hide"></i><span class="mm_ir-blind">비밀번호 보기</span></button>
+													<label>
+														<input type="password" class="textfield"><i class="bg_text"></i>
+														<span class="text_placeholder">영어,숫자,특수문자가 2가지 이상 조합된 9~20자리</span>
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>비밀번호 확인</span><i class="ico_required" title="필수입력"></i></th>
+											<td>
+												<div class="mm_form-text __text_wider__">
+													<button type="button" class="btn_text-pw"><i class="mco_hide"></i><span class="mm_ir-blind">비밀번호 보기</span></button>
+													<label>
+														<input type="password" class="textfield"><i class="bg_text"></i>
+														<span class="text_placeholder">비밀번호 확인을 위해 다시 한 번 입력해 주세요</span>
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>성별</span><i class="ico_required" title="필수입력"></i></th>
+											<td>
+												<div class="mm_radio-list">
+													<ul>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="radio_gender" checked>
+																<b class="mm_box-block">
+																	<i class="mco_form-radio"></i>
+																	<span class="text_label">여자</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="radio_gender">
+																<b class="mm_box-block">
+																	<i class="mco_form-radio"></i>
+																	<span class="text_label">남자</span>
+																</b>
+															</label>
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>이메일</span><i class="ico_required" title="필수입력"></i></th>
+											<td>
+												<div class="mm_formbox-linked m-profile-email">
+													<div class="mm_form-text __text_short__">
+														<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+														<label>
+															<input type="text" class="textfield"><i class="bg_text"></i>
+															<span class="text_placeholder mm_ir-blind">이메일 주소 앞자리</span>
+														</label>
+													</div>
+													<i class="text_tilde">&#64;</i>
+													<div class="mm_form-text __text_short__">
+														<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+														<label>
+															<input type="text" class="textfield"><i class="bg_text"></i>
+															<span class="text_placeholder mm_ir-blind">이메일 주소 뒷자리</span>
+														</label>
+													</div>
+													<div class="mm_form-select __select_short__">
+														<label>
+															<select>
+																<option value="">직접 입력</option>
+																<option value="">naver.com</option>
+															</select>
+															<i class="mco_form-select"></i>
+														</label>
+													</div>
+												</div>
+												<div class="mm_formbox-attention">
+													<ul>
+														<li>정확한 정보를 입력하지 않으시면 주문, 결제, 이벤트, 아이디/비밀번호 찾기 등 정확한 정보를 받지 못하실 수 있습니다</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>마케팅 정보<br>수신동의 <span>(선택)</span></span></th>
+											<td>
+												<div class="mm_check-list">
+													<ul>
+														<li>
+															<label class="mm_form-check">
+																<input type="checkbox" name="dev_check_power">
+																<b class="mm_box-block">
+																	<i class="mco_form-check"></i>
+																	<span class="text_label">SMS</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-check">
+																<input type="checkbox" name="dev_check_power">
+																<b class="mm_box-block">
+																	<i class="mco_form-check"></i>
+																	<span class="text_label">이메일</span>
+																</b>
+															</label>
+														</li>
+													</ul>
+												</div>
+												<div class="mm_formbox-attention">
+													<ul>
+														<li>엔터식스몰에서 제공되는 다양한 이벤트, 할인정보, 공지사항 등을 받아보실 수 있습니다</li>
+														<li>결제, 교환, 환불 등의 주문거래 관련 SMS, 이메일은 수신동의 여부와 상관없이 발송됩니다</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>주소</span><i class="ico_required" title="필수입력"></i></th>
+											<td>
+												<div class="mm_formbox-address">
+													<div class="mm_formbox-address-postcode">
+														<div class="mm_form-text">
+															<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+															<label>
+																<input type="text" class="textfield" readonly><i class="bg_text"></i>
+																<span class="text_placeholder mm_ir-blind">우편번호</span>
+															</label>
+														</div>
+														<a href="_modal_postcode.html" class="mm_btn __btn_xs_darker__ btn_postcode" data-href="{ '_type': 'modal' }"><span>우편번호 찾기</span></a>
+													</div>
+													<div class="mm_form-text __text_full__">
+														<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+														<label>
+															<input type="text" class="textfield" readonly><i class="bg_text"></i>
+															<span class="text_placeholder mm_ir-blind">검색주소</span>
+														</label>
+													</div>
+													<div class="mm_form-text __text_full__">
+														<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+														<label>
+															<input type="text" class="textfield"><i class="bg_text"></i>
+															<span class="text_placeholder mm_ir-blind">상세주소</span>
+														</label>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>단골지점</span></th>
+											<td>
+												<div class="mm_radio-list">
+													<ul>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="radio_branch-custom" checked>
+																<b class="mm_box-block">
+																	<i class="mco_form-radio"></i>
+																	<span class="text_label">천호역점</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="radio_branch-custom">
+																<b class="mm_box-block">
+																	<i class="mco_form-radio"></i>
+																	<span class="text_label">강남점</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="radio_branch-custom">
+																<b class="mm_box-block">
+																	<i class="mco_form-radio"></i>
+																	<span class="text_label">파크에비뉴 한양대점</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="radio_branch-custom">
+																<b class="mm_box-block">
+																	<i class="mco_form-radio"></i>
+																	<span class="text_label">상봉점</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="radio_branch-custom">
+																<b class="mm_box-block">
+																	<i class="mco_form-radio"></i>
+																	<span class="text_label">강변테크노마트점</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="radio_branch-custom">
+																<b class="mm_box-block">
+																	<i class="mco_form-radio"></i>
+																	<span class="text_label">동탄 메타폴리스점</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="radio_branch-custom">
+																<b class="mm_box-block">
+																	<i class="mco_form-radio"></i>
+																	<span class="text_label">왕십리역점</span>
+																</b>
+															</label>
+														</li>
+														<li>
+															<label class="mm_form-radio">
+																<input type="radio" name="radio_branch-custom">
+																<b class="mm_box-block">
+																	<i class="mco_form-radio"></i>
+																	<span class="text_label">안양점(추가예정)</span>
+																</b>
+															</label>
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section>
+					<!--// 섹션 -->
+
+					<div class="mm_btngroup">
+						<div class="mm_box-inline">
+							<button type="button" class="mm_btn __btn_wide_line__"><span>페이지 최하단 버튼</span></button>
+							<button type="button" class="mm_btn __btn_wide_primary__"><span>저장하기</span></button>
+						</div>
+					</div>
+
+					<!-- 페이지하단(서브밋) -->
+					<div class="mm_foot">
+						<div class="mm_btngroup">
+							<div class="mm_box-inline">
+								<button type="button" class="mm_btn __btn_lg__"><span>페이지 최하단 버튼</span></button>
+								<button type="button" class="mm_btn __btn_lg_secondary__"><span>저장하기</span></button>
+							</div>
+						</div>
+					</div>
+					<!--// 페이지하단(서브밋) -->
+
+					<section>
+						<div class="mm_inner">
+							<h2 style="padding:30px 5px 10px; font-size:16px;">- 게시판형식 리스트</h2>
+							<div class="mm_board-list">
+								<table>
+									<colgroup>
+										<col style="width:80px">
+										<col style="width:110px">
+										<col>
+										<col style="width:180px">
+										<col style="width:190px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col"><span>NO</span></th>
+											<th scope="col"><span>문의유형</span></th>
+											<th scope="col"><span>문의제목</span></th>
+											<th scope="col"><span>문의일시</span></th>
+											<th scope="col"><span>답변여부</span></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><span>5</span></td>
+											<td><span>지점문의</span></td>
+											<td><a href="#" data-href="{ '_type': 'link' }"><span>엔터식스 포인트는 어디에서 확인할 수 있나요????? 엔터식스 포인트는 어디에서 확인할 수 있나요????? 엔터식스 포인트는 어디에서 확인할 수 있나요?????</span></a></td>
+											<td><span>2018.10.08 15:00:00</span></td>
+											<td><span>답변대기중</span></td>
+										</tr>
+										<tr>
+											<td><span>4</span></td>
+											<td><span>지점문의</span></td>
+											<td><a href="#" data-href="{ '_type': 'link' }"><p>엔터식스 포인트는 어디에서 확인할 수 있나요?????</p></a></td>
+											<td><span>2018.10.08 15:00:00</span></td>
+											<td><span>답변대기중</span></td>
+										</tr>
+										<tr>
+											<td><span>3</span></td>
+											<td><span>지점문의</span></td>
+											<td><a href="#" data-href="{ '_type': 'link' }"><p>파크에비뉴 엔터식스 한양대점 메두사홀 대관문의</p></a></td>
+											<td><span>2018.10.08 17:00:00</span></td>
+											<td><span>답변대기중</span></td>
+										</tr>
+										<tr>
+											<td><span>2</span></td>
+											<td><span>지점문의</span></td>
+											<td><a href="#" data-href="{ '_type': 'link' }"><p>안양점은 언제 오픈되나요?</p></a></td>
+											<td><span>2018.10.08 17:00:00</span></td>
+											<td><span>답변대기중</span></td>
+										</tr>
+										<tr>
+											<td><span>1</span></td>
+											<td><span>지점문의</span></td>
+											<td><a href="#" data-href="{ '_type': 'link' }"><p>안양점은 언제 오픈되나요?</p></a></td>
+											<td><span>2018.10.08 17:00:00</span></td>
+											<td><span>2018.06.01 09:30:22</span></td>
+										</tr>
+									</tbody>
+								</table>
+
+								<!-- 페이지네이션 -->
+								<div class="mm_pagination">
+									<div class="mm_box-inline">
+										<ol>
+											<li><a href="#" class="__page-on" title="선택됨"><span>1</span></a></li>
+											<li><a href="#"><span>2</span></a></li>
+											<li><a href="#"><span>3</span></a></li>
+											<li><a href="#"><span>4</span></a></li>
+											<li><a href="#"><span>5</span></a></li>
+										</ol>
+										<button type="button" class="btn_control-first" onclick="mm.link('')" disabled><i class="mco_page-first"></i><span class="mm_ir-blind">처음</span></button>
+										<button type="button" class="btn_control-prev" onclick="mm.link('')" disabled><i class="mco_page-prev"></i><span class="mm_ir-blind">이전</span></button>
+										<button type="button" class="btn_control-next" onclick="mm.link('')"><i class="mco_page-next"></i><span class="mm_ir-blind">다음</span></button>
+										<button type="button" class="btn_control-last" onclick="mm.link('')"><i class="mco_page-last"></i><span class="mm_ir-blind">마지막</span></button>
+									</div>
+								</div>
+								<!--// 페이지네이션 -->
+							</div>
+							<br>
+							<h2 style="padding:30px 5px 10px; font-size:16px;">- 게시판 상세보기</h2>
+							<article class="mm_board">
+								<div class="mm_board-title">
+									<h4><span class="text_board-category">[공지사항]</span><span>엔터식스 지점별 영업시간 변경 안내</span></h4>
+
+									<div class="text_board-date">
+										<p><span>등록일</span><span>2018.10.08</span></p>
+									</div>
+								</div>
+
+								<!-- 게시글 내용 -->
+								<div class="mm_board-content">
+									<i class="image_content"><img src="../images/_sample/board_image01.jpg" alt="" onerror="this.remove();"></i>
+									<br>
+									<br>
+									<p>안녕하세요, 엔터식스 입니다</p>
+									<p>2월 엔터식스에서 지점별 영업 <영업시간안내>  공지 합니다</p>
+									<br>
+									<p>엔터식스 지점별 영업시간 확인부탁드립니다</p>
+									<p>오픈/닫는 시간 잘 확인하시어 착오없으시길 바랍니다</p>
+									<p>많은 관심에 진심으로 감사 드리며 앞으로도 엔터식스몰 애용해주시길 부탁드립니다</p>
+								</div>
+								<!--// 게시글 내용 -->
+							</article>
+						</div>
+					</section>
+					<br>
+					<br>
+					<section>
+						<div class="mm_inner">
+							<h2 style="padding:30px 5px 10px; font-size:16px;">- 박스 사이즈(width)</h2>
+							<div class="mm_form-text __text_shorter__">
+								<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+								<label>
+									<input type="text" class="textfield"><i class="bg_text"></i>
+									<span class="text_placeholder">Shoter</span>
+								</label>
+							</div>
+							<br>
+							<div class="mm_form-text __text_short__">
+								<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+								<label>
+									<input type="text" class="textfield"><i class="bg_text"></i>
+									<span class="text_placeholder">shot</span>
+								</label>
+							</div>
+							<br>
+							<div class="mm_form-text">
+								<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+								<label>
+									<input type="text" class="textfield"><i class="bg_text"></i>
+									<span class="text_placeholder">기본</span>
+								</label>
+							</div>
+							<br>
+							<div class="mm_form-text __text_wide__">
+								<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+								<label>
+									<input type="text" class="textfield"><i class="bg_text"></i>
+									<span class="text_placeholder">wide</span>
+								</label>
+							</div>
+							<br>
+							<div class="mm_form-text __text_wider__">
+								<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+								<label>
+									<input type="text" class="textfield"><i class="bg_text"></i>
+									<span class="text_placeholder">wider</span>
+								</label>
+							</div>
+							<br>
+							<div class="mm_form-text __text_full__">
+								<button type="button" class="btn_text-clear"><i class="mco_form-clear"></i><span class="mm_ir-blind">지우기</span></button>
+								<label>
+									<input type="text" class="textfield"><i class="bg_text"></i>
+									<span class="text_placeholder">full</span>
+								</label>
+							</div>
+							<br>
+							<br>
+							<div class="mm_form-select __select_shorter__">
+								<label>
+									<select>
+										<option value="">shorter</option>
+									</select>
+									<i class="mco_form-select"></i>
+								</label>
+							</div>
+							<br>
+							<div class="mm_form-select __select_short__">
+								<label>
+									<select>
+										<option value="">short</option>
+									</select>
+									<i class="mco_form-select"></i>
+								</label>
+							</div>
+							<br>
+							<div class="mm_form-select">
+								<label>
+									<select>
+										<option value="">기본</option>
+									</select>
+									<i class="mco_form-select"></i>
+								</label>
+							</div>
+							<br>
+							<div class="mm_form-select __select_full__">
+								<label>
+									<select>
+										<option value="">full</option>
+									</select>
+									<i class="mco_form-select"></i>
+								</label>
+							</div>
+						</div>
+					</section>
+
+					<!-- 버튼 -->
+					<section>
+						<div class="mm_inner">
+							<h2 style="padding:30px 5px 10px; font-size:16px;">- 버튼 스타일 (a, button)</h2>
+							<a href="#" class="mm_btn"><span>기본버튼</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_sm__"><span>sm</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_xs__"><span>xs</span></a>
+							<!-- <br><br>
+							<a href="#" class="mm_btn __btn_xxs__"><span>xxs</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_xxxs__"><span>xxxs</span></a> -->
+							<br><br>
+							<a href="#" class="mm_btn __btn_lg__"><span>lg</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_xl__"><span>xl</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_light__"><span>밝은(미리보기)</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_lighter__"><span>더 밝은(비활성)</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_dark__"><span>어두운(삭제)</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_darker__"><span>더 어두운</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_primary__"><span>메인컬러</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_secondary__"><span>세컨컬러</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_line__"><span>테두리</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_line_dark__"><span>테두리 + dark</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_line_primary__"><span>테두리 + 메인컬러</span></a>
+							<br><br>
+							<a href="#" class="mm_btn __btn_line_secondary__"><span>테두리 + 세컨컬러</span></a>
+							<br><br>
+						</div>
+					</section>
+					<!--// 버튼 -->
+
+					<!-- 페이지네이션 -->
+					<section>
+						<div class="mm_inner">
+							<h2 style="padding:30px 5px 10px; font-size:16px;">- 페이지네이션</h2>
+							<!-- (D) 현재 페이지의 메뉴에 '__page-on' 클래스와 '선택됨' 타이틀을 추가합니다. -->
+							<div class="mm_pagination">
+								<div class="mm_box-inline">
+									<ol>
+										<li><a href="#" class="__page-on" title="선택됨"><span>1</span></a></li>
+										<li><a href="#"><span>2</span></a></li>
+										<li><a href="#"><span>3</span></a></li>
+										<li><a href="#"><span>4</span></a></li>
+										<li><a href="#"><span>5</span></a></li>
+									</ol>
+									<button type="button" class="btn_control-first" onclick="mm.link('')" disabled><i class="mco_page-first"></i><span class="mm_ir-blind">처음</span></button>
+									<button type="button" class="btn_control-prev" onclick="mm.link('')" disabled><i class="mco_page-prev"></i><span class="mm_ir-blind">이전</span></button>
+									<button type="button" class="btn_control-next" onclick="mm.link('')"><i class="mco_page-next"></i><span class="mm_ir-blind">다음</span></button>
+									<button type="button" class="btn_control-last" onclick="mm.link('')"><i class="mco_page-last"></i><span class="mm_ir-blind">마지막</span></button>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!--// 페이지네이션 -->
+
+					<!-- 탭메뉴 -->
+					<section>
+						<div class="mm_inner">
+							<section>
+								<h2 style="padding:30px 5px 10px; font-size:16px;">- 기본 탭메뉴</h2>
+								<div class="mm_tab">
+									<div class="mm_tabmenu">
+										<ul>
+											<li><a href="#" class="btn_tab __tab-on" title="선택됨"><span>탭메뉴 1</span></a></li>
+											<li><a href="#" class="btn_tab"><span>탭메뉴 2</span></a></li>
+										</ul>
+									</div>
+								</div>
+								<br>
+								<br>
+								<h2 style="padding:30px 5px 10px; font-size:16px;">- 탭 메뉴 세로형 (펼침형, 닫기가능)</h2>
+								<!-- (D) 선택된 탭메뉴에 '__tab-on' 클래스와 '선택됨' 타이틀을 추가합니다. -->
+								<div class="mm_tab __tab_vertical__" data-tab="{ '_isToggle': true }">
+									<div class="mm_tabmenu">
+										<ul>
+											<li><a href="#" class="btn_tab __tab-on" title="선택됨"><span>탭메뉴 1</span></a></li>
+											<li><a href="#" class="btn_tab"><span>탭메뉴 2</span></a></li>
+										</ul>
+									</div>
+									<div class="mm_tab-item __tab-on">
+										탭메뉴1 내용
+									</div>
+									<div class="mm_tab-item">
+										탭메뉴2 내용
+									</div>
+								</div>
+								<br>
+								<br>
+								<h2 style="padding:30px 5px 10px; font-size:16px;">- 가로 라인형</h2>
+								<div class="mm_tab __tab_line__">
+									<div class="mm_tabmenu">
+										<ul>
+											<li><a href="#" class="btn_tab __tab-on" title="선택됨"><span>탭메뉴 1</span></a></li>
+											<li><a href="#" class="btn_tab"><span>탭메뉴 2</span></a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+						</div>
+					</section>
+					<!--//탭메뉴  -->
+
+					<section>
+						<div class="mm_inner">
+							<h2 style="padding:30px 5px 10px; font-size:16px;">- 아코디언(드롭다운 적용)</h2>
+							<div class="mm_accordion">
+								<ul>
+									<li>
+										<dl class="mm_dropdown" data-dropdown="{ '_group': 'dev_accrodion' }">
+											<dt class="btn_dropdown" tabindex="0" title="펼쳐보기"><span>회원가입은 어떻게 해야 하나요?</span><i class="mco_dropdown"></i></dt>
+											<dd class="mm_dropdown-item">
+												<div class="mm_dropdown-item-inner">
+													아이디/비밀번호 분실 시 휴대폰 인증 또는 아이핀 인증을 통해 조회가 가능합니다.<br>아이디/비밀번호 분실 시 휴대폰 인증 또는 아이핀 인증을 통해 조회가 가능합니다
+												</div>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl class="mm_dropdown" data-dropdown="{ '_group': 'dev_accrodion' }">
+											<dt class="btn_dropdown" tabindex="0" title="펼쳐보기"><span>아이디 / 비밀번호를 분실하였습니다. 어떻게 확인하나요?</span><i class="mco_dropdown"></i></dt>
+											<dd class="mm_dropdown-item">
+												<div class="mm_dropdown-item-inner">
+													아이디/비밀번호 분실 시 휴대폰 인증 또는 아이핀 인증을 통해 조회가 가능합니다. 아이디/비밀번호 분실 시 휴대폰 인증 또는 아이핀 인증을 통해 조회가 가능합니다
+												</div>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<div class="mm_inner">
+							<h2 style="padding:30px 5px 10px; font-size:16px;">- 폼 (라디오)</h2>
+							<label class="mm_form-radio">
+								<input type="radio">
+								<b class="mm_box-block">
+									<i class="mco_form-radio"></i>
+									<span class="text_label">라디오 기본</span>
+								</b>
+							</label>
+
+							<br><br>
+							<label class="mm_form-radio">
+								<input type="radio" checked>
+								<b class="mm_box-block">
+									<i class="mco_form-radio"></i>
+									<span class="text_label">라디오 체크</span>
+								</b>
+							</label>
+						</div>
+					</section>
+
+					<section>
+						<div class="mm_inner">
+							<h2 style="padding:30px 5px 10px; font-size:16px;">- 폼 (라디오리스트)</h2>
+							<div class="mm_radio-list">
+								<ul>
+									<li>
+										<label class="mm_form-radio">
+											<input type="radio" name="dev_radio_kakao">
+											<b class="mm_box-block">
+												<i class="mco_form-radio"></i>
+												<span class="text_label">라디오 1</span>
+											</b>
+										</label>
+									</li>
+									<li>
+										<label class="mm_form-radio">
+											<input type="radio" name="dev_radio_kakao" checked>
+											<b class="mm_box-block">
+												<i class="mco_form-radio"></i>
+												<span class="text_label">라디오 2</span>
+											</b>
+										</label>
+									</li>
+									<li>
+										<label class="mm_form-radio">
+											<input type="radio" name="dev_radio_kakao">
+											<b class="mm_box-block">
+												<i class="mco_form-radio"></i>
+												<span class="text_label">라디오 3</span>
+											</b>
+										</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<div class="mm_inner">
+							<h2 style="padding:30px 5px 10px; font-size:16px;">- 폼 (체크박스)</h2>
+							<label class="mm_form-check">
+								<input type="checkbox">
+								<b class="mm_box-block">
+									<i class="mco_form-check"></i>
+									<span class="text_label">체크박스 기본</span>
+								</b>
+							</label>
+
+							<br><br>
+							<label class="mm_form-check">
+								<input type="checkbox" checked>
+								<b class="mm_box-block">
+									<i class="mco_form-check"></i>
+									<span class="text_label">체크박스 체크</span>
+								</b>
+							</label>
+						</div>
+					</section>
+
+					<section>
+						<div class="mm_inner">
+							<h2 style="padding:30px 5px 10px; font-size:16px;">- 폼 (체크박스 전체선택)</h2>
+							<!--
+								(D) 체크박스 전체선택
+								name 속성을 사용하여 그룹화 할 수 있습니다.
+								전체 체크박스에 data-check 값으로 { '_type': 'check_all' }을 설정합니다.
+								개수 요소에 data-check 값으로 { '_type': 'check_count', '_group': 'name 값' }을 설정합니다.
+								추가로 전체가 체크되는 시점이 전체가 아닌 임의의 개수로 변경이 필요한 경우,
+								전체 체크박스에 data-check 값으로 { '_min': 5 }처럼 최소 개수를 설정합니다.
+							-->
+							<label class="mm_form-check">
+								<input type="checkbox" name="dev_check" data-check="{ '_type': 'check_all' }">
+								<b class="mm_box-block">
+									<i class="mco_form-check"></i>
+									<span class="text_label">체크 전체</span>
+								</b>
+							</label>
+
+							<br><br>
+							<label class="mm_form-check">
+								<input type="checkbox" name="dev_check">
+								<b class="mm_box-block">
+									<i class="mco_form-check"></i>
+									<span class="text_label">체크 1</span>
+								</b>
+							</label>
+							<label class="mm_form-check">
+								<input type="checkbox" name="dev_check">
+								<b class="mm_box-block">
+									<i class="mco_form-check"></i>
+									<span class="text_label">체크 2</span>
+								</b>
+							</label>
+							<label class="mm_form-check">
+								<input type="checkbox" name="dev_check">
+								<b class="mm_box-block">
+									<i class="mco_form-check"></i>
+									<span class="text_label">체크 3</span>
+								</b>
+							</label>
+							<br><br>
+							<p>선택된 개수: <span data-check="{ '_type': 'check_count', '_group': 'dev_check' }">0</span>개</p>
+						</div>
+					</section>
+
+					<section>
+						<div class="mm_inner">
+							<h2 style="padding:30px 5px 10px; font-size:16px;">- 폼 (체크박스 리스트)</h2>
+							<div class="mm_check-list">
+								<label class="mm_form-check">
+									<input type="checkbox" name="dev_check_power" data-check="{ '_type': 'check_all' }">
+									<b class="mm_box-block">
+										<i class="mco_form-check"></i>
+										<span class="text_label">전체선택</span>
+									</b>
+								</label>
+								<ul>
+									<li>
+										<label class="mm_form-check">
+											<input type="checkbox" name="dev_check_power">
+											<b class="mm_box-block">
+												<i class="mco_form-check"></i>
+												<span class="text_label">회원 목록</span>
+											</b>
+										</label>
+									</li>
+									<li>
+										<label class="mm_form-check">
+											<input type="checkbox" name="dev_check_power">
+											<b class="mm_box-block">
+												<i class="mco_form-check"></i>
+												<span class="text_label">VIP회원 관리</span>
+											</b>
+										</label>
+									</li>
+									<li>
+										<label class="mm_form-check">
+											<input type="checkbox" name="dev_check_power">
+											<b class="mm_box-block">
+												<i class="mco_form-check"></i>
+												<span class="text_label">회원등급 관리</span>
+											</b>
+										</label>
+									</li>
+									<li>
+										<label class="mm_form-check">
+											<input type="checkbox" name="dev_check_power">
+											<b class="mm_box-block">
+												<i class="mco_form-check"></i>
+												<span class="text_label">회원가입 승인설정</span>
+											</b>
+										</label>
+									</li>
+									<li>
+										<label class="mm_form-check">
+											<input type="checkbox" name="dev_check_power">
+											<b class="mm_box-block">
+												<i class="mco_form-check"></i>
+												<span class="text_label">회원 상담내역</span>
+											</b>
+										</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+
+					<!-- 페이지 스크립트 -->
+					<!-- <script src="../js/.js"></script> -->
+				</div>
+				<!--// 본문 -->
+			</div>
+			<!--// 내용 -->
+
+			<!-- 푸터 -->
+			<div class="mm_footer">
+				<div class="mm_footer-service">
+					<div class="mm_container mm_inner">
+						<div class="mm_box-lside">
+							<ul>
+								<li>
+									<a href="#" data-href="{ '_type': 'link' }"><span>이용약관</span></a>
+								</li>
+								<li>
+									<a href="#" data-href="{ '_type': 'link' }"><span>개인정보취급방침</span></a>
+								</li>
+								<li>
+									<a href="#" data-href="{ '_type': 'link' }"><span>이메일무단수집거부</span></a>
+								</li>
+							</ul>
+						</div>
+						<div class="mm_box-rside">
+							<div class="mm_form-select">
+								<label>
+									<select onchange="window.open(value, '_blank')">
+										<option value="">Partner Site</option>
+										<!-- (D) 파트너 사이트 연결 -->
+										<option value="http://enter6.co.kr/">엔터식스 쇼핑몰</option>
+									</select>
+									<i class="mco_form-select"></i>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mm_footer-info">
+					<div class="mm_inner">
+						<h5><span>(주) 엔터식스 패션쇼핑몰</span></h5>
+						<address>
+							<span>서울 특별시 광진구 광나루로 56길 85, 37층, 38층, 39층</span><span>대표이사:김상대</span><span>개인정보담당자:이대건</span><br>
+							<span>대표전화(본사):02.511.8588</span><span>팩스:02.511.9939</span><span>서프라이즈카드 회원관리팀:02.511.8288</span><span>사업자등록번호:120-81-45616</span>
+						</address>
+						<p class="text_copyright">&copy; (주)엔터식스 패션쇼핑몰. all rights reserved.</p>
+
+						<!-- SNS 연결 링크 -->
+						<ul>
+							<li>
+								<a href="https://www.facebook.com/enter6" data-href="{ '_type': 'link' }">
+									<i class="mco_sns-facebook"></i><span class="mm_ir-blind">facebook</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.instagram.com/enter_6/" data-href="{ '_type': 'link' }">
+									<i class="mco_sns-instagram"></i><span class="mm_ir-blind">instagram</span>
+								</a>
+							</li>
+							<li>
+								<a href="http://blog.enter6.co.kr/" data-href="{ '_type': 'link' }">
+									<i class="mco_sns-blog"></i><span class="mm_ir-blind">blog</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.youtube.com/user/enter6video/" data-href="{ '_type': 'link' }">
+									<i class="mco_sns-youtube"></i><span class="mm_ir-blind">Youtube</span>
+								</a>
+							</li>
+						</ul>
+						<!--// SNS 연결 링크 -->
+					</div>
+				</div>
+
+				<!-- 수상배너 -->
+				<div class="mm_footer-awards">
+					<div class="mm_inner">
+						<div class="mm_swiper mm_swiper-navi" data-swiper="{'_slidePerView' : 8}">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<figure>
+										<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_01.png'}" alt=""></i>
+										<figcaption>
+											<p class="text_awards">2014 웹어워드코리아</p>
+											<p class="text_awards">유통분야 최우수상</p>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_03.png'}" alt=""></i>
+										<figcaption>
+											<p class="text_awards">2016</p>
+											<p class="text_awards">우수중소기업대상</p>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_02.png'}" alt=""></i>
+										<figcaption>
+											<p class="text_awards">2014 대한민국</p>
+											<p class="text_awards">인터넷소통대상</p>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_01.png'}" alt=""></i>
+										<figcaption>
+											<p class="text_awards">2014 웹어워드코리아</p>
+											<p class="text_awards">유통분야 최우수상</p>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_03.png'}" alt=""></i>
+										<figcaption>
+											<p class="text_awards">2016</p>
+											<p class="text_awards">우수중소기업대상</p>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_02.png'}" alt=""></i>
+										<figcaption>
+											<p class="text_awards">2014 대한민국</p>
+											<p class="text_awards">인터넷소통대상</p>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_01.png'}" alt=""></i>
+										<figcaption>
+											<p class="text_awards">2014 웹어워드코리아</p>
+											<p class="text_awards">유통분야 최우수상</p>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_03.png'}" alt=""></i>
+										<figcaption>
+											<p class="text_awards">2016</p>
+											<p class="text_awards">우수중소기업대상</p>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_02.png'}" alt=""></i>
+										<figcaption>
+											<p class="text_awards">2014 대한민국</p>
+											<p class="text_awards">인터넷소통대상</p>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_01.png'}" alt=""></i>
+										<figcaption>
+											<p class="text_awards">2014 웹어워드코리아</p>
+											<p class="text_awards">유통분야 최우수상</p>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_03.png'}" alt=""></i>
+										<figcaption>
+											<p class="text_awards">2016</p>
+											<p class="text_awards">우수중소기업대상</p>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="swiper-slide">
+									<figure>
+										<i class="image_awards"><img class="mm_preload" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-preload="{ '_src': '../images/common/awards_item_02.png'}" alt=""></i>
+										<figcaption>
+											<p class="text_awards">2014 대한민국</p>
+											<p class="text_awards">인터넷소통대상</p>
+										</figcaption>
+									</figure>
+								</div>
+							</div>
+						</div>
+
+						<!-- 네비게이션 -->
+						<div class="swiper-button-next"><i class="mco_control __next__"></i></div>
+						<div class="swiper-button-prev "><i class="mco_control __prev__"></i></div>
+						<!--// 네비게이션 -->
+					</div>
+				</div>
+				<!--// 수상배너 -->
+			</div>
+			<!--// 헤더 -->
+        </div>
+        <!--// 화면 -->
+    </div>
+
+	<!-- 페이지 공통 스크립트 -->
+	<script src="../js/app_page-common.js"></script>
+</body>
+</html>

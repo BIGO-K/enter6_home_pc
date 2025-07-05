@@ -1,0 +1,250 @@
+@charset 'utf-8';
+
+/**
+** My쿠폰
+**/
+
+.m-coupon {
+    &-visual {
+        position: relative;
+        margin-bottom: 118px;
+        height: 330px;
+
+        &-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom:0;
+            left: 0;
+            padding: 114px 0 0;
+            text-align: center;
+
+            > p {
+                position: relative;
+                padding-left: 4px;
+                font-size: 24px;
+                font-weight: 300;
+                line-height: 36px;
+
+                [class*="__ie1"] & { padding-top: 3px;}
+
+                &:after {
+                    display: block;
+                    position: absolute;
+                    bottom: -13px;
+                    left: 50%;
+                    margin-left: -6px;
+                    width: 12px;
+                    border-top: 1px solid #000;
+                    content: "";
+
+                    [class*="__ie1"] & { bottom: -10px; }
+                }
+
+                .image_logo {
+                    margin-right: 12px;
+                    width: 102px;
+                    height: 29px;
+
+                    [class*="__ie1"] & { margin-top: -3px; }
+                }
+            }
+        }
+
+        .image_ico {
+            position: absolute;
+            top: 231px;
+            left: 133px;
+        }
+    }
+
+    .mm_tabmenu {
+        ul {
+            li {
+                .btn_tab {
+                    width: 454px;
+                }
+            }
+        }
+    }
+
+    &-list {
+        ul {
+            li {
+                position: relative;
+                border-bottom: 1px solid #e8e8e8;
+
+                &:first-child {
+                    border-top: 0;
+                }
+
+                .m-coupon-item {
+                    &[class*="_voucher_"] {
+                        .ico_badge {
+                            border-color: #559a7d;
+                            color: #559a7d;
+                        }
+                    }
+
+                    &[class*="_mcoupon_"] {
+                        .ico_badge {
+                            border-color: #3c86a6;
+                            color: #3c86a6;
+                        }
+
+                        .mm_image-none {
+                            background: url('../images/common/coupon_voucher.png') no-repeat center center;
+
+                            > i {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &[class*="_brand_"] {
+                        .ico_badge {
+                            border-color: #e27e37;
+                            color: #e27e37;
+                        }
+
+                        .mm_image-none {
+                            background: url('../images/common/coupon_brand.png') no-repeat center center;
+
+                            > i {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &[class*="_scratch_"] {
+                        .ico_badge {
+                            border-color: #ae699b;
+                            color: #ae699b;
+                        }
+
+                        .mm_image-none {
+                            background: url('../images/common/coupon_scratch.png') no-repeat center center;
+
+                            > i {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &.__item-soldout {
+                        &:before {
+                            position: absolute;
+                            z-index: 1;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: rgba(255,255,255,0.8);
+                            content: "";
+                        }
+
+                        .image_voucher-soldout {
+                            position: absolute;
+                            z-index: 2;
+                            top: 50%;
+                            left: 50%;
+                            width: 135px;
+                            @include transform(translate(-50%, -50%), webkit ms);
+                        }
+                    }
+                }
+            }
+        }
+
+        figure {
+            position: relative;
+            padding: 40px 250px 36px 257px;
+
+            .image_voucher {
+                overflow: hidden;
+                position: absolute;
+                top: 50%;
+                left: 50px;
+                @include transform(translateY(-50%), webkit ms);
+                width: 146px;
+                text-align: center;
+                max-height: 110px;
+
+                img {
+                    width: auto;
+                    max-width: 100%;
+                    max-height: 110px;
+                }
+            }
+
+            figcaption {
+                .m-coupon-badge {
+                    overflow: hidden;
+                    margin-bottom: 18px;
+
+                    i {
+                        float: left;
+                        padding: 0 8px;
+                        height: 26px;
+                        border: 1px solid #cfcfcf;
+                        font-size: 12px;
+                        font-weight: 500;
+                        line-height: 25px;
+
+                        [class*="__ie1"] & { line-height: 28px; }
+                    }
+
+                    .ico_type {
+                        border-left: 0;
+                    }
+                }
+
+                .text_coupon-name {
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 21px;
+                }
+
+                .text_coupon-value {
+                    color: #606060;
+                    font-size: 14px;
+                    font-weight: 300;
+                    line-height: 20px;
+
+                    [class*="__ie1"] & { height: 20px; line-height: 23px; }
+                }
+
+                .text_exdate {
+                    position: absolute;
+                    top: 50%;
+                    right: 166px;
+                    margin-top: -1px;
+                    color: #606060;
+                    font-size: 14px;
+                    line-height: 20px;
+                    text-decoration: underline;
+                    @include prefix(transform, translateY(-50%), webkit ms);
+
+                    [class*="__ie1"] & { height: 20px; line-height: 24px; }
+                }
+
+                .text_coupon-status {
+                    position: absolute;
+                    top: 50%;
+                    right: 50px;
+                    color: $color-primary-base;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 20px;
+                    @include prefix(transform, translateY(-50%), webkit ms);
+
+                    &[class*="_expire_"] {
+                        color: #54534c;
+                    }
+
+                    [class*="__ie1"] & { height: 20px; line-height: 24px; }
+                }
+            }
+        }
+    }
+}

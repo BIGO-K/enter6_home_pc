@@ -1,0 +1,444 @@
+@charset 'utf-8';
+
+/**
+** 로그인 / 회원가입 / 비밀번호 찾기
+**/
+
+/// 회원가입
+.m-join {
+    margin: 0 auto;
+    padding: 72px 0 0;
+
+    .mm_heading {
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .text_subtitle {
+        margin-top: 15px;
+        color: #606060;
+        font-size: 16px;
+        text-align: center;
+
+        [class*="__ie1"] & { margin-top: 17px; margin-bottom: -2px; }
+    }
+
+    &-step {
+        margin-top: 39px;
+        margin: 49px 0 60px;
+        text-align: center;
+
+        ul {
+            display: inline-block;
+            position: relative;
+
+            &:before {
+                display: block;
+                position: absolute;
+                top: 50px;
+                width: 100%;
+                border-top: 1px solid #cfcfcf;
+                content: "";
+            }
+
+            li {
+                float: left;
+                position: relative;
+                z-index: 1;
+                margin-left: 70px;
+                padding-top: 28px;
+                width: 100px;
+                height: 100px;
+                border-radius: 100px;
+                border: 2px solid #cfcfcf;
+                background: #fff;
+                color: #cfcfcf;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &.__step {
+                    border-color: $color-primary-base;
+                    color: $color-primary-base;
+                }
+
+                i {
+                    font-size: 22px;
+                    line-height: 22px;
+                }
+
+                p {
+                    margin-top: 6px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 12px;
+
+                    [class*="__ie1"] & {
+                        line-height: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-form{
+        .mm_btngroup {
+            margin-top: 26px;
+
+            .mm_btn {
+                // [class*="__ie1"] & { line-height: 53px; }
+            }
+        }
+
+        /// 본인인증
+        &-certification {
+            padding: 48px 45px;
+            border-top: 1px solid #999;
+            background: #f7f7f9;
+            text-align: center;
+
+            [class*="__ie1"] & { padding: 45px 45px 48px; }
+
+            .mm_strapline {
+                font-size: 19px;
+
+                [class*="__ie1"] & { height: 28px; line-height: 29px; }
+            }
+
+            i {
+                margin-top: 33px;
+                padding-left: 10px;
+                height: 48px;
+            }
+
+            p {
+                margin-top: 14px;
+                font-size: 16px;
+
+                [class*="__ie1"] & { margin-top: 16px; margin-bottom: -2px; }
+            }
+
+            .btn_certification {
+                margin-top: 23px;
+                width: 150px;
+                font-size: 16px;
+            }
+        }
+        ///-- 본인인증
+
+        /// 약관동의
+        &-terms {
+            padding: 48px 45px;
+            border-top: 1px solid #999;
+            background: #f7f7f9;
+            text-align: center;
+
+            .mm_box-head {
+                margin: 24px 0 7px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                .mm_box-lside {
+                    .mm_strapline {
+                        font-size: 20px;
+                        line-height: 24px;
+
+                        [class*="__ie1"] & { margin-bottom: 0; height: 24px; line-height: 29px; }
+                    }
+                }
+
+                .mm_box-rside {
+                    .mm_form-check {
+                        margin-top: 3px;
+                    }
+                }
+            }
+
+            .m--terms-contents {
+                padding: 14px 16px;;
+                height: 125px;
+                border: 1px solid #e1e1e1;
+                background: #fff;
+                text-align: left;
+
+                [class*="__ie1"] & { padding: 16px; }
+
+                > * {
+                    font-size: 12px;
+                    line-height: 16px;
+                }
+            }
+        }
+        ///-- 약관동의
+
+        /// 정보입력
+        &-profile {
+            table {
+                th {
+                    > span {
+                        > span {
+                            color: #999;
+                        }
+                    }
+                }
+
+                td {
+                    .m-profile-email {
+                        .text_tilde {
+                            width: 25px;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .mm_text-primary {
+                        font-size: 14px;
+                    }
+
+                    .mm_formbox-linked {
+                        .mco_hyphen {
+                            color: #cfcfcf;
+                			line-height: 36px;
+                        }
+            		}
+                }
+            }
+        }
+        ///-- 정보입력
+
+        /// 가입 완료
+        &-complete {
+            padding: 100px 45px 95px;
+            border-top: 1px solid #999;
+            background: #f7f7f9;
+
+            .mm_strapline {
+                margin-bottom: 31px;
+                font-size: 24px;
+                font-weight: 500;
+
+                [class*="__ie1"] & { height: 24px; line-height: 29px; }
+
+                strong {
+                    color: $color-primary-base;
+                }
+            }
+
+            > p {
+                text-align: center;
+                font-size: 14px;
+                line-height: 21px;
+            }
+        }
+        ///-- 가입 완료
+    }
+}
+///-- 회원가입
+
+/// 로그인
+.m-login {
+    margin: 0 auto;
+    padding: 40px 0 0;
+    width: 834px;
+
+    .mm_heading {
+        margin-bottom: 27px;
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    /// 아이디 / 비밀번호 찾기
+    &-find {
+        padding: 66px 0;
+        border-top: 1px solid #999;
+        background: #f7f7f9;
+
+        /// 본인인증
+        [class*="-certified"] {
+            text-align: center;
+
+            > .mm_strapline {
+                font-size: 20px;
+
+                [class*="__ie1"] & { height: 20px; line-height: 25px; }
+            }
+
+            > i {
+                margin-top: 54px;
+                padding-left: 10px;
+                height: 48px;
+
+                .__edge & { padding-left: 9px; }
+
+                + p {
+                    margin-top: 15px;
+                    font-size: 16px;
+
+                    [class*="__ie1"] & { height: 16px; line-height: 20px; }
+                }
+            }
+
+            > .btn_certification {
+                margin-top: 23px;
+                width: 150px;
+                font-size: 16px;
+
+                [class*="__ie1"] & { line-height: 48px; }
+            }
+        }
+        ///-- 본인인증
+
+        &-id {
+            /// 아이디 찾기 결과
+            .text_result-id {
+                margin: 12px 0;
+                font-size: 20px;
+                text-align: center;
+
+                .mm_text-primary {
+                    font-weight: 500;
+                }
+
+                [class*="__ie1"] & { height: 20px; line-height: 24px; }
+            }
+            ///-- 아이디 찾기 결과
+        }
+
+        &-password {
+            .mm_form-text {
+                margin: 0 auto;
+
+                + .mm_form-text {
+                    margin-top: 10px;
+                }
+
+                label {
+                    input {
+                        padding-left: 42px;
+                    }
+
+                    [class*="mco_"] {
+                        position: absolute;
+                        z-index: 1;
+                        top: 15px;
+                        left: 15px;
+                        color: #606060;
+                    }
+
+                    .mco_login-id {
+                        font-size: 13px;
+                    }
+
+                    .mco_name {
+                        font-size: 17px;
+                    }
+
+                    .mco_login-password {
+                        font-size: 18px;
+                    }
+
+                    .text_placeholder {
+        				padding-left: 42px;
+
+                        [class*="__ie1"] & { padding: 2px 12px 0 42px; }
+        			}
+                }
+            }
+
+            .m-login-find-certified {
+                margin-top: 46px;
+            }
+
+            /// 비밀번호 재설정
+            .m-password-reset {
+                padding: 0 239px;
+
+                .text_subtitle {
+                    margin: 12px 0 45px;
+                    font-size: 16px;
+                    text-align: center;
+
+                    [class*="__ie1"] & { height: 16px; line-height: 21px; }
+                }
+
+                [class*="__ie1"] & .mm_strapline { height: 22px; line-height: 27px; }
+            }
+            ///-- 비밀번호 재설정
+        }
+    }
+    ///-- 아이디 / 비밀번호 찾기
+
+    &-form {
+        padding: 66px 203px 62px;
+        border-top: 1px solid #999;
+        background: #f7f7f9;
+
+        .mm_form-text {
+            margin: 0 auto 10px;
+
+            label {
+                input {
+                    padding-left: 42px;
+                }
+
+                [class*="mco_"] {
+                    position: absolute;
+                    z-index: 1;
+                    top: 15px;
+                    left: 15px;
+                    color: #606060;
+                }
+
+                .mco_login-id {
+                    font-size: 13px;
+                }
+
+                .mco_login-password {
+                    font-size: 18px;
+                }
+
+                .text_placeholder {
+    				padding-left: 42px;
+
+                    [class*="__ie1"] & { padding: 2px 12px 0 42px; }
+    			}
+            }
+        }
+
+        .btn_login {
+            margin-top: 20px;
+        }
+
+        .btn_join {
+            margin-top: 10px;
+        }
+
+        > .mm_btngroup {
+            margin-top: 21px;
+
+			a {
+				position: relative;
+                margin: 0;
+				padding: 0 32px;
+				height: 22px;
+				color: #606060;
+				font-size: 14px;
+				line-height: 24px;
+
+				&:nth-child(n+2):before {
+					position: absolute;
+					top: 6px;
+					left: 0;
+					height: 10px;
+					border-left: 1px solid #e1e1e1;
+					content: "";
+				}
+
+                [class*="__ie1"] & { line-height: 26px; }
+			}
+        }
+    }
+}
+///-- 로그인

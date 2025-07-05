@@ -1,0 +1,745 @@
+@charset 'utf-8';
+
+/**
+** 점별안내
+**/
+
+.m-branch {
+    font-size: 0;
+
+    &-visual {
+        position: relative;
+        margin-bottom: 26px;
+
+        .mm_form-select {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 346px;
+            @include transform(translate(-50%, -50%));
+
+            .__edge & { margin-left: -1px; }
+
+            label {
+                border: 5px solid $color-primary-base;
+
+                select {
+                    color: #000;
+                    font-weight: 600;
+                    line-height: 46px;
+
+                    .__edge & { padding: 4px 30px 0 12px; }
+                }
+
+                .mco_form-select {
+                    color: $color-primary-base;
+                }
+            }
+
+        }
+    }
+
+    &-shoppingnews {
+        display: inline-block;
+        width: 291px;
+        padding-top: 13px;
+
+        .mm_strapline {
+            font-size: 18px;
+            line-height: 23px;
+            text-align: left;
+
+            .__edge & { height: 23px; line-height: 21px; }
+        }
+
+        .mm_swiper {
+            margin-top: -6px;
+            padding-top: 15px;
+
+            ul {
+                li {
+                    .image_shoppingnews {
+                        width: 291px;
+                        height: 291px;
+
+                        &.mm_image-none {
+                            border: 1px solid #d5d5d5;
+                            border-bottom: 0;
+                        }
+                    }
+                    figure {
+                        > i {
+                            overflow: hidden;
+                            width: 291px;
+                            height: 291px;
+                        }
+
+                        figcaption {
+                            position: relative;
+                            padding: 22px 18px 31px;
+                            width: 291px;
+                            height: 117px;
+                            border: 1px solid #d5d5d5;
+
+                            .m-shoppingnews-badge {
+                                overflow: hidden;
+                                position: absolute;
+                                top: -13px;
+                                left: 19px;
+
+                                i {
+                                    overflow: hidden;
+                                    float: left;
+                                    padding: 0 8px;
+                                    height: 26px;
+                                    color: #fff;
+                                    font-size: 12px;
+                                    font-weight: 500;
+                                    line-height: 27px;
+
+                                    &.ico_branch {
+                                        background: #000;
+                                    }
+
+                                    &.ico_category {
+                                        background: $color-primary-base;
+                                    }
+
+                                    [class*="__ie1"] & {
+                                        line-height: 30px;
+                                    }
+                                }
+                            }
+
+                            > P {
+                                &.text_title {
+                                    overflow: hidden;
+                                    height: 23px;
+                                    font-size: 18px;
+                                    line-height: 23px;
+
+                                    [class*="__ie1"] & { line-height: 25px; }
+                                }
+
+                                &.text_period {
+                                    position: absolute;
+                                    left: 18px;
+                                    bottom: 19px;
+                                    color: #54534c;
+                                    font-size: 12px;
+
+                                    [class*="__ie1"] & { bottom: 17px; }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .swiper-pagination {
+                top: 0;
+                right: 0;
+                bottom: auto;
+                left: auto;
+                text-align: right;
+
+                .swiper-pagination-bullet {
+                    margin: 0 2px;
+                    background: rgba(0,0,0,0.5);
+
+                    &-active {
+                        background: #ff4949;
+                    }
+                }
+            }
+        }
+    }
+
+    &-info {
+        display: inline-block;
+        margin-left: 32px;
+        border-top: 1px solid #d5d5d5;
+        border-bottom: 1px solid #d5d5d5;
+        @include clearfix();
+
+        > ul {
+            float: left;
+            padding: 36px 0 39px;
+            width: 293px;
+            height: 451px;
+            background: #f7f7f9;
+
+            li {
+                padding-top: 27px;
+                text-align: center;
+
+                &:first-child {
+                    padding-top: 0;
+                }
+
+                i {
+                    margin-bottom: 6px;
+                    width: 68px;
+                    height: 68px;
+                    background: #fff;
+                    border: 1px solid #e6e6e6;
+                    border-radius: 68px;
+                    color: #b1b1b1;
+                    font-size: 31px;
+                    line-height: 68px;
+
+                    &[class*="-time"] {
+                        line-height: 67px;
+                    }
+
+                    &[class*="-address"] {
+                        line-height: 71px;
+                    }
+
+                    &[class*="-call"] {
+                        line-height: 71px;
+                    }
+                }
+
+                .text_address {
+                    overflow: hidden;
+                    height: 40px;
+                }
+
+                p {
+                    overflow: hidden;
+                    height: 20px;
+                    font-size: 14px;
+                    line-height: 20px;
+
+                    [class*="__ie1"] & { line-height: 23px; }
+                }
+            }
+        }
+
+        .m-branch-info-link {
+            float: left;
+            width: 291px;
+            height: 451px;
+
+            ul {
+                li {
+                    position: relative;
+                    padding: 37px 80px 37px 34px ;
+                    border-top: 1px solid #d5d5d5;
+
+                    [class*="__ie1"] & { padding: 39px 80px 35px 34px ; }
+
+                    &:first-child {
+                        border: 0;
+                    }
+
+                    strong {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        margin-top: 8px;
+                        color: #999999;
+                        font-size: 12px;
+                    }
+
+                    i {
+                        position: absolute;
+                        top: 40px;
+                        color: #e4e4e4;
+
+                        &.mco_brand {
+                            right: 36px;
+                            font-size: 31px;
+                        }
+                        &.mco_facility {
+                            right: 37px;
+                            font-size: 29px;
+                        }
+                        &.mco_way {
+                            right: 36px;
+                            font-size: 33px;
+                        }
+                        &.mco_inquiry {
+                            right: 33px;
+                            font-size: 32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /// 브랜드 안내
+    &-brand {
+        /// 건물구분 탭
+        .tab_building {
+            text-align: center;
+
+            > .mm_tabmenu {
+                display: inline-block;
+                margin: 0 auto 46px;
+                width: auto;
+
+                > ul {
+                    > li {
+                        width: 180px;
+                    }
+                }
+            }
+        }
+        ///-- 건물구분 탭
+
+        /// 층 구분 탭
+        .tab_floor {
+            .mm_tabmenu {
+                border-bottom: 0;
+                background: #f3f3f3;
+
+                ul {
+                    li {
+                        .btn_tab {
+                            width: 84px;
+                            height: 58px;
+                            border: 0;
+                            color: #b1b1b1;
+                            font-size: 18px;
+                            font-weight: 800;
+                            line-height: 62px;
+
+                            [class*="__ie1"] & { line-height: 65px; }
+
+                            &.__tab-on {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        ///-- 층 구분 탭
+
+        .m-branch-brand-floor {
+            .m--floor {
+                overflow: hidden;
+                position: relative;
+                border: 1px solid #e4e4e4;
+                border-top: 0;
+                background: #fafafa;
+
+                &-map {
+                    position: relative;
+                    float: left;
+                    padding: 30px 30px 72px;
+                    width: 678px;
+                    height: 394px;
+                    background: #fff;
+
+                    .image_floor-map {
+                        width: 100%;
+                        height: 100%;
+
+                        &:before {
+                            margin-left: -1px;
+                			width: 1px;
+                			height: 100%;
+                			vertical-align: middle;
+                			content: "";
+                        }
+
+                        > img {
+                            max-width: 100%;
+                            max-height: 100%;
+                            width: auto;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+
+                &-pictogram {
+                    float: left;
+                    width: 227px;
+                    height: 394px;
+                }
+
+                .btn_zoom {
+                    position: absolute;
+                    bottom: 19px;
+                    left: 50%;
+                    width: auto;
+                    @include prefix(transform, translateX(-50%), webkit ms);
+
+                    .mco_expansion {
+                        margin-right: 4px;
+                        font-size: 15px;
+                        line-height: 36px;
+                    }
+                }
+            }
+
+            .m--floor-brand-list {
+                h4 {
+                    margin: 47px 0 14px;
+                    font-size: 16px;
+                    text-align: left;
+
+                    [class*="__ie1"] & {margin: 49px 0 12px;}
+                }
+
+                ul {
+                    overflow: hidden;
+
+                    li {
+                        display: inline-block;
+                        float: left;
+                        width: 443px;
+                        border-bottom: 1px solid #e4e4e4;
+
+                        &:nth-child(1),
+                        &:nth-child(2) {
+                            border-top: 1px solid #999999;
+                        }
+
+                        &:nth-child(2n) {
+                            margin-left: 20px;
+                        }
+
+                        dl {
+                            overflow: hidden;
+                            height: 38px;
+                            color: #333;
+                            font-size: 14px;
+                            line-height: 40px;
+
+                            [class*="__ie1"] & {line-height: 42px;}
+
+                            > * {
+                                float: left;
+                                text-align: left;
+                            }
+                        }
+
+                        dt {
+                            padding: 0 16px;
+                            width: 264px;
+                            border-right: 1px solid #e4e4e4;
+                            background-color: #f9f9f9;
+
+                            [class*="__ie1"] & { line-height: 44px; }
+                        }
+
+                        dd {
+                            position: relative;
+                            padding: 0 46px 0 16px;
+                            width: 178px;
+
+                            [class*="__ie1"] & { line-height: 44px; }
+
+                            .btn_brand-like {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                width: 46px;
+
+                                [class*="__ie1"] & { line-height: 40px; }
+
+                                .mco_like-fill {
+                                    color: $color-primary-base;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ///-- 브랜드 안내
+
+    /// 편의시설 안내
+    &-facility {
+        ul {
+            li {
+                margin-top: 16px;
+                height: 130px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                figure {
+                    position: relative;
+                    padding-left: 206px;
+
+                    .image_facility {
+                        overflow: hidden;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 186px;
+                        height: 130px;
+                    }
+
+                    figcaption {
+                        .m-branch-facility-head {
+                            overflow: hidden;
+                            padding-bottom: 8px;
+                            height: 31px;
+                            border-bottom: 1px solid #dcdcdc;
+                            line-height: 24px;
+
+                            .ico_badge {
+                                display: inline-block;
+                                margin-right: 8px;
+                                padding: 0 8px;
+                                height: 22px;
+                                border-width: 1px;
+                                border-style: solid;
+                                border-radius: 10px;
+                                font-size: 12px;
+                                font-weight: 700;
+                                line-height: 23px;
+
+                                &[class*="_shopping_"] {
+                                    border-color: #8d5d09;
+                                    color: #8d5d09;
+                                }
+
+                                &[class*="_rest_"] {
+                                    border-color: #409930;
+                                    color: #409930;
+                                }
+
+                                &[class*="_lady_"] {
+                                    border-color: #e55151;
+                                    color: #e55151;
+                                }
+                            }
+
+                            strong {
+                                font-size: 16px;
+
+                                [class*="__ie1"] & { line-height: 28px; }
+                            }
+
+                            .text_facility-location {
+                                float: right;
+                                margin-right: 21px;
+                                color: #333333;
+                                font-size: 12px;
+
+                                [class*="__ie1"] & { line-height: 27px; }
+                            }
+                        }
+
+                        .text_facility {
+                            padding: 12px 0 0 3px;
+                            color: #333333;
+                            font-size: 14px;
+                            line-height: 21px;
+
+                            [class*="__ie1"] & { padding: 13px 0 0 3px; }
+
+                            .__edge & { padding: 11px 0 1px 3px; }
+                        }
+                    }
+                }
+            }
+        }
+
+        .mm_btngroup {
+            margin-top: 56px;
+
+            .mco_next {
+                margin-left: 9px;
+                line-height: 49px;
+            }
+        }
+    }
+    /// 편의시설 안내
+
+    /// 오시는길
+    &-way {
+        &-map {
+            overflow: hidden;
+            margin-bottom: 56px;
+            border: 1px solid #d5d5d5;
+            border-right: 0;
+
+            .m--map-api {
+                float: left;
+
+                .root_daum_roughmap {
+                    .wrap_controllers {
+                        border: 0;
+                    }
+                }
+            }
+
+            .m--map-address {
+                float: left;
+                padding-top: 55px;
+                width: 284px;
+                height: 407px;
+                background: #f7f7f9;
+                text-align: center;
+
+                h4 {
+                    position: relative;
+                    font-size: 24px;
+                    font-weight: 500;
+
+                    &:before {
+                        display: inline-block;
+                        position: absolute;
+                        top: 45px;
+                        left: 50%;
+                        width: 16px;
+                        border-top: 1px solid #000;
+                        @include prefix(transform, translateX(-50%), webkit ms);
+                        content: "";
+                    }
+
+                    [class*="__ie1"] & { height: 24px; line-height: 30px; }
+                }
+
+                ul {
+                    float: left;
+                    padding: 54px 0 39px;
+                    width: 284px;
+                    background: #f7f7f9;
+
+                    li {
+                        padding-top: 27px;
+                        text-align: center;
+
+                        &:first-child {
+                            padding-top: 0;
+                        }
+
+                        i {
+                            margin-bottom: 6px;
+                            width: 68px;
+                            height: 68px;
+                            background: #fff;
+                            border: 1px solid #e6e6e6;
+                            border-radius: 68px;
+                            color: #b1b1b1;
+                            font-size: 31px;
+                            line-height: 68px;
+
+                            &[class*="-time"] {
+                                line-height: 67px;
+                            }
+
+                            &[class*="-pin"] {
+                                line-height: 71px;
+                            }
+
+                            &[class*="-call"] {
+                                line-height: 71px;
+                            }
+                        }
+
+                        .text_address,
+                        .text_businesshours {
+                            overflow: hidden;
+                            height: 40px;
+                        }
+
+                        p {
+                            overflow: hidden;
+                            height: 20px;
+                            font-size: 14px;
+                            line-height: 20px;
+
+                            [class*="__ie1"] & { line-height: 23px; }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-guide,
+        &-parking {
+            .mm_form {
+                table {
+                    border-top: 1px solid #999;
+                    border-bottom: 1px solid #999;
+
+                    tbody {
+                        tr {
+                            border-top: 1px solid #e4e4e4;
+
+                            &:first-child {
+                                border: 0;
+                            }
+
+                            th {
+                                background: #f9f9f9;
+                                font-size: 14px;
+                            }
+
+                            td {
+                                padding: 19px 11px 16px;
+                                font-size: 14px;
+                                line-height: 23px;
+                                text-align: left;
+
+                                [class*="__ie1"] & { padding: 20px 11px 15px; }
+
+                                .__edge & { padding: 18px 12px 17px 10px; }
+                            }
+                        }
+                    }
+                }
+            }
+
+            dl {
+                position: relative;
+                padding-left: 120px;
+
+                dt {
+                    position: absolute;
+                    top: 0;
+                    left: 17px;
+                    padding-left: 22px;
+
+                    i {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        margin-right: 12px;
+                        color: #b1b1b1;
+                        font-size: 15px;
+
+                        &.mco_pin {
+                            font-size: 17px;
+
+                            [class*="__ie1"] & { margin-top: 1px; }
+                        }
+
+                        &.mco_charge {
+                            margin-top: -1px;
+                            font-size: 13px;
+
+                            [class*="__ie1"] & { margin-top: 0; }
+                        }
+
+                        &.mco_inquiry {
+                            margin: -1px 0 0 -2px;
+                            font-size: 12px;
+                        }
+
+                        [class*="__ie1"] & { top: -2px; }
+                    }
+                }
+            }
+        }
+
+        &-parking{
+            margin-top: -1px;
+        }
+    }
+    ///-- 오시는길
+}

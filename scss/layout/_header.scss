@@ -1,0 +1,94 @@
+@charset 'utf-8';
+
+/**
+** 헤더
+** GNB는 _navigation에서 수정
+**/
+
+/// 헤더 영역
+.mm_header {
+	position: absolute;
+	z-index: $index-header;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: $height-header-base;
+	background: #fff;
+	font-size : 12px;
+
+	&-util {
+		height: 40px;
+		font-weight: 700;
+
+		.mm_inner {
+			padding: 13px 0 0 21px;
+		}
+
+		.mm_box-rside {
+			> ul {
+				li {
+					float: left;
+					margin-left: 15px;
+					color: #606060;
+
+					[class^="btn_"]{
+						line-height: 32px;
+
+						[class^="mco_"] {
+							display: inline;
+							margin: -1px 5px 0 0;
+							font-size: 11px;
+							line-height: 31px;
+						}
+
+						[class*="_log"] {
+							font-size: 15px;
+							line-height: 34px;
+
+							[class*="__ie1"] & { line-height: 35px; }
+						}
+
+						[class*="__ie1"] & { line-height: 36px; }
+					}
+				}
+			}
+
+			.mm_form-select {
+				width: 114px;
+
+				label {
+					select {
+						padding: 0 25px 0 10px;
+						color: #999999;
+
+						[class*="__ie1"] & { padding: 3px 25px 0 7px; }
+
+						.__edge & { padding: 0 25px 0 6px; }
+					}
+
+					.mco_dropdown {
+						position: absolute;
+						z-index: 2;
+						top: 5px;
+						right: 12px;
+						color: #999;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+
+	&-title {
+		margin: 0 auto;
+		width: 153px;
+		background: url(../images/common/logo.png) no-repeat center center;
+		background-size: contain;
+
+		a {
+			width: 100%;
+			height: 43px;
+		}
+	}
+}
+///-- 헤더 영역

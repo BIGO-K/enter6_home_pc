@@ -1,0 +1,229 @@
+@charset 'utf-8';
+
+/**
+** 회원가입
+**/
+
+.m-join {
+    padding: 72px 0 0px;
+
+    .mm_heading {
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .text_subtitle {
+        margin-top: 15px;
+        color: #606060;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    &-step {
+        margin-top: 39px;
+        margin: 49px 0 60px;
+        text-align: center;
+
+        ul {
+            display: inline-block;
+            position: relative;
+
+            &:before {
+                display: block;
+                position: absolute;
+                top: 50px;
+                width: 100%;
+                border-top: 1px solid #cfcfcf;
+                content: "";
+            }
+
+            li {
+                float: left;
+                position: relative;
+                z-index: 1;
+                margin-left: 70px;
+                padding-top: 25px;
+                width: 100px;
+                height: 100px;
+                border-radius: 100px;
+                border: 2px solid #cfcfcf;
+                background: #fff;
+                color: #cfcfcf;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &.__step {
+                    border-color: $color-primary-base;
+                    color: $color-primary-base;
+                }
+
+                i {
+                    font-size: 22px;
+                }
+
+                p {
+                    margin-top: 6px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 12px;
+
+                    [class*="__ie1"] & {
+                        line-height: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-form{
+        > .mm_inner {
+            + .mm_btngroup {
+                margin-top: 25px;
+
+                .mm_btn {
+                    width: 200px;
+
+                    [class*="__ie1"] & {
+                        line-height: 50px;
+                    }
+                }
+            }
+
+            > [class*="m-join-form-"] {
+                margin: 0 auto;
+                width: 907px;
+            }
+        }
+
+        /// 본인인증
+        &-certification {
+            padding: 48px 45px;
+            border-top: 1px solid #999;
+            background: #f7f7f9;
+            text-align: center;
+
+            .mm_strapline {
+                font-size: 19px;
+            }
+
+            i {
+                margin-top: 33px;
+                padding-left: 10px;
+                height: 48px;
+            }
+
+            p {
+                margin-top: 14px;
+                font-size: 16px;
+            }
+
+            .btn_certification {
+                margin-top: 23px;
+                width: 150px;
+                font-size: 16px;
+
+                [class*="__ie1"] & {
+                    line-height: 47px;
+                }
+            }
+        }
+        ///-- 본인인증
+
+        /// 약관동의
+        &-terms {
+            padding: 48px 45px;
+            border-top: 1px solid #999;
+            background: #f7f7f9;
+            text-align: center;
+
+            .mm_box-head {
+                margin: 24px 0 6px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                .mm_box-lside {
+                    .mm_strapline {
+                        font-size: 20px;
+                        line-height: 24px;
+                    }
+                }
+            }
+
+            .m--terms-contents {
+                padding: 14px 16px;;
+                height: 125px;
+                border: 1px solid #e1e1e1;
+                background: #fff;
+                text-align: left;
+
+                > * {
+                    font-size: 11px;
+                    line-height: 16px;
+                }
+            }
+        }
+        ///-- 약관동의
+
+        /// 정보입력
+        &-profile {
+            table {
+                th {
+                    > span {
+                        > span {
+                            color: #999;
+                        }
+                    }
+                }
+
+                td {
+                    .m-profile-email {
+                        .text_tilde {
+                            width: 25px;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .mm_text-primary {
+                        font-size: 14px;
+                    }
+
+                    .mm_formbox-linked {
+                        .mco_hyphen {
+                            color: #cfcfcf;
+                			line-height: 36px;
+                        }
+            		}
+                }
+            }
+        }
+        ///-- 정보입력
+
+        /// 가입 완료
+        &-complete {
+            padding: 100px 45px 95px;
+            border-top: 1px solid #999;
+            background: #f7f7f9;
+
+            .mm_strapline {
+                margin-bottom: 31px;
+                font-size: 24px;
+                font-weight: 500;
+
+                strong {
+                    color: $color-primary-base;
+                }
+            }
+
+            > p {
+                text-align: center;
+                font-size: 14px;
+                line-height: 21px;
+            }
+        }
+        ///-- 가입 완료
+    }
+}

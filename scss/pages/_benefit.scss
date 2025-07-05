@@ -1,0 +1,1346 @@
+@charset 'utf-8';
+
+/**
+** 혜택
+**/
+
+/// 서프라이즈카드란
+.m-benefit-surprisecard {
+    .mm_tab {
+        .mm_tabmenu {
+            margin-bottom: 46px;
+
+            > ul {
+                li {
+                    > a,
+        			.btn_tab {
+                        width: 227.5px;
+                    }
+                }
+            }
+        }
+
+        .m-surprisecard-memebership-terms {
+            margin-top: -46px;
+            padding: 30px;
+            border: 1px solid #e1e1e1;
+            border-top: 0;
+
+            ul {
+                li {
+                    position: relative;
+                    padding-left: 10px;
+
+                    &:before {
+                        position: absolute;
+                        top: 2px;
+                        left: 0;
+                        font-size: 12px;
+                        content: "ㆍ";
+                    }
+
+                    p {
+                        font-size: 12px;
+                        line-height: 16px;
+                    }
+                }
+            }
+
+            h3 {
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+    }
+
+    /// 우대제휴사
+    .m-benefit-surprisecard-alliance {
+        .mm_tabmenu {
+            margin-bottom: 39px;
+            border: 0;
+            text-align: center;
+
+            > ul {
+                display: inline-block;
+
+                > li {
+                    position: relative;
+                    margin-left: 0;
+
+                    &:first-child:before{
+                        display: none;
+                    }
+
+                    &:before {
+                        display: inline-block;
+                        position: absolute;
+                        top: 12px;
+                        left: 0;
+                        height: 10px;
+                        border-left: 1px solid #999;
+                        content: "";
+                    }
+
+                    > a,
+                    .btn_tab {
+                        width: 225px;
+                        height: 41px;
+                        border: 0;
+                        color: #999;
+                        line-height: 35px;
+
+                        &.__tab-on {
+                            border: 0;;
+                            background: transparent;
+                            color: $color-primary-base;
+                        }
+
+                        small {
+                            margin-left: 4px;
+                            font-size: 11px;
+                            vertical-align: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .m-alliance-brand {
+            ul {
+                li {
+                    margin-top: 16px;
+                    height: 130px;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+
+                    figure {
+                        position: relative;
+                        padding-left: 206px;
+
+                        .image_alliance-brand {
+                            overflow: hidden;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 186px;
+                            height: 130px;
+                            border: 1px solid #dcdcdc;
+                            text-align: center;
+
+                            &:before {
+                                margin-left: -1px;
+                                height: 100%;
+                                width: 1px;
+                                vertical-align: middle;
+                                content: "";
+                            }
+
+                            > img {
+                                width: auto;
+                                max-width: 100%;
+                                vertical-align: middle;
+                            }
+                        }
+
+                        figcaption {
+                            .m-alliance-brand-head {
+                                overflow: hidden;
+                                margin-bottom: 13px;
+                                padding-bottom: 8px;
+                                height: 35px;
+                                border-bottom: 1px solid #dcdcdc;
+                                line-height: 28px;
+
+                                .ico_branch {
+                                    display: inline-block;
+                                    margin-right: 5px;
+                                    padding: 0 8px;
+                                    height: 26px;
+                                    border: 1px solid #dcdcdc;
+                                    background: #e4e4e4;
+                                    color: #424242;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    line-height: 26px;
+                                }
+
+                                strong {
+                                    font-size: 16px;
+                                }
+
+                                .text_brand-location {
+                                    float: right;
+                                    margin-right: 21px;
+                                    color: #333333;
+                                    font-size: 12px;
+                                    line-height: 30px;
+                                }
+                            }
+
+                            > p {
+                                padding-left: 2px;
+                                color: #333;
+                                font-size: 14px;
+                                line-height: 21px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ///-- 우대제휴사
+
+    /// 발급방법
+    .m-benefit-surprisecard-issue {
+        > ol {
+            li {
+                float: left;
+                border-right: 1px dashed #d7d7d7;
+                background-color: #fcfcfc;
+
+                &:last-child {
+                    border-right: 0;
+                }
+
+                dl {
+                    padding-bottom: 46px;
+                    font-size: 14px;
+                    text-align: center;
+
+                    dt {
+                        padding-top: 50px;
+                        width: 301px;
+                        height: 286px;
+                        background-color: #f7f7f9;
+
+                        .text_process {
+                            font-size: 19px;
+                            line-height: 26px;
+
+                            .__edge & { margin-top: -1px; }
+                        }
+
+                        > p {
+                            > span {
+                                color: #7b7b7b;
+                                font-size: 14px;
+
+                                [class*="__ie1"] & { line-height: 17px; }
+                            }
+
+                            strong {
+                                display: block;
+                                padding: 15px 0 24px;
+                                color: $color-primary-base;
+                                font-size: 27px;
+                                font-weight: 600;
+
+                                [class*="__ie1"] & { padding: 16px 0 22px; }
+                            }
+                        }
+                    }
+
+                    dd {
+                        position: relative;
+                        margin: -1px auto 0;
+                        width: 210px;
+                        border: 1px solid #d7d7d7;
+                        background-color: #fff;
+
+                        &:before {
+                            position: absolute;
+                            z-index: 10;
+                            bottom: -20px;
+                            left: 50%;
+                            @include prefix(transform, translateX(-50%), webkit ms);
+                            width: 0;
+                            height: 0;
+                            border: 9px solid transparent;
+                            border-top: 11px solid #d7d7d7;
+                            content: " ";
+                        }
+
+                        &:after {
+                            position: absolute;
+                            z-index: 10;
+                            bottom: -19px;
+                            left: 50%;
+                            @include prefix(transform, translateX(-50%), webkit ms);
+                            width: 0;
+                            height: 0;
+                            border: 9px solid transparent;
+                            border-top: 11px solid #fff;
+                            content: " ";
+                        }
+
+                        &:first-of-type {
+                            margin-top: -74px;
+                        }
+
+                        figure {
+                            position: relative;
+                            padding: 113px 0 26px;
+                            text-align: center;
+
+                            [class*="__ie1"] & { padding: 115px 0 24px; }
+
+                            .image_ico {
+                                position: absolute;
+                                bottom: 95px;
+                                left: 50%;
+                                @include prefix(transform, translateX(-50%), webkit ms);
+                            }
+
+                            figcaption {
+                                p {
+                                    line-height: 20px;
+
+                                    span {
+                                        color: #aaaaaa;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .m--issue-complete {
+            padding: 38px 45px 36px;
+            border-top: 1px dashed #d7d7d7;
+            background-color: #f7f7f9;
+            font-size: 14px;
+            text-align: center;
+
+            > figure {
+                padding-bottom: 26px;
+
+                [class*="__ie1"] & { padding-bottom: 24px; }
+
+                figcaption {
+                    h4 {
+                        padding: 17px 0 5px;
+                        font-size: 19px;
+                        line-height: 20px;
+
+                        [class*="__ie1"] & { padding: 19px 0 5px; }
+
+                        .__edge & { padding: 16px 0 6px; }
+                    }
+
+                    p {
+                        color: #666;
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                }
+            }
+
+            .m--issue-benefit {
+                ul {
+                    li {
+                        float: left;
+                        margin-left: -1px;
+                        width: 50%;
+                        height: 90px;
+                        border: 1px solid #d7d7d7;
+                        background-color: #fff;
+
+                        a {
+                            display: block;
+                        }
+
+                        figure {
+                            position: relative;
+                            padding: 35px 0 35px 154px;
+                            text-align: left;
+
+                            [class*="__ie1"] & { padding: 37px 0 33px 154px; }
+
+                            .ico_benefitimage {
+                                position: absolute;
+                                top: 50%;
+                                left: 53px;
+                                @include prefix(transform, translateY(-50%), webkit ms);
+                            }
+
+                            p {
+                                line-height: 20px;
+
+                                .mco_page-next{
+                                    margin-left: 12px;
+
+                                    [class*="__ie1"] & { margin-top: -2px; }
+                                }
+                            }
+                        }
+
+                        &:first-child {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .mm_formbox-attention {
+            position: relative;
+            margin-top: 26px;
+            color: #000;
+            font-size: 12px;
+            line-height: 18px;
+
+            [class*="__ie1"] & { margin-top: 28px; }
+
+            strong {
+                position: absolute;
+                top: 29px;
+                left: 10px;
+                font-size: 17px;
+
+                [class*="__ie1"] & { top: 26px; }
+
+                .mco_attention-triangle {
+                    margin-right: 7px;
+                    color: #5a5a5a;
+                    font-size: 16px;
+                }
+
+                span {
+                    [class*="__ie1"] & { line-height: 25px; }
+                }
+            }
+
+            ul {
+                padding-left: 152px;
+
+                li {
+                    position: relative;
+                    margin-top: 0;
+
+                    &:before {
+                        position: absolute;
+                        top: 1px;
+        				left: -10px;
+        				content: "ㆍ";
+                    }
+                }
+            }
+        }
+    }
+    ///-- 발급방법
+}
+///-- 서프라이즈카드란
+
+
+/// 상품교환권
+.m-benefit-voucher {
+    &-visual {
+        position: relative;
+        margin-bottom: 117px;
+        height: 331px;
+
+        .m-visual-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom:0;
+            left: 0;
+            margin: 55px;
+            padding: 74px 0 39px;
+            background: rgba(255, 255, 255, 0.8);
+            text-align: center;
+
+            [class*="__ie1"] & { padding: 77px 0 39px; }
+
+            &:before {
+                display: block;
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                bottom:8px;
+                left: 8px;
+                border: 1px solid #e7e7e7;
+                content: "";
+
+            }
+
+            > h4 {
+                position: relative;
+                font-size: 24px;
+                font-weight: 300;
+                line-height: 36px;
+
+                &:after {
+                    display: block;
+                    position: absolute;
+                    bottom: -13px;
+                    left: 50%;
+                    margin-left: -6px;
+                    width: 12px;
+                    border-top: 1px solid #000;
+                    content: "";
+
+                    [class*="__ie1"] & { bottom: -10px; }
+                }
+
+                .image_logo {
+                    margin-right: 12px;
+                    width: 102px;
+                    height: 29px;
+
+                    [class*="__ie1"] & { margin-top: -3px; }
+                }
+            }
+        }
+
+        .image_ico {
+            position: absolute;
+            top: 229px;
+            left: 50%;
+            @include prefix(transform, translateX(-50%), webkit ms);
+        }
+    }
+
+    .mm_section {
+        padding-top: 32px;
+
+        /// 상품교환권
+        &:last-of-type {
+            .m-benefit-voucher-list {
+                ul {
+                    li:last-child {
+                        margin-left: 246px
+                    }
+                }
+            }
+        }
+        ///-- 상품교환권
+    }
+
+    .mm_strapline {
+        position: relative;
+        font-size: 18px;
+
+        [class*="__ie1"] & { margin-bottom: -4px; line-height: 22px; }
+
+        > span {
+            position: relative;
+            z-index: 1;
+            padding: 0 50px;
+            background: #fff;
+        }
+
+        &:before {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 100%;
+            border-top: 1px solid #e4e4e4;
+            content: "";
+        }
+    }
+
+    &-list {
+        margin-top: 55px;
+        padding: 0 118px;
+
+        ul {
+            margin-left: -70px;
+
+            li {
+                float: left;
+                margin: 0 0 45px 70px;
+
+                figure {
+                    i {
+                        width: 300px;
+                        height: 132px;
+                    }
+
+                    figcaption {
+                        padding-top: 18px;
+                        font-size: 14px;
+                        font-weight: 300;
+                        text-align: center;
+
+                        [class*="__ie1"] & { height: 32px; line-height: 17px; }
+                    }
+                }
+            }
+        }
+    }
+
+    &-note {
+        overflow: hidden;
+
+        dl {
+            position: relative;
+            margin-top: 20px;
+            padding-left: 233px;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            > * {
+                display: inline-block;
+            }
+
+            dt {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding-left: 18px;
+                width: 200px;
+                border-left: 3px solid #7b7b7b;
+                background: #f3f3f3;
+                font-size: 14px;
+                line-height: 38px;
+
+                [class*="__ie1"] & { height: 38px; line-height: 41px; }
+            }
+
+            dd {
+                padding-top: 1px;
+
+                [class*="__ie1"] & { padding-top: 3px; margin-bottom: -2px; }
+
+                > span {
+                    display: inline-block;
+                    position: relative;
+                    font-size: 14px;
+                    line-height: 38px;
+
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        left: -14px;
+                        font-size: 14px;
+                        content: "ㆍ";
+                    }
+                }
+
+                > ul {
+                    li {
+                        position: relative;
+                        float: left;
+                        min-width: 50%;
+
+                        [class*="__ie1"] & { height: 19px; }
+
+                        > span {
+                            font-size: 14px;
+                            line-height: 19px;
+
+                            [class*="__ie1"] & { line-height: 18px; }
+
+                            span {
+                                color: #999;
+                            }
+                        }
+
+                        &:before {
+                            position: absolute;
+                            top: 0;
+                            left: -14px;
+                            font-size: 14px;
+                            content: "ㆍ";
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mm_tabmenu {
+        margin-top: 96px;
+
+        ul {
+            li {
+                .btn_tab {
+                    width: 454px;
+                }
+            }
+        }
+    }
+
+    &-terms,
+    &-notice {
+        padding: 30px;
+        border: 1px solid #e1e1e1;
+        border-top: 0;
+
+        [class*="__ie1"] & { padding: 32px 30px 28px; }
+
+        ul {
+            li {
+                position: relative;
+                padding-left: 10px;
+
+                &:before {
+                    position: absolute;
+                    top: 2px;
+                    left: 0;
+                    font-size: 12px;
+                    content: "ㆍ";
+                }
+
+                p {
+                    font-size: 12px;
+                    line-height: 20px;
+                }
+            }
+        }
+
+        h4,
+        strong {
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 500;
+        }
+    }
+}
+///-- 상품교환권
+
+/// 회원등급 혜택
+.m-benefit-grade {
+    .mm_list {
+        table {
+            border: 1px solid #dcdcdc;
+            border-top: 0;
+            border-right: 0;
+
+            thead {
+                tr {
+                    th {
+                        width: auto;
+                        border-top: 1px solid #dcdcdc;
+                        border-bottom: 1px solid #dcdcdc;
+                        background: #e4e4e4;
+
+                        i {
+                            width: 67px;
+                            height: 67px;
+                            border: 2px solid #cfcfcf;
+                            border-radius: 67px;
+                            background: #fff;
+                            color: #7b7b7b;
+                            font-size: 17px;
+                            font-weight: 500;
+                            line-height: 66px;
+
+                            [class*="__ie1"] & { line-height: 71px; }
+                        }
+                    }
+
+                    td {
+                        border-right: 1px solid #fff;
+
+                        &:last-child {
+                            border-color: #5bc5c9;
+                        }
+
+                        figure {
+                            position: relative;
+                            padding: 28px 0 32px 96px;
+
+                            &.m-grade-s {
+                                background: #f89b09;
+
+                                &.__grade-on:before {
+                                    display: block;
+                                    border-color: #f89b09;
+                                }
+                            }
+                            &.m-grade-u {
+                                background: #5bc5c9;
+
+                                &.__grade-on:before {
+                                    display: block;
+                                    border-color: #5bc5c9;
+                                }
+                            }
+                            &.m-grade-m {
+                                background: #9cd10c;
+
+                                &.__grade-on:before {
+                                    display: block;
+                                    border-color: #9cd10c;
+                                }
+                            }
+
+                            &:before {
+                                display: none;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 541px;
+                                border-width: 1px;
+                                border-style: solid;
+                                content: "";
+                            }
+
+                            i {
+                                position: absolute;
+                                top: 24px;
+                                left: 20px;
+                                width: 61px;
+                                height: 61px;
+                            }
+
+                            figcaption {
+                                p {
+                                    margin-top: 7px;
+                                    min-width: auto;
+                                    color: rgba(0,0,0,0.7);
+                                    font-size: 14px;
+                                    text-align: left;
+
+                                    [class*="__ie1"] & { height: 17px; line-height: 20px; }
+
+                                    strong {
+                                        color: #fff;
+                                        font-size: 20px;
+                                        font-weight: 600;
+
+                                        [class*="__ie1"] & { line-height: 21px; }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    &:first-child {
+                        > * {
+                            border-top: 0;
+                        }
+                    }
+
+                    th {
+                        height: 108px;
+                        border-top: 1px solid #dcdcdc;
+                        background: #fafafa;
+                        color: #7b7b7b;
+                        font-size: 14px;
+                        font-weight: 500;
+
+                        [class*="__ie1"] & { padding: 6px 12px 4px; }
+                    }
+
+                    td {
+                        padding: 4px 10px 4px 12px;
+                        border-right: 1px solid #dcdcdc;
+
+                        [class*="__ie1"] & { padding: 8px 10px 5px 12px; }
+
+                        &:first-of-type {
+                            border-left: 1px solid #dcdcdc;
+                        }
+
+                        ul {
+                            li {
+                                position: relative;
+                                padding-left: 6px;
+
+                                p {
+                                    font-size: 14px;
+                                    line-height: 18px;
+
+                                    small {
+                                        font-size: 12px;
+                                    }
+
+                                    strong {
+                                        font-weight: 500;
+                                    }
+                                }
+
+                                &:before {
+                                    position:absolute;
+                                    top: 1px;
+                                    left: -7px;
+                                    font-size: 14px;
+                                    content: "ㆍ";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+///-- 회원등급 혜택
+
+/// 제휴상품권 및 카드
+.m-benefit-alliance {
+
+    // 제휴 상품권
+    &-giftcard {
+        .m--giftcard-visual {
+            position: relative;
+
+            &-content {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom:0;
+                left: 0;
+                margin: 55px;
+                padding: 57px 0 39px;
+                background: rgba(255, 255, 255, 0.8);
+                text-align: center;
+
+                [class*="__ie1"] & { padding: 60px 0 36px; }
+
+                &:before {
+                    display: block;
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+                    bottom:8px;
+                    left: 8px;
+                    border: 1px solid #e7e7e7;
+                    content: "";
+
+                }
+
+                > h4 {
+                    position: relative;
+                    font-size: 24px;
+                    font-weight: 300;
+                    line-height: 36px;
+
+                    &:after {
+                        display: block;
+                        position: absolute;
+                        bottom: -13px;
+                        left: 50%;
+                        margin-left: -6px;
+                        width: 12px;
+                        border-top: 1px solid #000;
+                        content: "";
+
+                        [class*="__ie1"] & { bottom: -10px; }
+                    }
+
+                    .image_logo {
+                        margin-right: 12px;
+                        width: 102px;
+                        height: 29px;
+
+                        [class*="__ie1"] & { margin-top: -3px; }
+                    }
+                }
+
+                .mm_formbox-attention {
+                    margin-top: 40px;
+                    text-align: center;
+
+                    ul {
+                        display: inline-block;
+                        margin-left: -28px;
+
+                        li {
+                            display: inline-block;
+                            float: left;
+                            margin: 0 0 0 28px;
+                            color: #7b7b7b;
+                            font-size: 14px;
+                            font-weight: 300;
+
+                            [class*="__ie1"] & { line-height: 12px; }
+                        }
+                    }
+                }
+            }
+        }
+
+        .mm_strapline {
+            position: relative;
+            font-size: 18px;
+
+            [class*="__ie1"] & { margin-bottom: -4px; line-height: 22px; }
+
+            > span {
+                position: relative;
+                z-index: 1;
+                padding: 0 50px;
+                background: #fff;
+            }
+
+            &:before {
+                position: absolute;
+                top: 8px;
+                left: 0;
+                width: 100%;
+                border-top: 1px solid #e4e4e4;
+                content: "";
+            }
+        }
+
+        .m--giftcard-list {
+            margin-top: 54px;
+            padding: 0 203px 0 204px;
+
+            ul {
+                li {
+                    float: left;
+                    margin: 0 0 28px 80px;
+
+                    &:nth-child(2n+1),
+                    &:first-child {
+                        margin-left: 0px;
+                    }
+
+                    figure {
+                        i {
+                            width: 210px;
+                            height: 92px;
+                        }
+
+                        figcaption {
+                            font-size: 14px;
+                            font-weight: 300;
+                            line-height: 36px;
+                            text-align: center;
+
+                            [class*="__ie1"] & { height: 36px; line-height: 39px; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 제휴 상품권
+
+    // 모바일 결제
+    &-mobilepayment {
+        .m--mobilepayment-visual {
+            position: relative;
+            height: 331px;
+            background: #f7f7f7;
+
+            &-content {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom:0;
+                left: 0;
+                margin: 55px;
+                padding: 57px 0 39px;
+                background: #fff;
+                text-align: center;
+
+                [class*="__ie1"] & { padding: 60px 0 36px; }
+
+                &:before {
+                    display: block;
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+                    bottom:8px;
+                    left: 8px;
+                    border: 1px solid #e7e7e7;
+                    content: "";
+
+                }
+
+                > h4 {
+                    position: relative;
+                    font-size: 24px;
+                    font-weight: 300;
+                    line-height: 36px;
+
+                    .image_logo {
+                        margin-right: 12px;
+                        width: 102px;
+                        height: 29px;
+
+                        [class*="__ie1"] & { margin-top: -3px; }
+                    }
+                }
+            }
+
+            .image_ico {
+                position: absolute;
+                top: 221px;
+                left: 295px;
+            }
+        }
+
+        .m--mobilepayment-feature {
+            margin: 72px 0 40px;
+            text-align: center;
+
+            ul {
+                display: inline-block;
+
+                li {
+                    float: left;
+                    position: relative;
+                    margin-left: 23px;
+                    width: 162px;
+                    height: 162px;
+                    border: 1px solid #e9e9e9;
+                    border-radius: 162px;
+                    background: #fff;
+
+                    &:first-child{
+                        margin-left: 0;
+                        padding-top: 34px;
+                    }
+
+                    &:nth-child(2){
+                        padding-top: 37px;
+                    }
+
+                    &:last-child{
+                        padding-top: 36px;
+                    }
+
+                    figure {
+                        figcaption {
+                            position: absolute;
+                            top: 87px;
+                            left: 50%;
+                            width: 100%;
+                            font-size: 14px;
+                            line-height: 20px;
+                            @include prefix(transform, translateX(-50%), webkit ms);
+
+                            [class*="__ie1"] & { padding-top: 2px; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 모바일 결제
+
+    // 제휴카드
+    &-benefitcard {
+        .m--benefitcard-visual {
+            position: relative;
+
+            &-content {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom:0;
+                left: 0;
+                margin: 55px;
+                padding: 57px 0 39px;
+                background: rgba(255, 255, 255, 0.8);
+                text-align: center;
+
+                [class*="__ie1"] & { padding: 60px 0 36px; }
+
+                &:before {
+                    display: block;
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+                    bottom:8px;
+                    left: 8px;
+                    border: 1px solid #e7e7e7;
+                    content: "";
+
+                }
+
+                > h4 {
+                    position: relative;
+                    font-size: 24px;
+                    font-weight: 300;
+                    line-height: 36px;
+
+                    &:after {
+                        display: block;
+                        position: absolute;
+                        bottom: -13px;
+                        left: 50%;
+                        margin-left: -6px;
+                        width: 12px;
+                        border-top: 1px solid #000;
+                        content: "";
+
+                        [class*="__ie1"] & { bottom: -10px; }
+                    }
+
+                    .image_logo {
+                        margin-right: 12px;
+                        width: 102px;
+                        height: 29px;
+
+                        [class*="__ie1"] & { margin-top: -3px; }
+                    }
+                }
+
+                > p {
+                    margin-top: 40px;
+                    color: #7b7b7b;
+                    font-size: 14px;
+                    font-weight: 300;
+
+                    [class*="__ie1"] & { margin-top: 39px; }
+                }
+            }
+        }
+
+        .mm_section {
+            margin-top: 63px;
+        }
+
+        .mm_strapline {
+            font-size: 18px;
+            line-height: 34px;
+            text-align: left;
+
+            [class*="__ie1"] & { margin-bottom:  -3px; line-height: 37px; }
+        }
+
+        .m--benefitcard-list {
+            table {
+                border-bottom: 1px solid #7b7b7b;
+                font-size: 14px;
+
+                thead {
+
+                    tr {
+                        height: 39px;
+                        border-top: 1px solid #999999;
+                        vertical-align: middle;
+
+                        th {
+                            width: auto;
+
+                            [class*="__ie1"] & { padding-top: 3px; }
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        &:first-child {
+                            > * {
+                                border-top: 1px solid #999999;
+                            }
+                        }
+
+                        &:last-child {
+                            > * {
+                                border-bottom: 1px solid #7b7b7b;
+                            }
+
+                            td {
+                                position: relative;
+
+                                &:after {
+                                    display: block;
+                                    position: absolute;
+                                    bottom: -1px;
+                                    left: -10px;
+                                    width: 100%;
+                                    border-bottom: 1px solid #7b7b7b;
+                                    content: " ";
+                                }
+                            }
+                        }
+
+
+                        th {
+                            position: relative;
+                            height: auto;
+                            border-top: 1px solid #dcdcdc;
+                            color: #7b7b7b;
+                            font-size: 14px;
+                            font-weight: 500;
+
+                            i {
+                                overflow: hidden;
+                                position: absolute;
+                                left: 50%;
+                                @include transform(translate(-50%, -50%));
+
+                                img {
+                                    width: auto;
+                                    height: 100%;
+                                }
+                            }
+                        }
+
+                        td {
+                            padding: 8px 10px;
+                            height: 38px;
+                            border-right: 1px solid #dcdcdc;
+                            border-bottom: 1px solid #dcdcdc;
+                            text-align: center;
+
+                            &:first-of-type {
+                                border-left: 1px solid #dcdcdc;
+                            }
+
+                            &:last-of-type {
+                                border-right: 0;
+
+                                [class*="__ie1"] & { border-left: 1px solid #dcdcdc; }
+
+                                .__edge & { border-left: 1px solid #dcdcdc; }
+                            }
+
+                            > span {
+                                [class*="__ie1"] & { display: block; height: 20px; line-height: 23px; }
+                            }
+                        }
+
+                        .text_tag {
+                            margin: 0 auto;
+                            padding: 4px 0;
+                            color: #e71d3e;
+                            width: 76px;
+                            height: 22px;
+                            border: 1px solid currentColor;
+                            font-size: 12px;
+
+                            [class*="__ie1"] & { line-height: 15px; }
+
+                            &[class*="_part"] {
+                                color: #424242;
+                            }
+                        }
+
+                    }
+                }
+
+                + .text_notice {
+                    color: #7b7b7b;
+                    padding-top: 10px;
+                    text-align: right;
+                    font-size: 11px;
+
+                    [class*="__ie1"] & { margin-bottom: -2px; padding-top: 12px; }
+                }
+            }
+        }
+
+        .m--benefitcard-eventbanner {
+            margin-top: 76px;
+
+            i {
+                overflow: hidden;
+            }
+        }
+    }
+    //-- 제휴카드
+}
+///-- 제휴상품권 및 카드

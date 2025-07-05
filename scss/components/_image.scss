@@ -1,0 +1,140 @@
+@charset 'utf-8';
+
+/**
+** 컴포넌트
+** - 이미지, 아이콘, 플래그, 태그, 뱃지
+**/
+
+/// 기본형
+.mm_image {
+	/// 이미지 없음
+	&-none {
+		position: relative;
+
+		.ico_none:before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			color: #e2e2e2;
+			font-size: 21px;
+			@include transform(translate(-50%, -50%));
+		}
+	}
+	///-- 이미지 없음
+
+	/// 회원등급 이미지
+	&-grade {
+		width: auto;
+		height: 35px;
+	}
+	///-- 회원등급 이미지
+}
+///-- 기본형
+
+/// 프리로드
+.mm_preload {
+	// visibility: hidden;
+
+	&.__preload-loaded,
+	&.__preload-error {
+		// visibility: inherit;
+	}
+}
+///-- 프리로드
+
+/// 백그라운드 이미지
+.mm_bg {
+	&-cover {
+		background: transparent no-repeat 50% 50%;
+		background-size: cover;
+	}
+
+	&-contain {
+		background: transparent no-repeat 50% 50%;
+		background-size: contain;
+	}
+}
+///-- 백그라운드 이미지
+
+/// exif orientation (정방형만 가능)
+.mm_orientation {
+	// 반전
+	&-2 {
+		@include transform(scaleX(-1));
+	}
+	// 180도
+	&-3 {
+		@include transform(rotate(180deg));
+	}
+	// 180도 + 반전
+	&-4 {
+		@include transform(rotate(180deg) scaleX(-1));
+	}
+	// -90도 + 반전
+	&-5 {
+		@include transform(rotate(-90deg) scaleX(-1));
+	}
+	// -90도
+	&-6 {
+		@include transform(rotate(90deg));
+	}
+	// 90도 + 반전
+	&-7 {
+		@include transform(rotate(90deg) scaleX(-1));
+	}
+	// 90도
+	&-8 {
+		@include transform(rotate(-90deg));
+	}
+}
+///-- exif orientation
+
+/// 태그
+.mm_tag {
+	// 텍스트
+	&-text {
+		display: inline-block;
+		padding: 0 5px;
+		height: 22px;
+		border: 1px solid #606060;// 배송완료
+		border-radius: 4px;
+		background: #fff;
+		color: #606060;
+		font-size: 13px;
+		line-height: 20px;
+
+		// 배송중, 배송접수, 배송접수전
+		&.__tag-primary-light {
+			border-color: $color-primary-light;
+			color: $color-primary-light;
+		}
+
+		// 예약판매
+		&.__tag-primary {
+			border-color: $color-primary-base;
+			color: $color-primary-base;
+		}
+
+		// 가송장미확인, 반품미처리, 패널티면책, 패널티부과
+		&.__tag-secondary-light {
+			// border-color: $color-secondary-light;
+			// color: $color-secondary-light;
+		}
+
+		// 진열중, 미진열
+		&.__tag-tertiary {
+			border-color: $color-tertiary-base;
+			color: $color-tertiary-base;
+		}
+	}
+}
+///-- 태그
+
+/// 뱃지
+.mm_badge {
+	width: 8px;
+	height: 8px;
+	border-radius: 8px;
+	background: $color-primary-base;
+}
+///-- 뱃지
