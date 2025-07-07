@@ -1,19 +1,17 @@
 # 엔터6 홈페이지 프론트(PC)
+_2018.08 ~ 2019.05_
 + 엔터6 전체 일정  
-	https://docs.google.com/spreadsheets/
 + 프론트 스토리보드 구글드라이브 경로  
-	https://drive.google.com/drive/
 + 퍼블리싱 작업 리스트  
-	http://publish.mmonstar.co.kr/enter6/home_2019/pc/
 + 아톰에서 작업할 경우 **remoteFTP** 를 이용하면 FTP에 바로 업로드됩니다.
 	- remoteFTP의 **.ftpconfig** 파일설정
 		```
 		"protocol": "sftp",
-		"host": "퍼블리싱 접속IP",
+		"host": "",
 		"port": 22,
-		"user": "publish",
+		"user": "",
 		"pass": "비밀번호",
-		"remote": "/data/www/publish/public/enter6/home_2019/pc/",
+		"remote": "",
 		...
 		"watch": ["font", "scss", "css", "js", "html"],
 		...
@@ -27,7 +25,6 @@
 
 ## DESIGN
 + 디자인 구글드라이브 경로  
-	https://drive.google.com/drive/
 + 디자인 IA  
 
 <br><br>
